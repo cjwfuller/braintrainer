@@ -6,11 +6,32 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
+    android:gravity="center"
+    tools:context=".MainActivity"  >
 
-    <TextView
+    <Button
+        android:id="@+id/start_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:textSize="22sp"
+        android:width="100sp"
+        android:textStyle="bold"
+        android:text="@string/start_button" />
+    <Button
+        android:id="@+id/settings_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:width="100sp"
+        android:text="@string/settings_button"
+        android:layout_below="@+id/start_button" />    
+    <Button
+        android:id="@+id/about_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:width="100sp"
+        android:text="@string/about_button"
+        android:layout_below="@+id/settings_button"/>        
 
 </RelativeLayout>
