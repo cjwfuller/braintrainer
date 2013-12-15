@@ -43,11 +43,11 @@ public final class R {
     }
     public static final class string {
         public static final int about_button=0x7f060005;
+        public static final int about_description_text=0x7f060015;
         public static final int action_settings=0x7f060014;
         public static final int activity_title_settings=0x7f060008;
         public static final int app_name=0x7f060000;
         public static final int classification_questions_switch_text=0x7f06000d;
-        public static final int hello_world=0x7f060015;
         public static final int logic_questions_switch_text=0x7f06000a;
         public static final int mathematical_questions_switch_text=0x7f06000e;
         public static final int menu_about=0x7f060002;
