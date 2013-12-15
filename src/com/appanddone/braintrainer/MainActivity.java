@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends Activity {
 
@@ -13,7 +15,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		/*Button settingsButton = (Button)findViewById(R.id.settings_button);
+		Button settingsButton = (Button)findViewById(R.id.settings_button);
 		settingsButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -21,7 +23,7 @@ public class MainActivity extends Activity {
 				Intent intent_settings = new Intent(MainActivity.this, Settings.class);
 				MainActivity.this.startActivity(intent_settings);
 			}
-		});*/
+		});
 	}
 
 	@Override

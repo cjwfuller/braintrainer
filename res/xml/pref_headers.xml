@@ -8,8 +8,5 @@
     <header
         android:fragment="com.appanddone.braintrainer.Settings$QuestionsPreferenceFragment"
         android:title="@string/pref_header_questions" />
-    <header
-        android:fragment="com.appanddone.braintrainer.Settings$NotificationPreferenceFragment"
-        android:title="@string/pref_header_notifications" />
 
 </preference-headers>

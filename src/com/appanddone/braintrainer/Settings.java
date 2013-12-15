@@ -59,24 +59,21 @@ public class Settings extends PreferenceActivity {
 
 		// In the simplified UI, fragments are not used at all and we instead
 		// use the older PreferenceActivity APIs.
-
-		// Add 'general' preferences.
-		addPreferencesFromResource(R.xml.pref_general);
 		
-		addPreferencesFromResource(R.xml.pref_questions);
+		addPreferencesFromResource(R.xml.pref_general);
 
 		// Add 'notifications' preferences, and a corresponding header.
 		PreferenceCategory fakeHeader = new PreferenceCategory(this);
-		fakeHeader.setTitle(R.string.pref_header_notifications);
+		fakeHeader.setTitle(R.string.pref_header_questions);
 		getPreferenceScreen().addPreference(fakeHeader);
-		addPreferencesFromResource(R.xml.pref_notification);
+		addPreferencesFromResource(R.xml.pref_questions);
 
 		// Bind the summaries of EditText/List/Dialog/Ringtone preferences to
 		// their values. When their values change, their summaries are updated
 		// to reflect the new value, per the Android Design guidelines.
-		bindPreferenceSummaryToValue(findPreference("example_text"));
-		bindPreferenceSummaryToValue(findPreference("example_list"));
-		bindPreferenceSummaryToValue(findPreference("notifications_new_message_ringtone"));
+		//bindPreferenceSummaryToValue(findPreference("example_text"));
+		//bindPreferenceSummaryToValue(findPreference("example_list"));
+		//bindPreferenceSummaryToValue(findPreference("notifications_new_message_ringtone"));
 	}
 
 	/** {@inheritDoc} */
@@ -176,7 +173,7 @@ public class Settings extends PreferenceActivity {
 	 * 
 	 * @see #sBindPreferenceSummaryToValueListener
 	 */
-	private static void bindPreferenceSummaryToValue(Preference preference) {
+	/*private static void bindPreferenceSummaryToValue(Preference preference) {
 		// Set the listener to watch for value changes.
 		preference
 				.setOnPreferenceChangeListener(sBindPreferenceSummaryToValueListener);
@@ -188,27 +185,7 @@ public class Settings extends PreferenceActivity {
 				PreferenceManager.getDefaultSharedPreferences(
 						preference.getContext()).getString(preference.getKey(),
 						""));
-	}
-
-	/**
-	 * This fragment shows general preferences only. It is used when the
-	 * activity is showing a two-pane settings UI.
-	 */
-	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
-	public static class GeneralPreferenceFragment extends PreferenceFragment {
-		@Override
-		public void onCreate(Bundle savedInstanceState) {
-			super.onCreate(savedInstanceState);
-			addPreferencesFromResource(R.xml.pref_general);
-
-			// Bind the summaries of EditText/List/Dialog/Ringtone preferences
-			// to their values. When their values change, their summaries are
-			// updated to reflect the new value, per the Android Design
-			// guidelines.
-			bindPreferenceSummaryToValue(findPreference("example_text"));
-			bindPreferenceSummaryToValue(findPreference("example_list"));
-		}
-	}
+	}*/
 	
 	/**
 	 * 
@@ -218,9 +195,9 @@ public class Settings extends PreferenceActivity {
 		@Override
 		public void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
-			addPreferencesFromResource(R.xml.pref_questions);
-			bindPreferenceSummaryToValue(findPreference("example_text"));
-			bindPreferenceSummaryToValue(findPreference("example_list"));
+			addPreferencesFromResource(R.xml.pref_general);
+			//bindPreferenceSummaryToValue(findPreference("example_text"));
+			//bindPreferenceSummaryToValue(findPreference("example_list"));
 		}
 	}
 
@@ -240,7 +217,7 @@ public class Settings extends PreferenceActivity {
 			// to their values. When their values change, their summaries are
 			// updated to reflect the new value, per the Android Design
 			// guidelines.
-			bindPreferenceSummaryToValue(findPreference("notifications_new_message_ringtone"));
+			//bindPreferenceSummaryToValue(findPreference("notifications_new_message_ringtone"));
 		}
 	}
 }
