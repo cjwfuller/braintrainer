@@ -37,6 +37,7 @@ public final class R {
     public static final class layout {
         public static final int activity_about=0x7f030000;
         public static final int activity_main=0x7f030001;
+        public static final int activity_memory=0x7f030002;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -48,38 +49,38 @@ public final class R {
         public static final int activity_title_settings=0x7f060008;
         public static final int app_name=0x7f060000;
         public static final int classification_questions_switch_text=0x7f06000d;
+        public static final int hello_world=0x7f060017;
         public static final int logic_questions_switch_text=0x7f06000a;
         public static final int mathematical_questions_switch_text=0x7f06000e;
         public static final int menu_about=0x7f060002;
         public static final int menu_settings=0x7f060001;
         public static final int pattern_recognition_questions_switch_text=0x7f06000b;
-        public static final int pref_default_display_name=0x7f060027;
-        public static final int pref_description_social_recommendations=0x7f06001b;
-        public static final int pref_description_timer=0x7f06001c;
-        /**  Strings related to Settings 
- Example General settings 
+        public static final int pref_default_display_name=0x7f060029;
+        public static final int pref_description_social_recommendations=0x7f06001d;
+        public static final int pref_description_timer=0x7f06001e;
+        /**  Example General settings 
          */
-        public static final int pref_header_general=0x7f060017;
-        public static final int pref_header_questions=0x7f060018;
-        public static final int pref_ringtone_silent=0x7f06002b;
-        public static final int pref_title_add_friends_to_messages=0x7f060028;
-        public static final int pref_title_classification=0x7f06001f;
-        public static final int pref_title_display_name=0x7f060026;
-        public static final int pref_title_logic=0x7f06001e;
-        public static final int pref_title_mathematical=0x7f060022;
-        public static final int pref_title_memory=0x7f060021;
+        public static final int pref_header_general=0x7f060019;
+        public static final int pref_header_questions=0x7f06001a;
+        public static final int pref_ringtone_silent=0x7f06002d;
+        public static final int pref_title_add_friends_to_messages=0x7f06002a;
+        public static final int pref_title_classification=0x7f060021;
+        public static final int pref_title_display_name=0x7f060028;
+        public static final int pref_title_logic=0x7f060020;
+        public static final int pref_title_mathematical=0x7f060024;
+        public static final int pref_title_memory=0x7f060023;
         /**  Example settings for Notifications 
          */
-        public static final int pref_title_new_message_notifications=0x7f060029;
-        public static final int pref_title_pattern_recognition=0x7f060025;
-        public static final int pref_title_ringtone=0x7f06002a;
-        public static final int pref_title_social_recommendations=0x7f060019;
-        public static final int pref_title_sound=0x7f06001d;
-        public static final int pref_title_spatial=0x7f060023;
-        public static final int pref_title_timer=0x7f06001a;
-        public static final int pref_title_verbal=0x7f060020;
-        public static final int pref_title_vibrate=0x7f06002c;
-        public static final int pref_title_visual=0x7f060024;
+        public static final int pref_title_new_message_notifications=0x7f06002b;
+        public static final int pref_title_pattern_recognition=0x7f060027;
+        public static final int pref_title_ringtone=0x7f06002c;
+        public static final int pref_title_social_recommendations=0x7f06001b;
+        public static final int pref_title_sound=0x7f06001f;
+        public static final int pref_title_spatial=0x7f060025;
+        public static final int pref_title_timer=0x7f06001c;
+        public static final int pref_title_verbal=0x7f060022;
+        public static final int pref_title_vibrate=0x7f06002e;
+        public static final int pref_title_visual=0x7f060026;
         public static final int reset_highscore_button=0x7f060006;
         public static final int reset_highscore_text=0x7f060007;
         public static final int settings_button=0x7f060004;
@@ -87,7 +88,8 @@ public final class R {
         public static final int start_button=0x7f060003;
         public static final int timer_switch_text=0x7f060009;
         public static final int title_activity_about=0x7f060013;
-        public static final int title_activity_settings=0x7f060016;
+        public static final int title_activity_memory=0x7f060016;
+        public static final int title_activity_settings=0x7f060018;
         public static final int title_other_settings=0x7f060012;
         public static final int title_question_types=0x7f060011;
         public static final int verbal_questions_switch_text=0x7f060010;
@@ -124,7 +126,6 @@ public final class R {
     public static final class xml {
         public static final int pref_general=0x7f040000;
         public static final int pref_headers=0x7f040001;
-        public static final int pref_notification=0x7f040002;
-        public static final int pref_questions=0x7f040003;
+        public static final int pref_questions=0x7f040002;
     }
 }

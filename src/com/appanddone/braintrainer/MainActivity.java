@@ -10,10 +10,27 @@ import android.widget.Button;
 
 public class MainActivity extends Activity {
 
+	/**
+	 * TODO actually make the question random
+	 */
+	private void startRandomQuestion() {
+		Intent intent_memory_question = new Intent(MainActivity.this, Memory.class);
+		MainActivity.this.startActivity(intent_memory_question);
+	}
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		Button startButton = (Button)findViewById(R.id.start_button);
+		startButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				startRandomQuestion();
+			}
+		});
 		
 		Button settingsButton = (Button)findViewById(R.id.settings_button);
 		settingsButton.setOnClickListener(new View.OnClickListener() {

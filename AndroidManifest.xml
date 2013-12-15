@@ -30,6 +30,10 @@
             android:name="com.appanddone.braintrainer.About"
             android:label="@string/title_activity_about" >
         </activity>
+        <activity
+            android:name="com.appanddone.braintrainer.Memory"
+            android:label="@string/title_activity_memory" >
+        </activity>
     </application>
 
 </manifest>
