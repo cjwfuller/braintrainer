@@ -2,14 +2,14 @@ package com.appanddone.braintrainer;
 
 import java.util.Random;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class Mathematics extends Activity {
+public class Mathematics extends MainActivity {
 	
 	private int[][] series;
 	private final int numProblems = 2;
@@ -56,11 +56,17 @@ public class Mathematics extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				if(Integer.parseInt(mathsAnswer.getText().toString()) == series[randomProblem][5]) {
-					finish();
+				if(!mathsAnswer.getText().toString().matches("")) {
+					if(Integer.parseInt(mathsAnswer.getText().toString()) == series[randomProblem][5]) {
+						// Correct
+						
+					} else {
+						// Wrong
+						
+					}
+					startRandomQuestion();
 				} else {
-					System.out.println(Integer.parseInt(mathsAnswer.getText().toString()));
-					System.out.println(series[randomProblem][5]);
+					Toast.makeText(getApplicationContext(), "Please enter an answer", Toast.LENGTH_SHORT).show();
 				}
 			}
 		});

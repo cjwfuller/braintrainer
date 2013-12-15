@@ -13,7 +13,7 @@ public class MainActivity extends Activity {
 	/**
 	 * TODO actually make the question random
 	 */
-	private void startRandomQuestion() {
+	public void startRandomQuestion() {
 		//Intent intent_memory_question = new Intent(MainActivity.this, Memory.class);
 		//MainActivity.this.startActivity(intent_memory_question);
 		Intent intent_maths_question = new Intent(MainActivity.this, Mathematics.class);
