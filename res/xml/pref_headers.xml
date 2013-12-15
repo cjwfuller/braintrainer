@@ -11,8 +11,5 @@
     <header
         android:fragment="com.appanddone.braintrainer.Settings$NotificationPreferenceFragment"
         android:title="@string/pref_header_notifications" />
-    <header
-        android:fragment="com.appanddone.braintrainer.Settings$DataSyncPreferenceFragment"
-        android:title="@string/pref_header_data_sync" />
 
 </preference-headers>

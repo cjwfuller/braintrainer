@@ -62,6 +62,8 @@ public class Settings extends PreferenceActivity {
 
 		// Add 'general' preferences.
 		addPreferencesFromResource(R.xml.pref_general);
+		
+		addPreferencesFromResource(R.xml.pref_questions);
 
 		// Add 'notifications' preferences, and a corresponding header.
 		PreferenceCategory fakeHeader = new PreferenceCategory(this);
