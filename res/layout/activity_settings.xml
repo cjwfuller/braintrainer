@@ -13,11 +13,19 @@
 	        android:orientation="vertical"
 	        android:layout_marginLeft="18sp"
             android:layout_marginTop="18sp" >
+            <TextView 
+                android:id="@+id/text_question_types"
+                android:text="@string/title_question_types"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 	        <TextView 
 	            android:id="@+id/text_logic_questions"
 	            android:text="@string/logic_questions_switch_text"
 	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"/>
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="21sp"
+                android:layout_below="@+id/text_question_types"/>
 	        <TextView 
 	            android:id="@+id/text_pattern_recognition"
 	            android:text="@string/pattern_recognition_questions_switch_text"
@@ -59,13 +67,35 @@
 	            android:layout_height="wrap_content"
 	            android:layout_marginTop="21sp"
 	            android:layout_below="@+id/text_mathematical"
-	            android:text="@string/verbal_questions_switch_text" />        
-	    </RelativeLayout>
+	            android:text="@string/verbal_questions_switch_text" />     
+            <TextView 
+                android:id="@+id/text_other_settings"
+                android:text="@string/title_other_settings"
+                android:textStyle="bold"
+                android:layout_marginTop="21sp"
+                android:layout_below="@+id/text_verbal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>	
+            <TextView 
+                android:id="@+id/text_timer"
+                android:text="@string/timer_switch_text"
+                android:layout_marginTop="21sp"
+                android:layout_below="@+id/text_other_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView 
+                android:id="@+id/text_highscore_reset"
+                android:text="@string/reset_highscore_text"
+                android:layout_marginTop="21sp"
+                android:layout_below="@+id/text_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>	    
+        </RelativeLayout>
 	    <RelativeLayout
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:layout_marginRight="18sp"
-	        android:layout_marginTop="18sp"
+	        android:layout_marginTop="60sp"
 	        android:gravity="right"
 	        android:orientation="vertical" >
 		    <Switch
@@ -114,7 +144,22 @@
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:layout_marginTop="11sp"
-	            android:layout_below="@+id/mathemticalQuestionsSwitchButton" />                                                  
+	            android:layout_below="@+id/mathemticalQuestionsSwitchButton" />     
+            <Switch
+                android:id="@+id/otherSettingsSwitchButton"
+                android:checked="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50sp"
+                android:layout_below="@+id/verbalQuestionsSwitchButton" />	 
+            <Button 
+                android:id="@+id/reset_highscore"
+                android:text="@string/reset_highscore_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/otherSettingsSwitchButton"
+                android:layout_marginTop="11sp"
+                android:minHeight="0dp" />                                                                        
 	    </RelativeLayout>
     </LinearLayout>
 </ScrollView>
