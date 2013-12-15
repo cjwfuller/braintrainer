@@ -26,6 +26,10 @@
             android:name="com.appanddone.braintrainer.Settings"
             android:label="@string/activity_title_settings" >
         </activity>
+        <activity
+            android:name="com.appanddone.braintrainer.About"
+            android:label="@string/title_activity_about" >
+        </activity>
     </application>
 
 </manifest>

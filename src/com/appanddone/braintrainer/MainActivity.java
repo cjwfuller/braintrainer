@@ -24,6 +24,16 @@ public class MainActivity extends Activity {
 				MainActivity.this.startActivity(intent_settings);
 			}
 		});
+		
+		Button aboutButton = (Button)findViewById(R.id.about_button);
+		aboutButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent_about = new Intent(MainActivity.this, About.class);
+				MainActivity.this.startActivity(intent_about);
+			}
+		});
 	}
 
 	@Override
@@ -40,6 +50,10 @@ public class MainActivity extends Activity {
 			Intent intent_settings = new Intent(this, Settings.class);
 			this.startActivity(intent_settings);
 			break;	
+		case R.id.menu_about:
+			Intent intent_about = new Intent(this, About.class);
+			this.startActivity(intent_about);
+			break;				
 		default:
 			return super.onOptionsItemSelected(item);
 		}
