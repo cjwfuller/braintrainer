@@ -8,6 +8,12 @@
 package com.appanddone.braintrainer;
 
 public final class R {
+    public static final class array {
+        public static final int pref_example_list_titles=0x7f070000;
+        public static final int pref_example_list_values=0x7f070001;
+        public static final int pref_sync_frequency_titles=0x7f070002;
+        public static final int pref_sync_frequency_values=0x7f070003;
+    }
     public static final class attr {
     }
     public static final class dimen {
@@ -17,67 +23,67 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
+        public static final int activity_horizontal_margin=0x7f050000;
+        public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int about_button=0x7f080002;
-        public static final int classificationQuestionsSwitchButton=0x7f080012;
-        public static final int layout_question_types=0x7f080003;
-        public static final int logicQuestionsSwitchButton=0x7f08000f;
-        public static final int mathemticalQuestionsSwitchButton=0x7f080014;
-        public static final int menu_about=0x7f080019;
-        public static final int menu_settings=0x7f080018;
-        public static final int otherSettingsSwitchButton=0x7f080016;
-        public static final int patternRecognitionQuestionsSwitchButton=0x7f080010;
-        public static final int reset_highscore=0x7f080017;
-        public static final int settings_button=0x7f080001;
-        public static final int spatialQuestionsSwitchButton=0x7f080011;
-        public static final int start_button=0x7f080000;
-        public static final int text_classification=0x7f080008;
-        public static final int text_highscore_reset=0x7f08000e;
-        public static final int text_logic_questions=0x7f080005;
-        public static final int text_mathematical=0x7f08000a;
-        public static final int text_other_settings=0x7f08000c;
-        public static final int text_pattern_recognition=0x7f080006;
-        public static final int text_question_types=0x7f080004;
-        public static final int text_spatial=0x7f080007;
-        public static final int text_timer=0x7f08000d;
-        public static final int text_verbal=0x7f08000b;
-        public static final int text_visualisation=0x7f080009;
-        public static final int verbalQuestionsSwitchButton=0x7f080015;
-        public static final int visualisationQuestionsSwitchButton=0x7f080013;
+        public static final int about_button=0x7f0a0002;
+        public static final int menu_about=0x7f0a0004;
+        public static final int menu_settings=0x7f0a0003;
+        public static final int settings_button=0x7f0a0001;
+        public static final int start_button=0x7f0a0000;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int activity_settings=0x7f030001;
     }
     public static final class menu {
-        public static final int main=0x7f070000;
+        public static final int main=0x7f090000;
     }
     public static final class string {
-        public static final int about_button=0x7f050005;
-        public static final int activity_title_settings=0x7f050008;
-        public static final int app_name=0x7f050000;
-        public static final int classification_questions_switch_text=0x7f05000d;
-        public static final int logic_questions_switch_text=0x7f05000a;
-        public static final int mathematical_questions_switch_text=0x7f05000e;
-        public static final int menu_about=0x7f050002;
-        public static final int menu_settings=0x7f050001;
-        public static final int pattern_recognition_questions_switch_text=0x7f05000b;
-        public static final int reset_highscore_button=0x7f050006;
-        public static final int reset_highscore_text=0x7f050007;
-        public static final int settings_button=0x7f050004;
-        public static final int spatial_questions_switch_text=0x7f05000c;
-        public static final int start_button=0x7f050003;
-        public static final int timer_switch_text=0x7f050009;
-        public static final int title_other_settings=0x7f050012;
-        public static final int title_question_types=0x7f050011;
-        public static final int verbal_questions_switch_text=0x7f050010;
-        public static final int visualisation_questions_switch_text=0x7f05000f;
+        public static final int about_button=0x7f060005;
+        public static final int activity_title_settings=0x7f060008;
+        public static final int app_name=0x7f060000;
+        public static final int classification_questions_switch_text=0x7f06000d;
+        public static final int logic_questions_switch_text=0x7f06000a;
+        public static final int mathematical_questions_switch_text=0x7f06000e;
+        public static final int menu_about=0x7f060002;
+        public static final int menu_settings=0x7f060001;
+        public static final int pattern_recognition_questions_switch_text=0x7f06000b;
+        public static final int pref_default_display_name=0x7f060018;
+        public static final int pref_description_social_recommendations=0x7f060016;
+        /**  Example settings for Data & Sync 
+         */
+        public static final int pref_header_data_sync=0x7f06001a;
+        /**  Strings related to Settings 
+ Example General settings 
+         */
+        public static final int pref_header_general=0x7f060014;
+        /**  Example settings for Notifications 
+         */
+        public static final int pref_header_notifications=0x7f06001d;
+        public static final int pref_ringtone_silent=0x7f060020;
+        public static final int pref_title_add_friends_to_messages=0x7f060019;
+        public static final int pref_title_display_name=0x7f060017;
+        public static final int pref_title_new_message_notifications=0x7f06001e;
+        public static final int pref_title_ringtone=0x7f06001f;
+        public static final int pref_title_social_recommendations=0x7f060015;
+        public static final int pref_title_sync_frequency=0x7f06001b;
+        public static final int pref_title_system_sync_settings=0x7f06001c;
+        public static final int pref_title_vibrate=0x7f060021;
+        public static final int reset_highscore_button=0x7f060006;
+        public static final int reset_highscore_text=0x7f060007;
+        public static final int settings_button=0x7f060004;
+        public static final int spatial_questions_switch_text=0x7f06000c;
+        public static final int start_button=0x7f060003;
+        public static final int timer_switch_text=0x7f060009;
+        public static final int title_activity_settings=0x7f060013;
+        public static final int title_other_settings=0x7f060012;
+        public static final int title_question_types=0x7f060011;
+        public static final int verbal_questions_switch_text=0x7f060010;
+        public static final int visualisation_questions_switch_text=0x7f06000f;
     }
     public static final class style {
         /** 
@@ -101,10 +107,16 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f080001;
+    }
+    public static final class xml {
+        public static final int pref_data_sync=0x7f040000;
+        public static final int pref_general=0x7f040001;
+        public static final int pref_headers=0x7f040002;
+        public static final int pref_notification=0x7f040003;
     }
 }

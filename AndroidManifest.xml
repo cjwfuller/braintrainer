@@ -22,9 +22,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity 
+        <activity
             android:name="com.appanddone.braintrainer.Settings"
-            android:label="@string/activity_title_settings" />
+            android:label="@string/activity_title_settings" >
+        </activity>
     </application>
 
 </manifest>
