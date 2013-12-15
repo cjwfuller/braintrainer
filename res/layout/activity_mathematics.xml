@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Mathematics" >
+	    <TextView
+	        android:id="@+id/maths_instructions"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:text="@string/maths_instructions_text"
+	        android:textSize="18sp"
+	        android:textStyle="bold" />
+	    <TextView
+	        android:id="@+id/maths_sequence"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+	        android:layout_gravity="center"
+	        android:layout_below="@+id/maths_instructions"
+	        android:textSize="18sp" />
+	   <TextView
+            android:id="@+id/maths_answer_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/maths_sequence"
+            android:layout_marginTop="15sp"
+            android:text="@string/maths_answer_label_text"
+            android:textSize="18sp" />
+	    <EditText
+	        android:id="@+id/maths_answer"
+	        android:inputType="number"
+	        android:layout_width="75sp"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="10sp"
+	        android:layout_centerHorizontal="true"
+	        android:gravity="center"
+	        android:layout_below="@+id/maths_answer_label"
+	        android:textSize="20sp" />
+	    <Button
+	        android:id="@+id/next_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_below="@+id/maths_answer"
+	        android:text="@string/next" />
+</RelativeLayout>

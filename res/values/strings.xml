@@ -25,5 +25,10 @@
     <string name="about_description_text">Thanks for downloading Brain Trainer!\n\nThis app contains LOTS of mind bending exercises to train your brain.\n\nYou can choose the types of questions you want to practice or you can just let the app decide for you.\n\nBrain Trainer is not only fun but it\'s a great way to practice questions that you might get in real life e.g. in University/College or Company interviews.</string>
     <string name="title_activity_memory">Memory</string>
     <string name="hello_world">Hello world!</string>
+    <string name="memory_instructions_text">Remember this sequence before the time runs out!\n\n</string>
+    <string name="maths_instructions_text">Which number should come next in the following series?\n\n</string>
+    <string name="maths_answer_label_text">Answer:</string>
+    <string name="title_activity_mathematics">Mathematics</string>
+    <string name="next">Submit \u25BA</string>
 
 </resources>

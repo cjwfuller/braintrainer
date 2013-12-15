@@ -34,6 +34,10 @@
             android:name="com.appanddone.braintrainer.Memory"
             android:label="@string/title_activity_memory" >
         </activity>
+        <activity
+            android:name="com.appanddone.braintrainer.Mathematics"
+            android:label="@string/title_activity_mathematics" >
+        </activity>
     </application>
 
 </manifest>

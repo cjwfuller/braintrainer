@@ -9,8 +9,20 @@
     tools:context=".Memory" >
 
     <TextView
+        android:id="@+id/memory_instructions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:gravity="center"
+        android:text="@string/memory_instructions_text"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/countdown_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/memory_instructions_text"
+        android:layout_below="@+id/memory_instructions"
+        android:textSize="18sp" />
 
 </RelativeLayout>
