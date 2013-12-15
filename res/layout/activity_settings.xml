@@ -1,122 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:layout_marginLeft="18sp"
-    android:layout_marginTop="18sp">
-
-    <LinearLayout
-        android:layout_width="170dp"
-        android:layout_height="304dp"
-        android:orientation="vertical" >
-        <TextView 
+    android:layout_height="match_parent">
+    <LinearLayout 
+	    android:id="@+id/layout_question_types"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" >    
+	    <RelativeLayout
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="@string/title_question_types"
-	        android:textStyle="bold" />
-        <TextView 
-            android:text="@string/logic_questions_switch_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18sp"/>
-        <TextView 
-            android:text="@string/pattern_recognition_questions_switch_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18sp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18sp"
-            android:text="@string/spatial_questions_switch_text" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18sp"
-            android:text="@string/classification_questions_switch_text" />   
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18sp"
-            android:text="@string/visualisation_questions_switch_text" /> 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18sp"
-            android:text="@string/mathematical_questions_switch_text" />  
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18sp"
-            android:text="@string/verbal_questions_switch_text" />
-                                        
+	        android:orientation="vertical"
+	        android:layout_marginLeft="18sp"
+            android:layout_marginTop="18sp" >
+	        <TextView 
+	            android:id="@+id/text_logic_questions"
+	            android:text="@string/logic_questions_switch_text"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"/>
+	        <TextView 
+	            android:id="@+id/text_pattern_recognition"
+	            android:text="@string/pattern_recognition_questions_switch_text"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="21sp"
+	            android:layout_below="@+id/text_logic_questions"/>
+	        <TextView
+	            android:id="@+id/text_spatial"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="21sp"
+	            android:layout_below="@+id/text_pattern_recognition"
+	            android:text="@string/spatial_questions_switch_text" />
+	        <TextView
+	            android:id="@+id/text_classification"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="21sp"
+	            android:layout_below="@+id/text_spatial"
+	            android:text="@string/classification_questions_switch_text" />   
+	        <TextView
+	            android:id="@+id/text_visualisation"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="21sp"
+	            android:layout_below="@+id/text_classification"
+	            android:text="@string/visualisation_questions_switch_text" /> 
+	        <TextView
+	            android:id="@+id/text_mathematical"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="21sp"
+	            android:layout_below="@+id/text_visualisation"
+	            android:text="@string/mathematical_questions_switch_text" />  
+	        <TextView
+	            android:id="@+id/text_verbal"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="21sp"
+	            android:layout_below="@+id/text_mathematical"
+	            android:text="@string/verbal_questions_switch_text" />        
+	    </RelativeLayout>
+	    <RelativeLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginRight="18sp"
+	        android:layout_marginTop="18sp"
+	        android:gravity="right"
+	        android:orientation="vertical" >
+		    <Switch
+		        android:id="@+id/logicQuestionsSwitchButton"
+		        android:checked="true"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content" />
+		    <Switch
+		        android:id="@+id/patternRecognitionQuestionsSwitchButton"
+		        android:checked="true"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginTop="11sp"
+		        android:layout_below="@+id/logicQuestionsSwitchButton" />
+		    <Switch
+		        android:id="@+id/spatialQuestionsSwitchButton"
+		        android:checked="true"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginTop="11sp"
+		        android:layout_below="@+id/patternRecognitionQuestionsSwitchButton" />  
+	        <Switch
+	            android:id="@+id/classificationQuestionsSwitchButton"
+	            android:checked="true"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="11sp"
+	            android:layout_below="@+id/spatialQuestionsSwitchButton" />	      
+	        <Switch
+	            android:id="@+id/visualisationQuestionsSwitchButton"
+	            android:checked="true"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="11sp"
+	            android:layout_below="@+id/classificationQuestionsSwitchButton" />
+	        <Switch
+	            android:id="@+id/mathemticalQuestionsSwitchButton"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="11sp"
+	            android:checked="true"
+	            android:layout_below="@+id/visualisationQuestionsSwitchButton" />
+	        <Switch
+	            android:id="@+id/verbalQuestionsSwitchButton"
+	            android:checked="true"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="11sp"
+	            android:layout_below="@+id/mathemticalQuestionsSwitchButton" />                                                  
+	    </RelativeLayout>
     </LinearLayout>
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="304dp"
-        android:layout_marginRight="18sp"
-        android:gravity="right"
-        android:orientation="vertical" >
-
-	    <Switch
-	        android:id="@+id/logicQuestionsSwitchButton"
-	        android:checked="true"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_marginTop="35sp" />
-	    <Switch
-	        android:id="@+id/patternRecognitionQuestionsSwitchButton"
-	        android:checked="true"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_marginTop="9sp" />
-	    <Switch
-	        android:id="@+id/spatialQuestionsSwitchButton"
-	        android:checked="true"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_marginTop="9sp" />  
-        <Switch
-            android:id="@+id/classificationQuestionsSwitchButton"
-            android:checked="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="9sp" />	      
-        <Switch
-            android:id="@+id/visualisationQuestionsSwitchButton"
-            android:checked="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="9sp" />
-
-        <Switch
-            android:id="@+id/mathemticalQuestionsSwitchButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="9sp"
-            android:checked="true" />
-        <Switch
-            android:id="@+id/verbalQuestionsSwitchButton"
-            android:checked="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="9sp" />                                                        
-    </LinearLayout>
-    
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="horizontal" >
-
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button" />
-            
-    </LinearLayout>
-</LinearLayout>    
+</ScrollView>
