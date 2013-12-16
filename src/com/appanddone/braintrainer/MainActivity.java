@@ -1,5 +1,13 @@
 package com.appanddone.braintrainer;
 
+import com.appanddone.braintrainer.R;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -13,17 +21,38 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends Activity {
-
+	
 	/**
 	 * TODO actually make the question random
 	 */
 	public void startRandomQuestion() {
-		
-		
-		//Intent intent_memory_question = new Intent(MainActivity.this, Memory.class);
-		//MainActivity.this.startActivity(intent_memory_question);
-		Intent intent_maths_question = new Intent(MainActivity.this, Mathematics.class);
-		MainActivity.this.startActivity(intent_maths_question);
+		// Get enabled question types
+		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+		ArrayList<String> enabledQuestionTypes = new ArrayList<String>();
+		Map<String, ?> keys = new HashMap<String, List<String>>();
+		keys = settings.getAll();
+		for(Map.Entry<String, ?> entry : keys.entrySet()) {
+			if(entry.getKey().toString().endsWith("question_type")) {
+				if(settings.getBoolean(entry.getKey().toString(), true)) {
+					enabledQuestionTypes.add(entry.getKey().toString());
+				}
+			}
+		}
+		// Get a random enabled question type
+		int idx = new Random().nextInt(enabledQuestionTypes.size());
+		String randomQuestionType = enabledQuestionTypes.get(idx);
+		// Start corresponding activity
+		Intent intent;
+		System.out.println("Random: " + randomQuestionType);
+		if(randomQuestionType.equals("pref_key_memory_question_type")) {
+			intent = new Intent(MainActivity.this, Memory.class);
+		} else if(randomQuestionType.equals("pref_key_mathematics_question_type")) {
+			intent = new Intent(MainActivity.this, Mathematics.class);
+		} else {
+			// TODO remove
+			intent = new Intent(MainActivity.this, Mathematics.class);
+		}
+		MainActivity.this.startActivity(intent);
 	}
 	
 	/**

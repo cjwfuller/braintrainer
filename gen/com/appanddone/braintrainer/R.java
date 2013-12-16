@@ -8,10 +8,6 @@
 package com.appanddone.braintrainer;
 
 public final class R {
-    public static final class array {
-        public static final int pref_example_list_titles=0x7f070000;
-        public static final int pref_example_list_values=0x7f070001;
-    }
     public static final class attr {
     }
     public static final class dimen {
@@ -31,32 +27,36 @@ public final class R {
         public static final int ic_launcher=0x7f020003;
     }
     public static final class id {
-        public static final int about_button=0x7f0a0002;
-        public static final int countdown_timer=0x7f0a0009;
-        public static final int maths_answer=0x7f0a0006;
-        public static final int maths_answer_label=0x7f0a0005;
-        public static final int maths_instructions=0x7f0a0003;
-        public static final int maths_sequence=0x7f0a0004;
-        public static final int memory_instructions=0x7f0a0008;
-        public static final int menu_about=0x7f0a000f;
-        public static final int menu_settings=0x7f0a000e;
-        public static final int next_button=0x7f0a0007;
-        public static final int settings_button=0x7f0a0001;
-        public static final int start_button=0x7f0a0000;
-        public static final int verbal_answer=0x7f0a000d;
-        public static final int verbal_answer_label=0x7f0a000c;
-        public static final int verbal_instructions=0x7f0a000a;
-        public static final int verbal_letters=0x7f0a000b;
+        public static final int about_button=0x7f090002;
+        public static final int countdown_timer=0x7f090009;
+        public static final int maths_answer=0x7f090006;
+        public static final int maths_answer_label=0x7f090005;
+        public static final int maths_instructions=0x7f090003;
+        public static final int maths_sequence=0x7f090004;
+        public static final int memory_instructions=0x7f090008;
+        public static final int menu_about=0x7f09000f;
+        public static final int menu_settings=0x7f09000e;
+        public static final int next_button=0x7f090007;
+        public static final int settings_button=0x7f090001;
+        public static final int start_button=0x7f090000;
+        public static final int verbal_answer=0x7f09000d;
+        public static final int verbal_answer_label=0x7f09000c;
+        public static final int verbal_instructions=0x7f09000a;
+        public static final int verbal_letters=0x7f09000b;
     }
     public static final class layout {
         public static final int activity_about=0x7f030000;
-        public static final int activity_main=0x7f030001;
-        public static final int activity_mathematics=0x7f030002;
-        public static final int activity_memory=0x7f030003;
-        public static final int activity_verbal=0x7f030004;
+        public static final int activity_logic=0x7f030001;
+        public static final int activity_main=0x7f030002;
+        public static final int activity_mathematics=0x7f030003;
+        public static final int activity_memory=0x7f030004;
+        public static final int activity_pattern_recognition=0x7f030005;
+        public static final int activity_spatial=0x7f030006;
+        public static final int activity_verbal=0x7f030007;
+        public static final int activity_visual=0x7f030008;
     }
     public static final class menu {
-        public static final int main=0x7f090000;
+        public static final int main=0x7f080000;
     }
     public static final class string {
         public static final int about_button=0x7f060005;
@@ -75,29 +75,18 @@ public final class R {
         public static final int menu_settings=0x7f060001;
         public static final int next=0x7f06001e;
         public static final int pattern_recognition_questions_switch_text=0x7f06000b;
-        public static final int pref_default_display_name=0x7f06002e;
         public static final int pref_description_social_recommendations=0x7f060023;
-        /**  Example General settings 
-         */
         public static final int pref_header_general=0x7f060020;
         public static final int pref_header_questions=0x7f060021;
-        public static final int pref_ringtone_silent=0x7f060032;
-        public static final int pref_title_add_friends_to_messages=0x7f06002f;
         public static final int pref_title_classification=0x7f060026;
-        public static final int pref_title_display_name=0x7f06002d;
         public static final int pref_title_logic=0x7f060025;
         public static final int pref_title_mathematical=0x7f060029;
         public static final int pref_title_memory=0x7f060028;
-        /**  Example settings for Notifications 
-         */
-        public static final int pref_title_new_message_notifications=0x7f060030;
         public static final int pref_title_pattern_recognition=0x7f06002c;
-        public static final int pref_title_ringtone=0x7f060031;
         public static final int pref_title_social_recommendations=0x7f060022;
         public static final int pref_title_sound=0x7f060024;
         public static final int pref_title_spatial=0x7f06002a;
         public static final int pref_title_verbal=0x7f060027;
-        public static final int pref_title_vibrate=0x7f060033;
         public static final int pref_title_visual=0x7f06002b;
         public static final int reset_highscore_button=0x7f060006;
         public static final int reset_highscore_text=0x7f060007;
@@ -138,11 +127,11 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f080000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
          */
-        public static final int AppTheme=0x7f080001;
-        public static final int ButtonText=0x7f080002;
+        public static final int AppTheme=0x7f070001;
+        public static final int ButtonText=0x7f070002;
     }
     public static final class xml {
         public static final int pref_headers=0x7f040000;
