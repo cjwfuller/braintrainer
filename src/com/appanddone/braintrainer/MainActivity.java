@@ -43,15 +43,28 @@ public class MainActivity extends Activity {
 		String randomQuestionType = enabledQuestionTypes.get(idx);
 		// Start corresponding activity
 		Intent intent;
-		System.out.println("Random: " + randomQuestionType);
-		if(randomQuestionType.equals("pref_key_memory_question_type")) {
+		// TODO enable block in production
+		intent = new Intent(MainActivity.this, Classification.class);
+		/*if(randomQuestionType.equals("pref_key_memory_question_type")) {
 			intent = new Intent(MainActivity.this, Memory.class);
 		} else if(randomQuestionType.equals("pref_key_mathematics_question_type")) {
 			intent = new Intent(MainActivity.this, Mathematics.class);
+		} else if(randomQuestionType.equals("pref_key_logic_question_type")) {
+			intent = new Intent(MainActivity.this, Logic.class);
+		} else if(randomQuestionType.equals("pref_key_spatial_question_type")) {
+			intent = new Intent(MainActivity.this, Spatial.class);
+		} else if(randomQuestionType.equals("pref_key_classification_question_type")) {
+			intent = new Intent(MainActivity.this, Classification.class);
+		} else if(randomQuestionType.equals("pref_key_pattern_recognition_question_type")) {
+			intent = new Intent(MainActivity.this, PatternRecognition.class);
+		} else if(randomQuestionType.equals("pref_key_verbal_question_type")) {
+			intent = new Intent(MainActivity.this, Verbal.class);
+		} else if(randomQuestionType.equals("pref_key_visual_question_type")) {
+			intent = new Intent(MainActivity.this, Visual.class);
 		} else {
-			// TODO remove
+			// Question type unknown, use mathematics
 			intent = new Intent(MainActivity.this, Mathematics.class);
-		}
+		}*/
 		MainActivity.this.startActivity(intent);
 	}
 	

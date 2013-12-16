@@ -15,7 +15,7 @@
         android:background="@drawable/btn_purple"
         style="@style/ButtonText"
         android:textSize="26sp"
-        android:width="100sp"
+        android:width="150dp"
         android:textStyle="bold"
         android:text="@string/start_button" />
     <Button
@@ -25,7 +25,7 @@
         android:background="@drawable/btn_purple"
         style="@style/ButtonText"
         android:textSize="18sp"
-        android:width="100sp"
+        android:width="150dp"
         android:text="@string/settings_button"
         android:layout_below="@+id/start_button" />    
     <Button
@@ -35,7 +35,7 @@
         android:background="@drawable/btn_purple"
         style="@style/ButtonText"
         android:textSize="18sp"
-        android:width="100sp"
+        android:width="150dp"
         android:text="@string/about_button"
         android:layout_below="@+id/settings_button"/>        
 

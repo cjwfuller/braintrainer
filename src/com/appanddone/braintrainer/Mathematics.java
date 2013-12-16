@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class Mathematics extends MainActivity {
 	
 	private int[][] series;
-	private final int numProblems = 2;
+	private final static int numProblems = 2;
 	
 	public Mathematics() {
 		setProblems();

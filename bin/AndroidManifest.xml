@@ -42,7 +42,27 @@
         <activity
             android:name="com.appanddone.braintrainer.Verbal"
             android:label="@string/title_activity_verbal" >
+        </activity>
+        <activity
+            android:name="com.appanddone.braintrainer.PatternRecognition"
+            android:label="@string/title_activity_pattern_recognition" >
+        </activity>
+        <activity
+            android:name="com.appanddone.braintrainer.Logic"
+            android:label="@string/title_activity_logic" >
+        </activity>                   
+        <activity
+            android:name="com.appanddone.braintrainer.Spatial"
+            android:label="@string/title_activity_spatial" >
         </activity> 
+        <activity
+            android:name="com.appanddone.braintrainer.Visual"
+            android:label="@string/title_activity_visual" >
+        </activity> 
+        <activity
+            android:name="com.appanddone.braintrainer.Classification"
+            android:label="@string/title_activity_classification" >
+        </activity>
     </application>
 
 </manifest>

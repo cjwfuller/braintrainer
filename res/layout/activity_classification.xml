@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="22sp"
+    android:layout_marginRight="22sp"
+    android:orientation="vertical" >
+   <TextView
+	   android:id="@+id/classification_instructions"
+	   android:layout_width="wrap_content"
+	   android:layout_height="wrap_content"
+	   android:layout_marginTop="18sp"
+	   android:gravity="center"
+	   android:text="@string/classification_instructions_text"
+	   android:layout_gravity="center"
+	   android:textSize="20sp"
+       android:textStyle="bold" />
+   <Button
+       android:id="@+id/word1_button"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:visibility="invisible"
+       android:background="@drawable/btn_green"
+       style="@style/ButtonText"
+       android:width="150dp"
+       android:layout_gravity="center"
+       android:layout_marginTop="18sp"
+       android:textSize="20sp" />
+   <Button
+       android:id="@+id/word2_button"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:visibility="invisible"
+       android:background="@drawable/btn_green"
+       style="@style/ButtonText"
+       android:width="150dp"       
+       android:layout_gravity="center"
+       android:layout_marginTop="18sp"
+       android:textSize="20sp" />
+   <Button
+       android:id="@+id/word3_button"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:visibility="invisible"
+       android:background="@drawable/btn_green"
+       style="@style/ButtonText"
+       android:width="150dp"       
+       android:layout_gravity="center"
+       android:layout_marginTop="18sp"
+       android:textSize="20sp" />
+   <Button
+       android:id="@+id/word4_button"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:visibility="invisible"
+       android:background="@drawable/btn_green"
+       style="@style/ButtonText"
+       android:width="150dp"
+       android:layout_gravity="center"
+       android:layout_marginTop="18sp"
+       android:textSize="20sp" />
+   <Button
+       android:id="@+id/word5_button"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:visibility="invisible"
+       android:background="@drawable/btn_green"
+       style="@style/ButtonText"
+       android:width="150dp"
+       android:layout_gravity="center"
+       android:layout_marginTop="18sp"
+       android:textSize="20sp" />                         
+
+</LinearLayout>
