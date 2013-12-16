@@ -1,7 +1,10 @@
 package com.appanddone.braintrainer;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,6 +21,25 @@ public class MainActivity extends Activity {
 		//MainActivity.this.startActivity(intent_memory_question);
 		Intent intent_maths_question = new Intent(MainActivity.this, Mathematics.class);
 		MainActivity.this.startActivity(intent_maths_question);
+	}
+	
+	/**
+	 * 
+	 */
+	protected void incrementScore() {
+		SharedPreferences prefs = this.getSharedPreferences("prefsKey", Context.MODE_PRIVATE);
+		int oldScore = prefs.getInt("scoreKey", 0);  
+	    Editor edit = prefs.edit();
+	    edit.putInt("scoreKey", oldScore + 1);
+	    edit.commit();
+	}
+	
+	/**
+	 * 
+	 */
+	protected int getScore() {
+		SharedPreferences prefs = this.getSharedPreferences("prefsKey", Context.MODE_PRIVATE);
+		return prefs.getInt("scoreKey", 0);
 	}
 	
 	@Override

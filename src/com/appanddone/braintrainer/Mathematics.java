@@ -49,6 +49,7 @@ public class Mathematics extends MainActivity {
 		}
 		str += " ...";
 		sequenceView.setText(str);
+		Toast.makeText(getApplicationContext(), "Score: " + Integer.toString(getScore()), Toast.LENGTH_SHORT).show();
 		// Check the answer
 		final EditText mathsAnswer = (EditText)findViewById(R.id.maths_answer);
 		Button nextButton = (Button)findViewById(R.id.next_button);
@@ -58,11 +59,7 @@ public class Mathematics extends MainActivity {
 			public void onClick(View v) {
 				if(!mathsAnswer.getText().toString().matches("")) {
 					if(Integer.parseInt(mathsAnswer.getText().toString()) == series[randomProblem][5]) {
-						// Correct
-						
-					} else {
-						// Wrong
-						
+						incrementScore(); // Correct
 					}
 					startRandomQuestion();
 				} else {
