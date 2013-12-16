@@ -46,6 +46,9 @@
 	        android:id="@+id/next_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
+	        android:background="@drawable/btn_purple"
+	        style="@style/ButtonText"
+	        android:textSize="18sp"
 	        android:layout_alignParentRight="true"
 	        android:layout_below="@+id/maths_answer"
 	        android:text="@string/next" />

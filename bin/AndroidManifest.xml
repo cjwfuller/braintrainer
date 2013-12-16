@@ -39,6 +39,10 @@
             android:name="com.appanddone.braintrainer.Mathematics"
             android:label="@string/title_activity_mathematics" >
         </activity>
+        <activity
+            android:name="com.appanddone.braintrainer.Verbal"
+            android:label="@string/title_activity_verbal" >
+        </activity> 
     </application>
 
 </manifest>

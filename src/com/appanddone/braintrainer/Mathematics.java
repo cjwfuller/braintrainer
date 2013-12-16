@@ -49,7 +49,6 @@ public class Mathematics extends MainActivity {
 		}
 		str += " ...";
 		sequenceView.setText(str);
-		Toast.makeText(getApplicationContext(), "Score: " + Integer.toString(getScore()), Toast.LENGTH_SHORT).show();
 		// Check the answer
 		final EditText mathsAnswer = (EditText)findViewById(R.id.maths_answer);
 		Button nextButton = (Button)findViewById(R.id.next_button);
