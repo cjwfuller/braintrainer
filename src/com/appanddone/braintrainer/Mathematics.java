@@ -53,7 +53,6 @@ public class Mathematics extends MainActivity {
 		final EditText mathsAnswer = (EditText)findViewById(R.id.maths_answer);
 		Button nextButton = (Button)findViewById(R.id.next_button);
 		nextButton.setOnClickListener(new View.OnClickListener() {
-			
 			@Override
 			public void onClick(View v) {
 				if(!mathsAnswer.getText().toString().matches("")) {

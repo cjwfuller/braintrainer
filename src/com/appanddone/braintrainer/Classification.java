@@ -14,20 +14,57 @@ public class Classification extends MainActivity {
 	private int randomProblem;
 	
 	public Classification() {
-		numProblems = 1;
+		numProblems = 6;
 		randomProblem = new Random().nextInt(numProblems);
 		setProblems();
 	}
 	
 	private void setProblems() {
 		wordGroups = new String[numProblems][5];
+		// Problem 0
 		wordGroups[0][0] = "Apple";
 		wordGroups[0][1] = "Carrot";
 		wordGroups[0][2] = "Orange";
 		wordGroups[0][3] = "Cherry";
 		wordGroups[0][4] = "Grape";
+		// Problem 1
+		wordGroups[1][0] = "Oak";
+		wordGroups[1][1] = "Ash";
+		wordGroups[1][2] = "Tree";
+		wordGroups[1][3] = "Willow";
+		wordGroups[1][4] = "Palm";
+		// Problem 2
+		wordGroups[2][0] = "Beer";
+		wordGroups[2][1] = "Wine";
+		wordGroups[2][2] = "Tonic";
+		wordGroups[2][3] = "Vodka";
+		wordGroups[2][4] = "Gin";
+		// Problem 3
+		wordGroups[3][0] = "Helicopter";
+		wordGroups[3][1] = "Aeroplane";
+		wordGroups[3][2] = "Glider";
+		wordGroups[3][3] = "Train";
+		wordGroups[3][4] = "Drone";
+		// Problem 4
+		wordGroups[4][0] = "Mars";
+		wordGroups[4][1] = "Earth";
+		wordGroups[4][2] = "Venus";
+		wordGroups[4][3] = "Jupiter";
+		wordGroups[4][4] = "Moon";
+		// Problem 5
+		wordGroups[5][0] = "Helium";
+		wordGroups[5][1] = "Magnesium";
+		wordGroups[5][2] = "Water";
+		wordGroups[5][3] = "Oxygen";
+		wordGroups[5][4] = "Iron";
+		// Answers
 		answers = new String[numProblems];
 		answers[0] = "Carrot";
+		answers[1] = "Tree";
+		answers[2] = "Tonic";
+		answers[3] = "Train";
+		answers[4] = "Moon";
+		answers[5] = "Water";
 	}
 	
 	private void showButtonsAndSetupText() {
