@@ -19,14 +19,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	
+	public BrainTrainer brainTrainer;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		brainTrainer = (BrainTrainer)getApplicationContext();
 		
 		Button startButton = (Button)findViewById(R.id.start_button);
 		startButton.setOnClickListener(new View.OnClickListener() {
@@ -86,10 +89,20 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
-	/**
-	 * TODO actually make the question random
-	 */
-	public void startRandomQuestion() {
+	private boolean questionsRemaining(String questionType) {
+		boolean result = true;
+		// TODO
+		return result;
+	}
+	
+	public boolean startRandomQuestion() {
+		brainTrainer.totalNumQuestionsAsked++;
+		if(brainTrainer.totalNumQuestionsAsked > brainTrainer.numTurns) {
+			Intent intent = new Intent(MainActivity.this, Finish.class);
+			MainActivity.this.startActivity(intent);
+			finish();
+			return true;
+		}
 		// Get enabled question types
 		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
 		ArrayList<String> enabledQuestionTypes = new ArrayList<String>();
@@ -98,7 +111,13 @@ public class MainActivity extends Activity {
 		for(Map.Entry<String, ?> entry : keys.entrySet()) {
 			if(entry.getKey().toString().endsWith("question_type")) {
 				if(settings.getBoolean(entry.getKey().toString(), true)) {
-					enabledQuestionTypes.add(entry.getKey().toString());
+					if(questionsRemaining(entry.getKey().toString())) {
+						//String questionType = entry.getKey().toString();
+						//questionType = questionType.replace("pref_key_", "");
+						//questionType = questionType.replace("_type", "");
+						//System.out.println(questionType);
+						enabledQuestionTypes.add(entry.getKey().toString());
+					}
 				}
 			}
 		}
@@ -130,25 +149,26 @@ public class MainActivity extends Activity {
 			intent = new Intent(MainActivity.this, Mathematics.class);
 		}*/
 		MainActivity.this.startActivity(intent);
+		return true;
 	}
 	
 	/**
 	 * 
 	 */
-	protected void incrementScore() {
+	/*protected void incrementScore() {
 		SharedPreferences prefs = this.getSharedPreferences("prefsKey", Context.MODE_PRIVATE);
 		int oldScore = prefs.getInt("scoreKey", 0);  
 	    Editor edit = prefs.edit();
 	    edit.putInt("scoreKey", oldScore + 1);
 	    edit.commit();
-	}
+	}*/
 	
 	/**
 	 * 
 	 */
-	protected int getScore() {
+	/*protected int getScore() {
 		SharedPreferences prefs = this.getSharedPreferences("prefsKey", Context.MODE_PRIVATE);
 		return prefs.getInt("scoreKey", 0);
-	}
+	}*/
 
 }

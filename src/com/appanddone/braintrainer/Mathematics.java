@@ -40,6 +40,7 @@ public class Mathematics extends MainActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_mathematics);
+		//brainTrainer.questionsAsked.put("mathematics", brainTrainer.questionsAsked.get("mathematics") + 1);
 		// Show the random maths problem
 		TextView sequenceView = (TextView)findViewById(R.id.maths_sequence);
 		String str = "";
@@ -57,7 +58,7 @@ public class Mathematics extends MainActivity {
 			public void onClick(View v) {
 				if(!mathsAnswer.getText().toString().matches("")) {
 					if(Integer.parseInt(mathsAnswer.getText().toString()) == series[randomProblem][5]) {
-						incrementScore(); // Correct
+						brainTrainer.score++; // Correct
 					}
 					startRandomQuestion();
 				} else {

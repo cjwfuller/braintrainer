@@ -20,7 +20,7 @@
         android:title="@string/pref_title_memory" />
     <CheckBoxPreference
         android:defaultValue="true"
-        android:key="pref_key_mathematical_question_type"
+        android:key="pref_key_mathematics_question_type"
         android:title="@string/pref_title_mathematical" />
     <CheckBoxPreference
         android:defaultValue="true"

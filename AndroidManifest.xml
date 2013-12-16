@@ -62,6 +62,10 @@
         <activity
             android:name="com.appanddone.braintrainer.Classification"
             android:label="@string/title_activity_classification" >
+        </activity>     
+        <activity
+            android:name="com.appanddone.braintrainer.Finish"
+            android:label="@string/title_activity_finish" >            
         </activity>
     </application>
 

@@ -26,10 +26,14 @@ public class Classification extends MainActivity {
 		boolean found = false;
 		while(!found) {
 			randomProblem = new Random().nextInt(numProblems);
-			Set<String> set = new HashSet<String>();
-			SharedPreferences prefs = this.getSharedPreferences("prefsKey", Context.MODE_PRIVATE);
-			set = prefs.getStringSet("previous_questions_key", set);
-			if(!set.contains(Integer.toString(randomProblem))) {
+			//Set<String> set = new HashSet<String>();
+			//SharedPreferences prefs = this.getSharedPreferences("prefsKey", Context.MODE_PRIVATE);
+			//set = prefs.getStringSet("previous_questions_key", set);
+			//if(!set.contains(Integer.toString(randomProblem))) {
+				//found = true;
+			//}
+			if(!brainTrainer.questionsAsked.get("classification").contains(randomProblem)) {
+				brainTrainer.questionsAsked.get("classification").add(randomProblem);
 				found = true;
 			}
 		}
@@ -37,7 +41,7 @@ public class Classification extends MainActivity {
 		showButtonsAndSetupText();
 		addClickListenersToButtons();
 		// Keep track of questions that have been asked
-		recordQuestion("classification", randomProblem);
+		//recordQuestion("classification", randomProblem);
 	}
 	
 	private void addClickListenersToButtons() {
@@ -69,15 +73,19 @@ public class Classification extends MainActivity {
 		});
 	}
 	
-	private void recordQuestion(String questionType, int questionNum) {
+	/*private void recordQuestion(String questionType, int questionNum) {
 		Set<String> set = new HashSet<String>();
+		// Get existing saved questions
 		SharedPreferences prefs = this.getSharedPreferences("prefsKey", Context.MODE_PRIVATE);
-		set = prefs.getStringSet("previous_questions_key", set);
+		set = prefs.getStringSet("previous_classifications_questions_key", set);
+		// Add this question to the already saved questions
 		set.add(Integer.toString(questionNum));
 		Editor edit = prefs.edit();
-		edit.putStringSet("previous_questions_key", set);
+		edit.putStringSet("previous_classifications_questions_key", set);
 		edit.commit();
-	}
+		// TODO Check if all questions have been asked, if they have then remove
+		// this question type from the types of questions that can be asked
+	}*/
 	
 	private void setProblems() {
 		wordGroups = new String[numProblems][5];
@@ -152,7 +160,7 @@ public class Classification extends MainActivity {
 		Button b = (Button)v;
 	    String buttonText = b.getText().toString();
 	    if(buttonText.equals(answers[randomProblem])) {
-	    	incrementScore(); // Correct
+	    	//incrementScore(); // Correct
 		}
 		startRandomQuestion();
 	}
