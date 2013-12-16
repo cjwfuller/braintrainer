@@ -1,7 +1,12 @@
 package com.appanddone.braintrainer;
 
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,13 +15,17 @@ public class Classification extends MainActivity {
 
 	private String[][] wordGroups;
 	private String[] answers;
-	private static int numProblems;
+	private int numProblems = 6;
 	private int randomProblem;
 	
-	public Classification() {
-		numProblems = 6;
-		randomProblem = new Random().nextInt(numProblems);
-		setProblems();
+	private void recordQuestion(String questionType, int questionNum) {
+		Set<String> set = new HashSet<String>();
+		SharedPreferences prefs = this.getSharedPreferences("prefsKey", Context.MODE_PRIVATE);
+		set = prefs.getStringSet("previous_questions_key", set);
+		set.add(Integer.toString(questionNum));
+		Editor edit = prefs.edit();
+		edit.putStringSet("previous_questions_key", set);
+		edit.commit();
 	}
 	
 	private void setProblems() {
@@ -130,7 +139,21 @@ public class Classification extends MainActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_classification);
+		// Look for a question of this type that has never been asked
+		boolean found = false;
+		while(!found) {
+			randomProblem = new Random().nextInt(numProblems);
+			Set<String> set = new HashSet<String>();
+			SharedPreferences prefs = this.getSharedPreferences("prefsKey", Context.MODE_PRIVATE);
+			set = prefs.getStringSet("previous_questions_key", set);
+			if(!set.contains(Integer.toString(randomProblem))) {
+				found = true;
+			}
+		}
+		setProblems();
 		showButtonsAndSetupText();
 		addClickListenersToButtons();
+		// Keep track of questions that have been asked
+		recordQuestion("classification", randomProblem);
 	}
 }
