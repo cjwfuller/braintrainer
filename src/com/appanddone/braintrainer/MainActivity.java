@@ -22,6 +22,70 @@ import android.widget.Button;
 
 public class MainActivity extends Activity {
 	
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		
+		Button startButton = (Button)findViewById(R.id.start_button);
+		startButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				startRandomQuestion();
+			}
+		});
+		
+		Button settingsButton = (Button)findViewById(R.id.settings_button);
+		settingsButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent_settings = new Intent(MainActivity.this, Settings.class);
+				MainActivity.this.startActivity(intent_settings);
+			}
+		});
+		
+		Button aboutButton = (Button)findViewById(R.id.about_button);
+		aboutButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent_about = new Intent(MainActivity.this, About.class);
+				MainActivity.this.startActivity(intent_about);
+			}
+		});
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch(item.getItemId()) {
+		case R.id.menu_main:
+			Intent intent_main = new Intent(this, MainActivity.class);
+			this.startActivity(intent_main);
+			break;
+		case R.id.menu_settings:
+			Intent intent_settings = new Intent(this, Settings.class);
+			this.startActivity(intent_settings);
+			break;	
+		case R.id.menu_about:
+			Intent intent_about = new Intent(this, About.class);
+			this.startActivity(intent_about);
+			break;				
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+		return true;
+	}
+	
 	/**
 	 * TODO actually make the question random
 	 */
@@ -86,63 +150,5 @@ public class MainActivity extends Activity {
 		SharedPreferences prefs = this.getSharedPreferences("prefsKey", Context.MODE_PRIVATE);
 		return prefs.getInt("scoreKey", 0);
 	}
-	
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		
-		Button startButton = (Button)findViewById(R.id.start_button);
-		startButton.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				startRandomQuestion();
-			}
-		});
-		
-		Button settingsButton = (Button)findViewById(R.id.settings_button);
-		settingsButton.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Intent intent_settings = new Intent(MainActivity.this, Settings.class);
-				MainActivity.this.startActivity(intent_settings);
-			}
-		});
-		
-		Button aboutButton = (Button)findViewById(R.id.about_button);
-		aboutButton.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Intent intent_about = new Intent(MainActivity.this, About.class);
-				MainActivity.this.startActivity(intent_about);
-			}
-		});
-	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch(item.getItemId()) {
-		case R.id.menu_settings:
-			Intent intent_settings = new Intent(this, Settings.class);
-			this.startActivity(intent_settings);
-			break;	
-		case R.id.menu_about:
-			Intent intent_about = new Intent(this, About.class);
-			this.startActivity(intent_about);
-			break;				
-		default:
-			return super.onOptionsItemSelected(item);
-		}
-		return true;
-	}
 }
