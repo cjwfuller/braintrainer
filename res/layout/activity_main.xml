@@ -8,14 +8,13 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:gravity="center"
     tools:context=".MainActivity"  >
-
     <Button
         android:id="@+id/start_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_purple"
         style="@style/ButtonText"
-        android:textSize="22sp"
+        android:textSize="26sp"
         android:width="100sp"
         android:textStyle="bold"
         android:text="@string/start_button" />

@@ -30,7 +30,7 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/maths_sequence"
             android:layout_marginTop="15sp"
-            android:text="@string/maths_answer_label_text"
+            android:text="@string/answer_label_text"
             android:textSize="18sp" />
 	    <EditText
 	        android:id="@+id/maths_answer"

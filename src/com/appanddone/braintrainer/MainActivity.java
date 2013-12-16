@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +18,8 @@ public class MainActivity extends Activity {
 	 * TODO actually make the question random
 	 */
 	public void startRandomQuestion() {
+		
+		
 		//Intent intent_memory_question = new Intent(MainActivity.this, Memory.class);
 		//MainActivity.this.startActivity(intent_memory_question);
 		Intent intent_maths_question = new Intent(MainActivity.this, Mathematics.class);
