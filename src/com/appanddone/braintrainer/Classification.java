@@ -18,6 +18,57 @@ public class Classification extends MainActivity {
 	private int numProblems = 6;
 	private int randomProblem;
 	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_classification);
+		// Look for a question of this type that has never been asked
+		boolean found = false;
+		while(!found) {
+			randomProblem = new Random().nextInt(numProblems);
+			Set<String> set = new HashSet<String>();
+			SharedPreferences prefs = this.getSharedPreferences("prefsKey", Context.MODE_PRIVATE);
+			set = prefs.getStringSet("previous_questions_key", set);
+			if(!set.contains(Integer.toString(randomProblem))) {
+				found = true;
+			}
+		}
+		setProblems();
+		showButtonsAndSetupText();
+		addClickListenersToButtons();
+		// Keep track of questions that have been asked
+		recordQuestion("classification", randomProblem);
+	}
+	
+	private void addClickListenersToButtons() {
+		// Find buttons
+		Button word1 = (Button)findViewById(R.id.word1_button);
+		Button word2 = (Button)findViewById(R.id.word2_button);
+		Button word3 = (Button)findViewById(R.id.word3_button);
+		Button word4 = (Button)findViewById(R.id.word4_button);
+		Button word5 = (Button)findViewById(R.id.word5_button);
+		word1.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) { checkAnswer(v); }
+		});
+		word2.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) { checkAnswer(v); }
+		});
+		word3.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) { checkAnswer(v); }
+		});
+		word4.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) { checkAnswer(v); }
+		});
+		word5.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) { checkAnswer(v); }
+		});
+	}
+	
 	private void recordQuestion(String questionType, int questionNum) {
 		Set<String> set = new HashSet<String>();
 		SharedPreferences prefs = this.getSharedPreferences("prefsKey", Context.MODE_PRIVATE);
@@ -105,55 +156,5 @@ public class Classification extends MainActivity {
 		}
 		startRandomQuestion();
 	}
-	
-	private void addClickListenersToButtons() {
-		// Find buttons
-		Button word1 = (Button)findViewById(R.id.word1_button);
-		Button word2 = (Button)findViewById(R.id.word2_button);
-		Button word3 = (Button)findViewById(R.id.word3_button);
-		Button word4 = (Button)findViewById(R.id.word4_button);
-		Button word5 = (Button)findViewById(R.id.word5_button);
-		word1.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) { checkAnswer(v); }
-		});
-		word2.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) { checkAnswer(v); }
-		});
-		word3.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) { checkAnswer(v); }
-		});
-		word4.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) { checkAnswer(v); }
-		});
-		word5.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) { checkAnswer(v); }
-		});
-	}
-	
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_classification);
-		// Look for a question of this type that has never been asked
-		boolean found = false;
-		while(!found) {
-			randomProblem = new Random().nextInt(numProblems);
-			Set<String> set = new HashSet<String>();
-			SharedPreferences prefs = this.getSharedPreferences("prefsKey", Context.MODE_PRIVATE);
-			set = prefs.getStringSet("previous_questions_key", set);
-			if(!set.contains(Integer.toString(randomProblem))) {
-				found = true;
-			}
-		}
-		setProblems();
-		showButtonsAndSetupText();
-		addClickListenersToButtons();
-		// Keep track of questions that have been asked
-		recordQuestion("classification", randomProblem);
-	}
+
 }
