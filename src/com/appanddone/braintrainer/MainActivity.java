@@ -145,34 +145,38 @@ public class MainActivity extends Activity {
 		return enabledAvailableQuestionTypes;
 	}
 	
-	public boolean startRandomQuestion() throws IllegalAccessException, IllegalArgumentException, NoSuchFieldException, ClassNotFoundException {
-		if(brainTrainer.totalNumQuestionsAsked > brainTrainer.numTurns) {
-			Intent intent = new Intent(MainActivity.this, Finish.class);
-			MainActivity.this.startActivity(intent);
-			finish();
-			return true;
-		}
-		// Get enabled question types
-		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
-		ArrayList<String> enabledAvailableQuestionTypes = getEnabledAndAvailableQuestions(settings);
-		
-		Intent intent;
+	private void finishIfNoQuestions(ArrayList<String> enabledAvailableQuestionTypes) {
 		// No question types selected.  Tell the user and redirect them to the
 		// settings page
+		Intent intent;
 		if(enabledAvailableQuestionTypes.size() == 0) {
 			intent = new Intent(MainActivity.this, Finish.class);
 			MainActivity.this.startActivity(intent);
 			Toast.makeText(getApplicationContext(), "No questions remaining!", Toast.LENGTH_LONG).show();
 			finish();
-			return true;
 		}
+	}
+	
+	private void finishIfTurnsFinished() {
+		if(brainTrainer.totalNumQuestionsAsked > brainTrainer.numTurns) {
+			Intent intent = new Intent(MainActivity.this, Finish.class);
+			MainActivity.this.startActivity(intent);
+			finish();
+		}
+	}
+	
+	public boolean startRandomQuestion() throws IllegalAccessException, IllegalArgumentException, NoSuchFieldException, ClassNotFoundException {
+		finishIfTurnsFinished();
+		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+		ArrayList<String> enabledAvailableQuestionTypes = getEnabledAndAvailableQuestions(settings);
+		finishIfNoQuestions(enabledAvailableQuestionTypes);
 		// Get a random enabled question type
 		int randomQuestionType = new Random().nextInt(enabledAvailableQuestionTypes.size());
-		Log.d("MainActivity", "MainActivity.startRandomQuestion() type: " + randomQuestionType);
-		Log.d("MainActivity", "MainActivity.startRandomQuestion() type name: " + enabledAvailableQuestionTypes.get(randomQuestionType));
 		int randomQuestionNum = 0;
 		boolean foundQuestion = false;
 		Class<?> clazz = null;
+		Log.d("MainActivity", "MainActivity.startRandomQuestion() type: " + randomQuestionType);
+		Log.d("MainActivity", "MainActivity.startRandomQuestion() type name: " + enabledAvailableQuestionTypes.get(randomQuestionType));
 		while(!foundQuestion) {
 			clazz = Class.forName(getApplicationContext().getPackageName() + "." + enabledAvailableQuestionTypes.get(randomQuestionType));
 			Field myField = clazz.getDeclaredField("numProblems");
@@ -186,6 +190,7 @@ public class MainActivity extends Activity {
 			}
 		}
 		// Start corresponding activity
+		Intent intent;
 		intent = new Intent(MainActivity.this, clazz);
 		Field myField = clazz.getDeclaredField("randomProblem");
 		myField.setInt(null, randomQuestionNum);
