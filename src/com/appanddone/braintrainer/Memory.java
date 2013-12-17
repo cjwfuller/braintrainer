@@ -2,6 +2,7 @@ package com.appanddone.braintrainer;
 
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
+import android.widget.RelativeLayout;
 
 import com.appanddone.braintrainer.shapes.ShapeGLSurfaceView;
 
@@ -14,11 +15,10 @@ public class Memory extends MainActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Create a GLSurfaceView instance and set it
-        // as the ContentView for this Activity.
-        mGLView = new ShapeGLSurfaceView(this);
-        setContentView(mGLView);
+        setContentView(R.layout.activity_memory);
+        mGLView = new ShapeGLSurfaceView(this);        
+        RelativeLayout layout = (RelativeLayout)findViewById(R.id.memory_layout);
+        layout.addView(mGLView, 0);
     }
 
     @Override
