@@ -160,7 +160,7 @@ public class Classification extends MainActivity {
 		Button b = (Button)v;
 	    String buttonText = b.getText().toString();
 	    if(buttonText.equals(answers[randomProblem])) {
-	    	//incrementScore(); // Correct
+	    	brainTrainer.score++;
 		}
 		startRandomQuestion();
 	}

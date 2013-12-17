@@ -21,6 +21,7 @@
     <string name="mathematical_questions_switch_text">Mathematical</string>
     <string name="visualisation_questions_switch_text">Visualisation</string>
     <string name="verbal_questions_switch_text">Verbal</string>
+    <string name="finished_text">Questions complete!  Your Results&#8230;</string>
     
     <string name="title_question_types">Question Types</string>
     <string name="title_other_settings">Other Settings</string>

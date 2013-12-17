@@ -2,13 +2,8 @@ package com.appanddone.braintrainer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
 
 import android.app.Application;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 
 public class BrainTrainer extends Application {
 	
@@ -20,12 +15,17 @@ public class BrainTrainer extends Application {
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		// Keep track of questions asked for each question type
+		//clearScore();
+		//setupNonDuplicatingQuestions();
+		reset();
+	}
+	
+	public void reset() {
+		score = 0;
+		totalNumQuestionsAsked = 0;
 		questionsAsked = new HashMap<String, ArrayList<Integer>>();
 		questionsAsked.put("mathematics", new ArrayList<Integer>());
 		questionsAsked.put("classification", new ArrayList<Integer>());
-		//clearScore();
-		//setupNonDuplicatingQuestions();
 	}
 	
 	/*private void clearScore() {
