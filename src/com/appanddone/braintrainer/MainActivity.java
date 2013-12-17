@@ -89,6 +89,14 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
+	@Override
+	public void onBackPressed() {
+		Intent intent = new Intent(this, MainActivity.class);
+		brainTrainer.reset();
+        startActivity(intent);
+	    return;
+	}
+	
 	private boolean questionsRemaining(String questionType) {
 		boolean result = true;
 		// TODO
