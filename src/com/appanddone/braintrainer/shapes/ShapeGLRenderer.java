@@ -18,7 +18,7 @@ import android.opengl.GLU;
 public class ShapeGLRenderer implements GLSurfaceView.Renderer {
 
     private Triangle mTriangle;
-    //private Square mSquare;
+    private Square mSquare;
     private float mAngle;
 
     @Override
@@ -27,7 +27,7 @@ public class ShapeGLRenderer implements GLSurfaceView.Renderer {
         gl.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
         mTriangle = new Triangle();
-        //mSquare = new Square();
+        mSquare = new Square();
     }
 
     @Override
@@ -44,7 +44,7 @@ public class ShapeGLRenderer implements GLSurfaceView.Renderer {
         GLU.gluLookAt(gl, 0, 0, -3, 0f, 0f, 0f, 0f, 1.0f, 0.0f);
 
         // Draw square
-        //mSquare.draw(gl);
+        mSquare.draw(gl);
 
         // Create a rotation for the triangle
 
