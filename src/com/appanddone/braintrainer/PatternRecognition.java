@@ -1,9 +1,12 @@
 package com.appanddone.braintrainer;
 
-import android.app.Activity;
 
-public class PatternRecognition extends Activity {
+public class PatternRecognition extends MainActivity {
 
 	public final static int numProblems = 0;
 	
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+	}
 }

@@ -5,7 +5,7 @@ import android.os.CountDownTimer;
 import android.widget.TextView;
 import android.app.Activity;
 
-public class Memory extends Activity {
+public class Memory extends MainActivity {
 
 	public final static int numProblems = 0;
 	
@@ -25,6 +25,11 @@ public class Memory extends Activity {
 		    	 //timerView.setText("done!");
 		     }
 		  }.start();
+	}
+	
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
 	}
 
 }

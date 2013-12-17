@@ -81,6 +81,7 @@ public class MainActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch(item.getItemId()) {
 		case R.id.menu_main:
+			brainTrainer.reset();
 			Intent intent_main = new Intent(this, MainActivity.class);
 			this.startActivity(intent_main);
 			break;
@@ -101,9 +102,9 @@ public class MainActivity extends Activity {
 	@Override
 	public void onBackPressed() {
 		brainTrainer.reset();
-		Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-	    return;
+		Intent intent = new Intent(MainActivity.this, MainActivity.class);
+	    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);   
+	    startActivity(intent);
 	}
 	
 	private boolean areQuestionsOfTypeRemaining(String activityStr) throws IllegalAccessException, IllegalArgumentException, NoSuchFieldException, ClassNotFoundException {
@@ -165,27 +166,34 @@ public class MainActivity extends Activity {
 			finish();
 			return true;
 		}
-		
 		// Get a random enabled question type
 		int randomQuestionType = new Random().nextInt(enabledAvailableQuestionTypes.size());
 		Log.d("MainActivity", "MainActivity.startRandomQuestion() type: " + randomQuestionType);
 		Log.d("MainActivity", "MainActivity.startRandomQuestion() type name: " + enabledAvailableQuestionTypes.get(randomQuestionType));
-		int randomQuestionNum;
+		int randomQuestionNum = 0;
 		boolean foundQuestion = false;
+		Class<?> clazz = null;
 		while(!foundQuestion) {
-			Class<?> clazz = Class.forName(getApplicationContext().getPackageName() + "." + enabledAvailableQuestionTypes.get(randomQuestionType));
+			clazz = Class.forName(getApplicationContext().getPackageName() + "." + enabledAvailableQuestionTypes.get(randomQuestionType));
 			Field myField = clazz.getDeclaredField("numProblems");
 			randomQuestionNum = new Random().nextInt(myField.getInt(null));
 			if(!askedAlready(enabledAvailableQuestionTypes.get(randomQuestionType), randomQuestionNum)) {
 				foundQuestion = true;
 				brainTrainer.recordQuestion(enabledAvailableQuestionTypes.get(randomQuestionType), randomQuestionNum);
 				Log.d("MainActivity", "MainActivity.startRandomQuestion() found unasked: " + randomQuestionNum);
+			} else {
+				Log.d("MainActivity", "MainActivity.startRandomQuestion() question: " + randomQuestionNum + " already asked");
 			}
 		}
 		// Start corresponding activity
+		//intent = new Intent(MainActivity.this, Classification.class);
+		//Classification.randomProblem = randomQuestionNum;
 		
-		// TODO enable block in production
-		intent = new Intent(MainActivity.this, Classification.class);
+		intent = new Intent(MainActivity.this, clazz);
+		Field myField = clazz.getDeclaredField("randomProblem");
+		myField.setInt(null, randomQuestionNum);
+		
+		
 		/*if(randomQuestionType.equals("pref_key_memory_question_type")) {
 			intent = new Intent(MainActivity.this, Memory.class);
 		} else if(randomQuestionType.equals("pref_key_mathematics_question_type")) {

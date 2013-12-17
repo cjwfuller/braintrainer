@@ -1,7 +1,5 @@
 package com.appanddone.braintrainer;
 
-import java.util.Random;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +11,7 @@ public class Mathematics extends MainActivity {
 	
 	private int[][] series;
 	public final static int numProblems = 2;
+	public static int randomProblem;
 	
 	public Mathematics() {
 		setProblems();
@@ -44,7 +43,6 @@ public class Mathematics extends MainActivity {
 		// Show the random maths problem
 		TextView sequenceView = (TextView)findViewById(R.id.maths_sequence);
 		String str = "";
-		final int randomProblem = new Random().nextInt(numProblems);
 		for(int i = 0; i < series[randomProblem].length - 1; i++) {
 			str += Integer.toString(series[randomProblem][i]) + ", ";
 		}
@@ -62,12 +60,27 @@ public class Mathematics extends MainActivity {
 					} else {
 						brainTrainer.numIncorrect++;
 					}
-					//startRandomQuestion();
+					try {
+						startRandomQuestion();
+					} catch (IllegalAccessException e) {
+						e.printStackTrace();
+					} catch (IllegalArgumentException e) {
+						e.printStackTrace();
+					} catch (NoSuchFieldException e) {
+						e.printStackTrace();
+					} catch (ClassNotFoundException e) {
+						e.printStackTrace();
+					}
 				} else {
 					Toast.makeText(getApplicationContext(), "Please enter an answer", Toast.LENGTH_SHORT).show();
 				}
 			}
 		});
+	}
+	
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
 	}
 
 }

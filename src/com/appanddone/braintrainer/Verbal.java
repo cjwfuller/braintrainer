@@ -1,12 +1,9 @@
 package com.appanddone.braintrainer;
 
-import java.util.Random;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class Verbal extends MainActivity {
@@ -48,6 +45,11 @@ public class Verbal extends MainActivity {
 				}
 			}
 		});
+	}
+	
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
 	}
 
 }

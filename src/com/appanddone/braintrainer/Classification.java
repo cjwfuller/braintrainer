@@ -1,6 +1,5 @@
 package com.appanddone.braintrainer;
 
-import java.util.Random;
 
 import android.os.Bundle;
 import android.view.View;
@@ -11,24 +10,20 @@ public class Classification extends MainActivity {
 	private String[][] wordGroups;
 	private String[] answers;
 	public final static int numProblems = 6;
-	private int randomProblem;
+	public static int randomProblem;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_classification);
-		// Look for a question of this type that has never been asked
-		boolean found = false;
-		while(!found) {
-			randomProblem = new Random().nextInt(numProblems);
-			if(!brainTrainer.questionsAsked.get(Classification.class.getSimpleName()).contains(randomProblem)) {
-				brainTrainer.questionsAsked.get(Classification.class.getSimpleName()).add(randomProblem);
-				found = true;
-			}
-		}
 		setProblems();
 		showButtonsAndSetupText();
 		addClickListenersToButtons();
+	}
+	
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
 	}
 	
 	private void addClickListenersToButtons() {

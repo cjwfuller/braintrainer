@@ -1,10 +1,9 @@
 package com.appanddone.braintrainer;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class Finish extends Activity {
+public class Finish extends MainActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -21,5 +20,10 @@ public class Finish extends Activity {
 		TextView percentage_correct = (TextView)findViewById(R.id.percentage_correct_answers_text);
 		float percent = (brainTrainer.numCorrect * 100.0f) / brainTrainer.totalNumQuestionsAsked;
 		percentage_correct.setText( "Percentage correct: " + Float.toString(percent) + "%");		
+	}
+	
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
 	}
 }
