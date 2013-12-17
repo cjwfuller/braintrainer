@@ -14,9 +14,9 @@ public class Verbal extends MainActivity {
 	
 	}
 	
-	private void setProblems() {
-		
-	}
+//	private void setProblems() {
+//		
+//	}
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

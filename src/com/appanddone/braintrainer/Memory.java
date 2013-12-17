@@ -1,31 +1,44 @@
 package com.appanddone.braintrainer;
 
+import android.opengl.GLSurfaceView;
 import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.widget.TextView;
-import android.app.Activity;
+
+import com.appanddone.braintrainer.shapes.ShapeGLSurfaceView;
 
 public class Memory extends MainActivity {
 
-	public final static int numProblems = 0;
-	
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_memory);
-		
-		final TextView timerView = (TextView)findViewById(R.id.countdown_timer);
-		CountDownTimer countDownTimer = new CountDownTimer(5000, 1000) {
+	public final static int numProblems = 1;
+	public static int randomProblem;
+	private GLSurfaceView mGLView;
 
-		     public void onTick(long millisUntilFinished) {
-		    	 timerView.setText("Seconds remaining: " + millisUntilFinished / 1000);
-		     }
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-		     public void onFinish() {
-		    	 //timerView.setText("done!");
-		     }
-		  }.start();
-	}
+        // Create a GLSurfaceView instance and set it
+        // as the ContentView for this Activity.
+        mGLView = new ShapeGLSurfaceView(this);
+        setContentView(mGLView);
+    }
+
+    @Override
+    protected void onPause() {
+        // The following call pauses the rendering thread.
+        // If your OpenGL application is memory intensive,
+        // you should consider de-allocating objects that
+        // consume significant memory here.
+        super.onPause();
+        mGLView.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        // The following call resumes a paused rendering thread.
+        // If you de-allocated graphic objects for onPause()
+        // this is a good place to re-allocate them.
+        super.onResume();
+        mGLView.onResume();
+    }
 	
 	@Override
 	public void onBackPressed() {
