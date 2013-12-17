@@ -7,6 +7,8 @@ import android.app.Activity;
 
 public class Memory extends Activity {
 
+	public final static int numProblems = 0;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

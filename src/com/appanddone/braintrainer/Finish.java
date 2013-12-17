@@ -13,13 +13,13 @@ public class Finish extends Activity {
 		
 		BrainTrainer brainTrainer = (BrainTrainer)getApplicationContext();
 		TextView correct = (TextView)findViewById(R.id.correct_answers_text);
-		correct.setText("Correct answers: " + Integer.toString(brainTrainer.score));
+		correct.setText("Correct answers: " + Integer.toString(brainTrainer.numCorrect));
 
 		TextView incorrect = (TextView)findViewById(R.id.incorrect_answers_text);
-		incorrect.setText("Incorrect answers: " + Integer.toString(brainTrainer.numTurns - brainTrainer.score));
+		incorrect.setText("Incorrect answers: " + Integer.toString(brainTrainer.numIncorrect));
 		
 		TextView percentage_correct = (TextView)findViewById(R.id.percentage_correct_answers_text);
-		float percent = (brainTrainer.score * 100.0f) / brainTrainer.numTurns;
+		float percent = (brainTrainer.numCorrect * 100.0f) / brainTrainer.totalNumQuestionsAsked;
 		percentage_correct.setText( "Percentage correct: " + Float.toString(percent) + "%");		
 	}
 }

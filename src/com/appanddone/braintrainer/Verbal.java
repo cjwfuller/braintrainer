@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class Verbal extends MainActivity {
 	
-	private final int numProblems = 2;
+	public final static int numProblems = 0;
 	
 	public Verbal() {
 	
@@ -42,8 +42,7 @@ public class Verbal extends MainActivity {
 			@Override
 			public void onClick(View v) {
 				if(!verbalAnswer.getText().toString().matches("")) {
-					
-					startRandomQuestion();
+					//startRandomQuestion();
 				} else {
 					Toast.makeText(getApplicationContext(), "Please enter an answer", Toast.LENGTH_SHORT).show();
 				}

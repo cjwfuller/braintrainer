@@ -1,7 +1,6 @@
 package com.appanddone.braintrainer;
 
-import com.appanddone.braintrainer.R;
-
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -9,12 +8,11 @@ import java.util.Map;
 import java.util.Random;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,25 +22,37 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 	
 	public BrainTrainer brainTrainer;
+	public static String PACKAGE_NAME;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		PreferenceManager.setDefaultValues(this, R.xml.pref_questions, false);
 		brainTrainer = (BrainTrainer)getApplicationContext();
+		PACKAGE_NAME = getApplicationContext().getPackageName();
 		
 		Button startButton = (Button)findViewById(R.id.start_button);
 		startButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				startRandomQuestion();
+				try {
+					startRandomQuestion();
+				} catch (IllegalAccessException e) {
+					e.printStackTrace();
+				} catch (IllegalArgumentException e) {
+					e.printStackTrace();
+				} catch (NoSuchFieldException e) {
+					e.printStackTrace();
+				} catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				}
 			}
 		});
 		
 		Button settingsButton = (Button)findViewById(R.id.settings_button);
 		settingsButton.setOnClickListener(new View.OnClickListener() {
-			
 			@Override
 			public void onClick(View v) {
 				Intent intent_settings = new Intent(MainActivity.this, Settings.class);
@@ -51,8 +61,7 @@ public class MainActivity extends Activity {
 		});
 		
 		Button aboutButton = (Button)findViewById(R.id.about_button);
-		aboutButton.setOnClickListener(new View.OnClickListener() {
-			
+		aboutButton.setOnClickListener(new View.OnClickListener() {	
 			@Override
 			public void onClick(View v) {
 				Intent intent_about = new Intent(MainActivity.this, About.class);
@@ -91,20 +100,51 @@ public class MainActivity extends Activity {
 	
 	@Override
 	public void onBackPressed() {
-		Intent intent = new Intent(this, MainActivity.class);
 		brainTrainer.reset();
+		Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
 	    return;
 	}
 	
-	private boolean questionsRemaining(String questionType) {
+	private boolean areQuestionsOfTypeRemaining(String activityStr) throws IllegalAccessException, IllegalArgumentException, NoSuchFieldException, ClassNotFoundException {
 		boolean result = true;
-		// TODO
+		Class<?> clazz = Class.forName(getApplicationContext().getPackageName() + "." + activityStr);
+		Field myField = clazz.getDeclaredField("numProblems");
+		if(brainTrainer.questionsAsked.get(activityStr).size() == myField.getInt(null)) {
+			result =  false;
+		}
+		Log.d("MainActivity", "MainActivity.areQuestionsOfTypeRemaining(" + activityStr + ") " + Boolean.toString(result));
 		return result;
 	}
 	
-	public boolean startRandomQuestion() {
-		brainTrainer.totalNumQuestionsAsked++;
+	private boolean askedAlready(String activityStr, Integer questionNum) {
+		boolean result = false;
+		if(brainTrainer.questionsAsked.get(activityStr).contains(questionNum)) {
+			result = true;
+		}
+		Log.d("MainActivity", "MainActivity.askedAlready(" + activityStr + ", " + questionNum + ") " + Boolean.toString(result));
+		return result;
+	}
+	
+	private ArrayList<String> getEnabledAndAvailableQuestions(SharedPreferences settings) throws IllegalAccessException, IllegalArgumentException, NoSuchFieldException, ClassNotFoundException {
+		Map<String, ?> keys = new HashMap<String, List<String>>();
+		keys = settings.getAll();
+		ArrayList<String> enabledAvailableQuestionTypes = new ArrayList<String>();
+		for(Map.Entry<String, ?> entry : keys.entrySet()) {
+			if(entry.getKey().toString().endsWith("_question_type")) {
+				if(settings.getBoolean(entry.getKey().toString(), true)) {
+					if(areQuestionsOfTypeRemaining(entry.getKey().toString().replace("_question_type", ""))) {
+						String enabledQuestionType = entry.getKey().toString().replace("_question_type", "");
+						enabledAvailableQuestionTypes.add(enabledQuestionType);
+						Log.d("MainActivity", "MainActivity.getEnabledAndAvailableQuestions() enabled: " + enabledQuestionType);
+					}
+				}
+			}
+		}
+		return enabledAvailableQuestionTypes;
+	}
+	
+	public boolean startRandomQuestion() throws IllegalAccessException, IllegalArgumentException, NoSuchFieldException, ClassNotFoundException {
 		if(brainTrainer.totalNumQuestionsAsked > brainTrainer.numTurns) {
 			Intent intent = new Intent(MainActivity.this, Finish.class);
 			MainActivity.this.startActivity(intent);
@@ -113,27 +153,37 @@ public class MainActivity extends Activity {
 		}
 		// Get enabled question types
 		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
-		ArrayList<String> enabledQuestionTypes = new ArrayList<String>();
-		Map<String, ?> keys = new HashMap<String, List<String>>();
-		keys = settings.getAll();
-		for(Map.Entry<String, ?> entry : keys.entrySet()) {
-			if(entry.getKey().toString().endsWith("question_type")) {
-				if(settings.getBoolean(entry.getKey().toString(), true)) {
-					if(questionsRemaining(entry.getKey().toString())) {
-						//String questionType = entry.getKey().toString();
-						//questionType = questionType.replace("pref_key_", "");
-						//questionType = questionType.replace("_type", "");
-						//System.out.println(questionType);
-						enabledQuestionTypes.add(entry.getKey().toString());
-					}
-				}
+		ArrayList<String> enabledAvailableQuestionTypes = getEnabledAndAvailableQuestions(settings);
+		
+		Intent intent;
+		// No question types selected.  Tell the user and redirect them to the
+		// settings page
+		if(enabledAvailableQuestionTypes.size() == 0) {
+			intent = new Intent(MainActivity.this, Finish.class);
+			MainActivity.this.startActivity(intent);
+			Toast.makeText(getApplicationContext(), "No questions remaining!", Toast.LENGTH_LONG).show();
+			finish();
+			return true;
+		}
+		
+		// Get a random enabled question type
+		int randomQuestionType = new Random().nextInt(enabledAvailableQuestionTypes.size());
+		Log.d("MainActivity", "MainActivity.startRandomQuestion() type: " + randomQuestionType);
+		Log.d("MainActivity", "MainActivity.startRandomQuestion() type name: " + enabledAvailableQuestionTypes.get(randomQuestionType));
+		int randomQuestionNum;
+		boolean foundQuestion = false;
+		while(!foundQuestion) {
+			Class<?> clazz = Class.forName(getApplicationContext().getPackageName() + "." + enabledAvailableQuestionTypes.get(randomQuestionType));
+			Field myField = clazz.getDeclaredField("numProblems");
+			randomQuestionNum = new Random().nextInt(myField.getInt(null));
+			if(!askedAlready(enabledAvailableQuestionTypes.get(randomQuestionType), randomQuestionNum)) {
+				foundQuestion = true;
+				brainTrainer.recordQuestion(enabledAvailableQuestionTypes.get(randomQuestionType), randomQuestionNum);
+				Log.d("MainActivity", "MainActivity.startRandomQuestion() found unasked: " + randomQuestionNum);
 			}
 		}
-		// Get a random enabled question type
-		int idx = new Random().nextInt(enabledQuestionTypes.size());
-		String randomQuestionType = enabledQuestionTypes.get(idx);
 		// Start corresponding activity
-		Intent intent;
+		
 		// TODO enable block in production
 		intent = new Intent(MainActivity.this, Classification.class);
 		/*if(randomQuestionType.equals("pref_key_memory_question_type")) {
@@ -159,24 +209,5 @@ public class MainActivity extends Activity {
 		MainActivity.this.startActivity(intent);
 		return true;
 	}
-	
-	/**
-	 * 
-	 */
-	/*protected void incrementScore() {
-		SharedPreferences prefs = this.getSharedPreferences("prefsKey", Context.MODE_PRIVATE);
-		int oldScore = prefs.getInt("scoreKey", 0);  
-	    Editor edit = prefs.edit();
-	    edit.putInt("scoreKey", oldScore + 1);
-	    edit.commit();
-	}*/
-	
-	/**
-	 * 
-	 */
-	/*protected int getScore() {
-		SharedPreferences prefs = this.getSharedPreferences("prefsKey", Context.MODE_PRIVATE);
-		return prefs.getInt("scoreKey", 0);
-	}*/
 
 }

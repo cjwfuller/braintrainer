@@ -4,46 +4,42 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.app.Application;
+import android.util.Log;
 
 public class BrainTrainer extends Application {
 	
-	public int score = 0;
+	public int numCorrect = 0;
+	public int numIncorrect = 0;
 	public int totalNumQuestionsAsked = 0;
-	public final int numTurns = 5;
+	public final int numTurns = 10;
 	public HashMap<String, ArrayList<Integer>> questionsAsked;
 	
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		//clearScore();
-		//setupNonDuplicatingQuestions();
 		reset();
 	}
 	
 	public void reset() {
-		score = 0;
+		numCorrect = 0;
+		numIncorrect = 0;
 		totalNumQuestionsAsked = 0;
 		questionsAsked = new HashMap<String, ArrayList<Integer>>();
-		questionsAsked.put("mathematics", new ArrayList<Integer>());
-		questionsAsked.put("classification", new ArrayList<Integer>());
+		questionsAsked.put(Classification.class.getSimpleName(), new ArrayList<Integer>());
+		questionsAsked.put(Mathematics.class.getSimpleName(), new ArrayList<Integer>());
+		questionsAsked.put(Visual.class.getSimpleName(), new ArrayList<Integer>());
+		questionsAsked.put(Logic.class.getSimpleName(), new ArrayList<Integer>());
+		questionsAsked.put(Spatial.class.getSimpleName(), new ArrayList<Integer>());
+		questionsAsked.put(Verbal.class.getSimpleName(), new ArrayList<Integer>());
+		questionsAsked.put(Visual.class.getSimpleName(), new ArrayList<Integer>());
+		questionsAsked.put(PatternRecognition.class.getSimpleName(), new ArrayList<Integer>());
+		questionsAsked.put(Memory.class.getSimpleName(), new ArrayList<Integer>());
+		Log.d("MainActivity", "BrainTrainer.reset()");
 	}
 	
-	/*private void clearScore() {
-		SharedPreferences prefs = this.getSharedPreferences("prefsKey", Context.MODE_PRIVATE);
-		Editor edit = prefs.edit();
-	    edit.remove("scoreKey");
-	    edit.commit();
-	}*/
-	
-	/**
-	 * Set up data structures that ensure questions are not asked more than once
-	 */
-	/*private void setupNonDuplicatingQuestions() {
-		// Save an empty HashSet for recording questions asked
-		SharedPreferences prefs = this.getSharedPreferences("prefsKey", Context.MODE_PRIVATE);
-		Editor edit = prefs.edit();
-		Set<String> previousQuestions = new HashSet<String>();
-		edit.putStringSet("previous_questions_key", previousQuestions);
-		edit.commit();
-	}*/
+	protected void recordQuestion(String activityName, Integer questionNum) {
+		questionsAsked.get(activityName).add(questionNum);
+		totalNumQuestionsAsked++;
+		Log.d("MainActivity", "BrainTrainer.recordQuestion() totalNumQuestionsAsked: " + totalNumQuestionsAsked);
+	}
 }

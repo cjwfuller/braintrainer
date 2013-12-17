@@ -1,12 +1,7 @@
 package com.appanddone.braintrainer;
 
-import java.util.HashSet;
 import java.util.Random;
-import java.util.Set;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +10,7 @@ public class Classification extends MainActivity {
 
 	private String[][] wordGroups;
 	private String[] answers;
-	private int numProblems = 6;
+	public final static int numProblems = 6;
 	private int randomProblem;
 	
 	@Override
@@ -26,22 +21,14 @@ public class Classification extends MainActivity {
 		boolean found = false;
 		while(!found) {
 			randomProblem = new Random().nextInt(numProblems);
-			//Set<String> set = new HashSet<String>();
-			//SharedPreferences prefs = this.getSharedPreferences("prefsKey", Context.MODE_PRIVATE);
-			//set = prefs.getStringSet("previous_questions_key", set);
-			//if(!set.contains(Integer.toString(randomProblem))) {
-				//found = true;
-			//}
-			if(!brainTrainer.questionsAsked.get("classification").contains(randomProblem)) {
-				brainTrainer.questionsAsked.get("classification").add(randomProblem);
+			if(!brainTrainer.questionsAsked.get(Classification.class.getSimpleName()).contains(randomProblem)) {
+				brainTrainer.questionsAsked.get(Classification.class.getSimpleName()).add(randomProblem);
 				found = true;
 			}
 		}
 		setProblems();
 		showButtonsAndSetupText();
 		addClickListenersToButtons();
-		// Keep track of questions that have been asked
-		//recordQuestion("classification", randomProblem);
 	}
 	
 	private void addClickListenersToButtons() {
@@ -72,20 +59,6 @@ public class Classification extends MainActivity {
 			public void onClick(View v) { checkAnswer(v); }
 		});
 	}
-	
-	/*private void recordQuestion(String questionType, int questionNum) {
-		Set<String> set = new HashSet<String>();
-		// Get existing saved questions
-		SharedPreferences prefs = this.getSharedPreferences("prefsKey", Context.MODE_PRIVATE);
-		set = prefs.getStringSet("previous_classifications_questions_key", set);
-		// Add this question to the already saved questions
-		set.add(Integer.toString(questionNum));
-		Editor edit = prefs.edit();
-		edit.putStringSet("previous_classifications_questions_key", set);
-		edit.commit();
-		// TODO Check if all questions have been asked, if they have then remove
-		// this question type from the types of questions that can be asked
-	}*/
 	
 	private void setProblems() {
 		wordGroups = new String[numProblems][5];
@@ -160,9 +133,21 @@ public class Classification extends MainActivity {
 		Button b = (Button)v;
 	    String buttonText = b.getText().toString();
 	    if(buttonText.equals(answers[randomProblem])) {
-	    	brainTrainer.score++;
+	    	brainTrainer.numCorrect++;
+		} else {
+			brainTrainer.numIncorrect++;
 		}
-		startRandomQuestion();
+		try {
+			startRandomQuestion();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (NoSuchFieldException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

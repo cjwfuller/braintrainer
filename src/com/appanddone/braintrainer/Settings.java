@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
+import android.util.Log;
 
 /**
  * A {@link PreferenceActivity} that presents a set of application settings. On
@@ -35,6 +36,7 @@ public class Settings extends PreferenceActivity {
 	protected void onPostCreate(Bundle savedInstanceState) {
 		super.onPostCreate(savedInstanceState);
 		setupSimplePreferencesScreen();
+		Log.d("Settings", "Settings.onPostCreate()");
 	}
 
 	/**
@@ -54,6 +56,7 @@ public class Settings extends PreferenceActivity {
 		PreferenceCategory fakeHeader = new PreferenceCategory(this);
 		fakeHeader.setTitle(R.string.pref_header_questions);
 		addPreferencesFromResource(R.xml.pref_questions);
+		Log.d("Settings", "Settings.setupSimplePreferencesScreen()");
 	}
 
 	/** {@inheritDoc} */
@@ -88,6 +91,7 @@ public class Settings extends PreferenceActivity {
 	public void onBuildHeaders(List<Header> target) {
 		if (!isSimplePreferences(this)) {
 			loadHeadersFromResource(R.xml.pref_headers, target);
+			Log.d("Settings", "Settings.onBuildHeaders()");
 		}
 	}
 	
@@ -95,10 +99,12 @@ public class Settings extends PreferenceActivity {
 	 * 
 	 */
 	public static class QuestionsPreferenceFragment extends PreferenceFragment {
+		
 		@Override
 		public void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
 			addPreferencesFromResource(R.xml.pref_questions);
+			Log.d("Settings", "QuestionsPreferenceFragment.onCreate()");
 		}
 	}
 }

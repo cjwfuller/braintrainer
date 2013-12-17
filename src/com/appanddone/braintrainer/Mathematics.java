@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class Mathematics extends MainActivity {
 	
 	private int[][] series;
-	private final static int numProblems = 2;
+	public final static int numProblems = 2;
 	
 	public Mathematics() {
 		setProblems();
@@ -58,9 +58,11 @@ public class Mathematics extends MainActivity {
 			public void onClick(View v) {
 				if(!mathsAnswer.getText().toString().matches("")) {
 					if(Integer.parseInt(mathsAnswer.getText().toString()) == series[randomProblem][5]) {
-						brainTrainer.score++; // Correct
+						brainTrainer.numCorrect++;
+					} else {
+						brainTrainer.numIncorrect++;
 					}
-					startRandomQuestion();
+					//startRandomQuestion();
 				} else {
 					Toast.makeText(getApplicationContext(), "Please enter an answer", Toast.LENGTH_SHORT).show();
 				}

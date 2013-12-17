@@ -4,35 +4,35 @@
         android:key="pref_key_question_settings">
     <CheckBoxPreference
         android:defaultValue="true"
-        android:key="pref_key_logic_question_type"
+        android:key="Logic_question_type"
         android:title="@string/pref_title_logic" />
     <CheckBoxPreference
         android:defaultValue="true"
-        android:key="pref_key_classification_question_type"
+        android:key="Classification_question_type"
         android:title="@string/pref_title_classification" />
     <CheckBoxPreference
         android:defaultValue="true"
-        android:key="pref_key_verbal_question_type"
+        android:key="Verbal_question_type"
         android:title="@string/pref_title_verbal" />
     <CheckBoxPreference
         android:defaultValue="true"
-        android:key="pref_key_memory_question_type"
+        android:key="Memory_question_type"
         android:title="@string/pref_title_memory" />
     <CheckBoxPreference
         android:defaultValue="true"
-        android:key="pref_key_mathematics_question_type"
+        android:key="Mathematics_question_type"
         android:title="@string/pref_title_mathematical" />
     <CheckBoxPreference
         android:defaultValue="true"
-        android:key="pref_key_spatial_question_type"
+        android:key="Spatial_question_type"
         android:title="@string/pref_title_spatial" />
     <CheckBoxPreference
         android:defaultValue="true"
-        android:key="pref_key_visual_question_type"
+        android:key="Visual_question_type"
         android:title="@string/pref_title_visual" />
     <CheckBoxPreference
         android:defaultValue="true"
-        android:key="pref_key_pattern_recognition_question_type"
+        android:key="PatternRecognition_question_type"
         android:title="@string/pref_title_pattern_recognition" />                    
     </PreferenceCategory>
 </PreferenceScreen>
