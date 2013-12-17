@@ -19,6 +19,7 @@ public class ShapeGLRenderer implements GLSurfaceView.Renderer {
 
     private Triangle mTriangle;
     private Square mSquare;
+    private Rectangle mRectangle;
     private float mAngle;
 
     @Override
@@ -28,6 +29,7 @@ public class ShapeGLRenderer implements GLSurfaceView.Renderer {
 
         mTriangle = new Triangle();
         mSquare = new Square();
+        mRectangle = new Rectangle();
     }
 
     @Override
@@ -43,19 +45,10 @@ public class ShapeGLRenderer implements GLSurfaceView.Renderer {
         // When using GL_MODELVIEW, you must set the view point
         GLU.gluLookAt(gl, 0, 0, -3, 0f, 0f, 0f, 0f, 1.0f, 0.0f);
 
-        // Draw square
         mSquare.draw(gl);
+        
+        mRectangle.draw(gl);
 
-        // Create a rotation for the triangle
-
-        // Use the following code to generate constant rotation.
-        // Leave this code out when using TouchEvents.
-        // long time = SystemClock.uptimeMillis() % 4000L;
-        // float angle = 0.090f * ((int) time);
-
-        gl.glRotatef(mAngle, 0.0f, 0.0f, 1.0f);
-
-        // Draw triangle
         mTriangle.draw(gl);
     }
 
