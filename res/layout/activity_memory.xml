@@ -16,10 +16,6 @@
         android:gravity="center"
         android:text="@string/memory_instructions_text"
         android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="#ffffff"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="7dp" />
+        android:textStyle="bold" />
 
 </RelativeLayout>
