@@ -1,5 +1,6 @@
 package com.appanddone.braintrainer.shapes;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import javax.microedition.khronos.egl.EGLConfig;
@@ -7,6 +8,7 @@ import javax.microedition.khronos.opengles.GL10;
 
 import android.opengl.GLSurfaceView;
 import android.opengl.GLU;
+import android.util.Log;
 
 /**
  * Provides drawing instructions for a GLSurfaceView object. This class
@@ -23,12 +25,14 @@ public class ShapeGLRenderer implements GLSurfaceView.Renderer {
     private Square mSquare;
     private Rectangle mRectangle;
     private float mAngle;
+    private ArrayList<CoOrdPair> existingCoOrds;
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
         mTriangle = new Triangle();
         mSquare = new Square();
         mRectangle = new Rectangle();
+        existingCoOrds = new ArrayList<CoOrdPair>();
     }
 
     @Override
@@ -44,28 +48,40 @@ public class ShapeGLRenderer implements GLSurfaceView.Renderer {
         // When using GL_MODELVIEW, you must set the view point
         GLU.gluLookAt(gl, 0, 0, -3, 0f, 0f, 0f, 0f, 1.0f, 0.0f);
         
+        CoOrdPair coOrd;        
+        
+        coOrd = getRandomCoOrd();
+        coOrd.printCoOrds();
         gl.glPushMatrix();
-        gl.glTranslatef(getRandomCoOrd(), getRandomCoOrd(), 0.0f);        
+        gl.glTranslatef(coOrd.x, coOrd.y, 0.0f);        
         mSquare.draw(gl);
         gl.glPopMatrix();
         
+        coOrd = getRandomCoOrd();
+        coOrd.printCoOrds();
         gl.glPushMatrix();
-        gl.glTranslatef(getRandomCoOrd(), getRandomCoOrd(), 0.0f);        
+        gl.glTranslatef(coOrd.x, coOrd.y, 0.0f);        
         mSquare.draw(gl);
         gl.glPopMatrix();
         
+        coOrd = getRandomCoOrd();
+        coOrd.printCoOrds();
         gl.glPushMatrix();
-        gl.glTranslatef(getRandomCoOrd(), getRandomCoOrd(), 0.0f);        
+        gl.glTranslatef(coOrd.x, coOrd.y, 0.0f);        
         mRectangle.draw(gl);
         gl.glPopMatrix();
 
+        coOrd = getRandomCoOrd();
+        coOrd.printCoOrds();
         gl.glPushMatrix();
-        gl.glTranslatef(getRandomCoOrd(), getRandomCoOrd(), 0.0f);        
+        gl.glTranslatef(coOrd.x, coOrd.y, 0.0f);        
         mTriangle.draw(gl);
         gl.glPopMatrix();
         
+        coOrd = getRandomCoOrd();
+        coOrd.printCoOrds();
         gl.glPushMatrix();
-        gl.glTranslatef(getRandomCoOrd(), getRandomCoOrd(), 0.0f);        
+        gl.glTranslatef(coOrd.x, coOrd.y, 0.0f);        
         mTriangle.draw(gl);
         gl.glPopMatrix();
     }
@@ -75,7 +91,6 @@ public class ShapeGLRenderer implements GLSurfaceView.Renderer {
         // Adjust the viewport based on geometry changes
         // such as screen rotations
         gl.glViewport(0, 0, width, height);
-
         // make adjustments for screen ratio
         float ratio = (float) width / height;
         gl.glMatrixMode(GL10.GL_PROJECTION);        // set matrix to projection mode
@@ -83,10 +98,31 @@ public class ShapeGLRenderer implements GLSurfaceView.Renderer {
         gl.glFrustumf(-ratio, ratio, -1, 1, 3, 7);  // apply the projection matrix
     }
     
-    private float getRandomCoOrd() {
-    	float limit = 0.5f;
-        Random rand = new Random();
-        return rand.nextFloat() * (limit + limit) - limit;
+    private CoOrdPair getRandomCoOrd() {
+    	CoOrdPair coOrd = null;
+    	boolean overlappingCoOrd = true;
+        while(overlappingCoOrd) {
+        	coOrd = new CoOrdPair();
+        	if(!coOrdOverlaps(coOrd)) {
+        		overlappingCoOrd = false;
+        	}
+        }
+        existingCoOrds.add(coOrd);
+        return coOrd;
+    }
+    
+    private boolean coOrdOverlaps(CoOrdPair coOrdToAdd) {
+    	if(existingCoOrds.size() == 0) {
+    		return false;
+    	}
+    	for (CoOrdPair pair : existingCoOrds) {
+    		Log.d("ShapeGLRenderer", "ShapeGLRenderer.coOrdOverlaps() X diff: " + Math.abs(pair.x - coOrdToAdd.x));
+    		Log.d("ShapeGLRenderer", "ShapeGLRenderer.coOrdOverlaps() Y diff: " + Math.abs(pair.y - coOrdToAdd.y));
+    		if((Math.abs(pair.x - coOrdToAdd.x) < 0.15) || (Math.abs(pair.y - coOrdToAdd.y) < 0.15)) {
+    			return true;
+    		}
+    	}
+    	return false;
     }
 
     /**
@@ -104,4 +140,22 @@ public class ShapeGLRenderer implements GLSurfaceView.Renderer {
     public void setAngle(float angle) {
         mAngle = angle;
     }
+}
+
+class CoOrdPair {
+	
+	final float x;
+	final float y;
+	final float limit;
+	
+	CoOrdPair() {
+		limit = 0.6f;
+		Random rand = new Random();
+		this.x = rand.nextFloat() * (limit - -limit) + -limit;
+		this.y = rand.nextFloat() * (limit - -limit) + -limit;
+	}
+	
+	public void printCoOrds() {
+		Log.d("ShapeGLRenderer", "CoOrdPair.printCoOrds(): (" + Float.toString(x) + ", " + Float.toString(y));
+	}
 }
