@@ -12,14 +12,14 @@ public class Triangle {
 
     // number of coordinates per vertex in this array
     static final int COORDS_PER_VERTEX = 3;
+    
     static float triangleCoords[] = {   // in counterclockwise order:
-             0.0f,  0.3110042295f, 0.0f, // top
-            -0.2f, -0.1555021215f, 0.0f, // bottom left
-             0.2f, -0.1555021215f, 0.0f  // bottom right
+             0.0f,  0.1555021215f, 0.0f, // top
+            -0.1f, -0.07775106075f, 0.0f, // bottom left
+             0.1f, -0.07775106075f, 0.0f  // bottom right
     };
 
-    // Set color with red, green, blue and alpha (opacity) values
-    float color[] = { 0.69671875f, 0.76953125f, 0.22265625f, 1.0f };
+    float color[] = { 0.5f, 0.0f, 1.0f, 1.0f };
 
     public Triangle() {
         // initialize vertex byte buffer for shape coordinates
@@ -28,7 +28,6 @@ public class Triangle {
                 triangleCoords.length * 4);
         // use the device hardware's native byte order
         bb.order(ByteOrder.nativeOrder());
-
         // create a floating point buffer from the ByteBuffer
         vertexBuffer = bb.asFloatBuffer();
         // add the coordinates to the FloatBuffer

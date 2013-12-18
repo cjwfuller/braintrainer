@@ -18,10 +18,10 @@ public class Rectangle {
     // number of coordinates per vertex in this array
     static final int COORDS_PER_VERTEX = 3;
     static float squareCoords[] = {
-            -0.15f,  0.3f, 0.0f,   // top left
-            -0.15f, -0.3f, 0.0f,   // bottom left
-             0.15f, -0.3f, 0.0f,   // bottom right
-             0.15f,  0.3f, 0.0f }; // top right
+            -0.075f,  0.15f, 0.0f,   // top left
+            -0.075f, -0.15f, 0.0f,   // bottom left
+             0.075f, -0.15f, 0.0f,   // bottom right
+             0.075f,  0.15f, 0.0f }; // top right
 
     private final short drawOrder[] = { 0, 1, 2, 0, 2, 3 }; // order to draw vertices
 

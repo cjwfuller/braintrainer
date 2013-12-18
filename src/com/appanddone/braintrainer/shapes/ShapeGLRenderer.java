@@ -1,5 +1,7 @@
 package com.appanddone.braintrainer.shapes;
 
+import java.util.Random;
+
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
@@ -24,17 +26,6 @@ public class ShapeGLRenderer implements GLSurfaceView.Renderer {
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-        // Set the background frame color
-        //gl.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-//    	 gl.glDisable(GL10.GL_DITHER);
-//    	    gl.glHint(GL10.GL_PERSPECTIVE_CORRECTION_HINT,
-//    	            GL10.GL_FASTEST);
-
-    	  //   gl.glClearColor(0,0,0,0);
-//    	     gl.glEnable(GL10.GL_CULL_FACE);
-//    	     gl.glShadeModel(GL10.GL_SMOOTH);
-//    	     gl.glEnable(GL10.GL_DEPTH_TEST);
-
         mTriangle = new Triangle();
         mSquare = new Square();
         mRectangle = new Rectangle();
@@ -52,12 +43,31 @@ public class ShapeGLRenderer implements GLSurfaceView.Renderer {
 
         // When using GL_MODELVIEW, you must set the view point
         GLU.gluLookAt(gl, 0, 0, -3, 0f, 0f, 0f, 0f, 1.0f, 0.0f);
-
-        mSquare.draw(gl);
         
+        gl.glPushMatrix();
+        gl.glTranslatef(getRandomCoOrd(), getRandomCoOrd(), 0.0f);        
+        mSquare.draw(gl);
+        gl.glPopMatrix();
+        
+        gl.glPushMatrix();
+        gl.glTranslatef(getRandomCoOrd(), getRandomCoOrd(), 0.0f);        
+        mSquare.draw(gl);
+        gl.glPopMatrix();
+        
+        gl.glPushMatrix();
+        gl.glTranslatef(getRandomCoOrd(), getRandomCoOrd(), 0.0f);        
         mRectangle.draw(gl);
+        gl.glPopMatrix();
 
+        gl.glPushMatrix();
+        gl.glTranslatef(getRandomCoOrd(), getRandomCoOrd(), 0.0f);        
         mTriangle.draw(gl);
+        gl.glPopMatrix();
+        
+        gl.glPushMatrix();
+        gl.glTranslatef(getRandomCoOrd(), getRandomCoOrd(), 0.0f);        
+        mTriangle.draw(gl);
+        gl.glPopMatrix();
     }
 
     @Override
@@ -71,6 +81,12 @@ public class ShapeGLRenderer implements GLSurfaceView.Renderer {
         gl.glMatrixMode(GL10.GL_PROJECTION);        // set matrix to projection mode
         gl.glLoadIdentity();                        // reset the matrix to its default state
         gl.glFrustumf(-ratio, ratio, -1, 1, 3, 7);  // apply the projection matrix
+    }
+    
+    private float getRandomCoOrd() {
+    	float limit = 0.5f;
+        Random rand = new Random();
+        return rand.nextFloat() * (limit + limit) - limit;
     }
 
     /**
