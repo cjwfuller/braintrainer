@@ -57,4 +57,5 @@ public class Triangle {
         // conflicts with shapes that don't use it
         gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);
     }
+    
 }

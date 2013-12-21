@@ -2,16 +2,21 @@ package com.appanddone.braintrainer;
 
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnTouchListener;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.appanddone.braintrainer.shapes.ShapeGLSurfaceView;
 
 public class Memory extends MainActivity {
 
-	public final static int numProblems = 1;
+	public final static int numProblems = 1; // TODO set to -1 or something
 	public static int randomProblem;
 	private GLSurfaceView mGLView;
 
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

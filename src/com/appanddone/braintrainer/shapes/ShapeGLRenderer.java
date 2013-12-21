@@ -1,6 +1,5 @@
 package com.appanddone.braintrainer.shapes;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 import javax.microedition.khronos.egl.EGLConfig;
@@ -21,22 +20,19 @@ import android.util.Log;
  */
 public class ShapeGLRenderer implements GLSurfaceView.Renderer {
 
-    private Triangle mTriangle1;
-    private Triangle mTriangle2;
-    private Square mSquare1;
-    private Square mSquare2;
+    private Triangle mTriangle1, mTriangle2;
+    private Square mSquare1, mSquare2;
     private Rectangle mRectangle;
     private float mAngle;
-    private ArrayList<CoOrdPair> existingCoOrds;
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-        mTriangle1 = new Triangle();
+        // Ensure we have new Object for each shape so colours are random
+    	mTriangle1 = new Triangle();
         mTriangle2 = new Triangle();
         mSquare1 = new Square();
         mSquare2 = new Square();
         mRectangle = new Rectangle();
-        existingCoOrds = new ArrayList<CoOrdPair>();
     }
 
     @Override
@@ -54,40 +50,42 @@ public class ShapeGLRenderer implements GLSurfaceView.Renderer {
         
         CoOrdPair coOrd;        
         
-        coOrd = getRandomCoOrd();
+        coOrd = new CoOrdPair();
         coOrd.printCoOrds();
         gl.glPushMatrix();
         gl.glTranslatef(coOrd.x, coOrd.y, 0.0f);        
         mSquare1.draw(gl);
         gl.glPopMatrix();
         
-        coOrd = getRandomCoOrd();
+        coOrd = new CoOrdPair();
         coOrd.printCoOrds();
         gl.glPushMatrix();
         gl.glTranslatef(coOrd.x, coOrd.y, 0.0f);        
         mSquare2.draw(gl);
         gl.glPopMatrix();
         
-        coOrd = getRandomCoOrd();
+        coOrd = new CoOrdPair();
         coOrd.printCoOrds();
         gl.glPushMatrix();
         gl.glTranslatef(coOrd.x, coOrd.y, 0.0f);        
         mRectangle.draw(gl);
         gl.glPopMatrix();
 
-        coOrd = getRandomCoOrd();
+        coOrd = new CoOrdPair();
         coOrd.printCoOrds();
         gl.glPushMatrix();
         gl.glTranslatef(coOrd.x, coOrd.y, 0.0f);        
         mTriangle1.draw(gl);
         gl.glPopMatrix();
         
-        coOrd = getRandomCoOrd();
+        coOrd = new CoOrdPair();
         coOrd.printCoOrds();
         gl.glPushMatrix();
         gl.glTranslatef(coOrd.x, coOrd.y, 0.0f);        
         mTriangle2.draw(gl);
         gl.glPopMatrix();
+        
+        
     }
 
     @Override
@@ -100,60 +98,6 @@ public class ShapeGLRenderer implements GLSurfaceView.Renderer {
         gl.glMatrixMode(GL10.GL_PROJECTION); // set matrix to projection mode
         gl.glLoadIdentity();  // reset the matrix to its default state
         gl.glFrustumf(-ratio, ratio, -1, 1, 3, 7); // apply tprojection matrix
-    }
-    
-    /**
-     * Returns a random co-ordinate that doesn't overlap with any other shapes
-     * 
-     * @return CoOrdPair
-     */
-    private CoOrdPair getRandomCoOrd() {
-    	CoOrdPair coOrd = null;
-    	boolean overlappingCoOrd = true;
-        while(overlappingCoOrd) {
-        	coOrd = new CoOrdPair();
-        	if(!coOrdOverlaps(coOrd)) {
-        		overlappingCoOrd = false;
-        	}
-        }
-        existingCoOrds.add(coOrd);
-        return coOrd;
-    }
-    
-    /**
-     * Returns whether a co-ordinate overlaps with another shape
-     * 
-     * @param coOrdToAdd
-     * @return - A boolean representing whether there's an overlap
-     */
-    private boolean coOrdOverlaps(CoOrdPair coOrdToAdd) {
-    	if(existingCoOrds.size() == 0) {
-    		return false;
-    	}
-    	for (CoOrdPair pair : existingCoOrds) {
-    		Log.d("ShapeGLRenderer", "ShapeGLRenderer.coOrdOverlaps() X diff: " + Math.abs(pair.x - coOrdToAdd.x));
-    		Log.d("ShapeGLRenderer", "ShapeGLRenderer.coOrdOverlaps() Y diff: " + Math.abs(pair.y - coOrdToAdd.y));
-    		if((Math.abs(pair.x - coOrdToAdd.x) < 0.15) || (Math.abs(pair.y - coOrdToAdd.y) < 0.15)) {
-    			return true;
-    		}
-    	}
-    	return false;
-    }
-
-    /**
-     * Returns the rotation angle of the triangle shape (mTriangle).
-     *
-     * @return - A float representing the rotation angle.
-     */
-    public float getAngle() {
-        return mAngle;
-    }
-
-    /**
-     * Sets the rotation angle of the triangle shape (mTriangle).
-     */
-    public void setAngle(float angle) {
-        mAngle = angle;
     }
 }
 
@@ -180,6 +124,6 @@ class CoOrdPair {
 	 * Used for debugging
 	 */
 	public void printCoOrds() {
-		Log.d("ShapeGLRenderer", "CoOrdPair.printCoOrds(): (" + Float.toString(x) + ", " + Float.toString(y));
+		Log.d("ShapeGLRenderer", "CoOrdPair.printCoOrds(): (" + Float.toString(x) + ", " + Float.toString(y) + ")");
 	}
 }
