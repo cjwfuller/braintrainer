@@ -93,11 +93,16 @@ public class ShapeGLRenderer implements GLSurfaceView.Renderer {
         gl.glViewport(0, 0, width, height);
         // make adjustments for screen ratio
         float ratio = (float) width / height;
-        gl.glMatrixMode(GL10.GL_PROJECTION);        // set matrix to projection mode
-        gl.glLoadIdentity();                        // reset the matrix to its default state
-        gl.glFrustumf(-ratio, ratio, -1, 1, 3, 7);  // apply the projection matrix
+        gl.glMatrixMode(GL10.GL_PROJECTION); // set matrix to projection mode
+        gl.glLoadIdentity();  // reset the matrix to its default state
+        gl.glFrustumf(-ratio, ratio, -1, 1, 3, 7); // apply tprojection matrix
     }
     
+    /**
+     * Returns a random co-ordinate that doesn't overlap with any other shapes
+     * 
+     * @return CoOrdPair
+     */
     private CoOrdPair getRandomCoOrd() {
     	CoOrdPair coOrd = null;
     	boolean overlappingCoOrd = true;
@@ -111,6 +116,12 @@ public class ShapeGLRenderer implements GLSurfaceView.Renderer {
         return coOrd;
     }
     
+    /**
+     * Returns whether a co-ordinate overlaps with another shape
+     * 
+     * @param coOrdToAdd
+     * @return - A boolean representing whether there's an overlap
+     */
     private boolean coOrdOverlaps(CoOrdPair coOrdToAdd) {
     	if(existingCoOrds.size() == 0) {
     		return false;
@@ -142,6 +153,12 @@ public class ShapeGLRenderer implements GLSurfaceView.Renderer {
     }
 }
 
+/**
+ * Random co-ordinates in 2D space 
+ * 
+ * @author cjwfuller
+ *
+ */
 class CoOrdPair {
 	
 	final float x;
@@ -149,12 +166,15 @@ class CoOrdPair {
 	final float limit;
 	
 	CoOrdPair() {
-		limit = 0.6f;
+		limit = 0.6f; // stops shapes going off the screen
 		Random rand = new Random();
 		this.x = rand.nextFloat() * (limit - -limit) + -limit;
 		this.y = rand.nextFloat() * (limit - -limit) + -limit;
 	}
 	
+	/**
+	 * Used for debugging
+	 */
 	public void printCoOrds() {
 		Log.d("ShapeGLRenderer", "CoOrdPair.printCoOrds(): (" + Float.toString(x) + ", " + Float.toString(y));
 	}
