@@ -3,6 +3,7 @@ package com.appanddone.braintrainer.shapes;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
+import java.util.Random;
 
 import javax.microedition.khronos.opengles.GL10;
 
@@ -19,7 +20,8 @@ public class Triangle {
              0.1f, -0.07775106075f, 0.0f  // bottom right
     };
 
-    float color[] = { 0.5f, 0.0f, 1.0f, 1.0f };
+    Random rand = new Random();
+    float color[] = { rand.nextFloat(), rand.nextFloat(), rand.nextFloat(), 1.0f };
 
     public Triangle() {
         // initialize vertex byte buffer for shape coordinates

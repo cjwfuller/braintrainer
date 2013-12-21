@@ -4,6 +4,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.nio.ShortBuffer;
+import java.util.Random;
 
 import javax.microedition.khronos.opengles.GL10;
 
@@ -25,7 +26,8 @@ public class Rectangle {
 
     private final short drawOrder[] = { 0, 1, 2, 0, 2, 3 }; // order to draw vertices
 
-    float color[] = { 0.2f, 0.898039216f, 0.709803922f, 1.0f };
+    Random rand = new Random();
+    float color[] = { rand.nextFloat(), rand.nextFloat(), rand.nextFloat(), 1.0f };
 
     /**
      * Sets up the drawing object data for use in an OpenGL ES context.

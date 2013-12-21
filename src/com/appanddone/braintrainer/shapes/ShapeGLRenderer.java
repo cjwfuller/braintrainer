@@ -21,16 +21,20 @@ import android.util.Log;
  */
 public class ShapeGLRenderer implements GLSurfaceView.Renderer {
 
-    private Triangle mTriangle;
-    private Square mSquare;
+    private Triangle mTriangle1;
+    private Triangle mTriangle2;
+    private Square mSquare1;
+    private Square mSquare2;
     private Rectangle mRectangle;
     private float mAngle;
     private ArrayList<CoOrdPair> existingCoOrds;
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-        mTriangle = new Triangle();
-        mSquare = new Square();
+        mTriangle1 = new Triangle();
+        mTriangle2 = new Triangle();
+        mSquare1 = new Square();
+        mSquare2 = new Square();
         mRectangle = new Rectangle();
         existingCoOrds = new ArrayList<CoOrdPair>();
     }
@@ -54,14 +58,14 @@ public class ShapeGLRenderer implements GLSurfaceView.Renderer {
         coOrd.printCoOrds();
         gl.glPushMatrix();
         gl.glTranslatef(coOrd.x, coOrd.y, 0.0f);        
-        mSquare.draw(gl);
+        mSquare1.draw(gl);
         gl.glPopMatrix();
         
         coOrd = getRandomCoOrd();
         coOrd.printCoOrds();
         gl.glPushMatrix();
         gl.glTranslatef(coOrd.x, coOrd.y, 0.0f);        
-        mSquare.draw(gl);
+        mSquare2.draw(gl);
         gl.glPopMatrix();
         
         coOrd = getRandomCoOrd();
@@ -75,14 +79,14 @@ public class ShapeGLRenderer implements GLSurfaceView.Renderer {
         coOrd.printCoOrds();
         gl.glPushMatrix();
         gl.glTranslatef(coOrd.x, coOrd.y, 0.0f);        
-        mTriangle.draw(gl);
+        mTriangle1.draw(gl);
         gl.glPopMatrix();
         
         coOrd = getRandomCoOrd();
         coOrd.printCoOrds();
         gl.glPushMatrix();
         gl.glTranslatef(coOrd.x, coOrd.y, 0.0f);        
-        mTriangle.draw(gl);
+        mTriangle2.draw(gl);
         gl.glPopMatrix();
     }
 
