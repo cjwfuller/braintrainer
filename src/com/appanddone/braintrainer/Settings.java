@@ -3,6 +3,7 @@ package com.appanddone.braintrainer;
 import java.util.List;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
@@ -24,6 +25,16 @@ import android.util.Log;
  */
 public class Settings extends PreferenceActivity {
 	
+	public BrainTrainer brainTrainer;
+	
+	@Override
+	public void onBackPressed() {
+		brainTrainer.reset();
+		Intent intent = new Intent(Settings.this, MainActivity.class);
+	    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);   
+	    startActivity(intent);
+	}
+	
 	/**
 	 * Determines whether to always show the simplified settings UI, where
 	 * settings are presented in a single list. When false, settings are shown
@@ -35,6 +46,7 @@ public class Settings extends PreferenceActivity {
 	@Override
 	protected void onPostCreate(Bundle savedInstanceState) {
 		super.onPostCreate(savedInstanceState);
+		brainTrainer = (BrainTrainer)getApplicationContext();
 		setupSimplePreferencesScreen();
 		Log.d("Settings", "Settings.onPostCreate()");
 	}

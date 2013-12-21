@@ -38,6 +38,6 @@
         android:textSize="18sp"
         android:width="150dp"
         android:text="@string/about_button"
-        android:layout_below="@+id/settings_button"/>        
+        android:layout_below="@+id/settings_button"/>            
 
 </RelativeLayout>
