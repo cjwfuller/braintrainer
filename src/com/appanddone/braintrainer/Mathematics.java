@@ -1,8 +1,11 @@
 package com.appanddone.braintrainer;
 
+import java.util.ArrayList;
+
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -11,13 +14,36 @@ import android.widget.Toast;
 public class Mathematics extends MainActivity {
 	
 	private int[][] series;
+	private int[][] possibleSolutions;
 	public final static int numProblems = 2;
 	public static int randomProblem;
 	
-	public Mathematics() {
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_mathematics);
 		setProblems();
+		setPossibleSolutions();
+		setUpButtons();
+		Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/Arvil_Sans.ttf");
+		// Show the random maths problem
+		TextView sequenceTextView = (TextView)findViewById(R.id.maths_sequence);
+		TextView instructionsTextView = (TextView)findViewById(R.id.maths_instructions);
+		sequenceTextView.setTypeface(typeFace);
+		instructionsTextView.setTypeface(typeFace);
+		String str = "";
+		for(int i = 0; i < series[randomProblem].length - 1; i++) {
+			str += Integer.toString(series[randomProblem][i]) + ", ";
+		}
+		str += " ...";
+		sequenceTextView.setText(str);
 	}
 	
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+	}
+
 	private void setProblems() {
 		series = new int[numProblems][6];
 		// Progressively decreasing pattern 
@@ -36,58 +62,71 @@ public class Mathematics extends MainActivity {
 		series[1][5] = 39;
 	}
 	
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_mathematics);
+	private void setPossibleSolutions() {
+		possibleSolutions = new int[numProblems][5];
+		// Progressively decreasing pattern 
+		possibleSolutions[0][0] = 82;
+		possibleSolutions[0][1] = 63;
+		possibleSolutions[0][2] = 66;
+		possibleSolutions[0][3] = 65;
+		possibleSolutions[0][4] = 70;
+		// Pair sums
+		possibleSolutions[1][0] = 39;
+		possibleSolutions[1][1] = 40;
+		possibleSolutions[1][2] = 66;
+		possibleSolutions[1][3] = 65;
+		possibleSolutions[1][4] = 64;
+	}
+	
+	private void setUpButtons() {
+		// Get buttons
+		Button answer1 = (Button)findViewById(R.id.answer1_button);
+		Button answer2 = (Button)findViewById(R.id.answer2_button);
+		Button answer3 = (Button)findViewById(R.id.answer3_button);
+		Button answer4 = (Button)findViewById(R.id.answer4_button);
+		Button answer5 = (Button)findViewById(R.id.answer5_button);
+		// Assign possible answers to their text
+		answer1.setText(Integer.toString(possibleSolutions[randomProblem][0]));
+		answer2.setText(Integer.toString(possibleSolutions[randomProblem][1]));
+		answer3.setText(Integer.toString(possibleSolutions[randomProblem][2]));
+		answer4.setText(Integer.toString(possibleSolutions[randomProblem][3]));
+		answer5.setText(Integer.toString(possibleSolutions[randomProblem][4]));
+		// Give the button text the game font
 		Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/Arvil_Sans.ttf");
-		// Show the random maths problem
-		TextView sequenceTextView = (TextView)findViewById(R.id.maths_sequence);
-		TextView instructionsTextView = (TextView)findViewById(R.id.maths_instructions);
-		TextView answerLabelTextView = (TextView)findViewById(R.id.maths_answer_label);
-		sequenceTextView.setTypeface(typeFace);
-		instructionsTextView.setTypeface(typeFace);
-		answerLabelTextView.setTypeface(typeFace);
-		String str = "";
-		for(int i = 0; i < series[randomProblem].length - 1; i++) {
-			str += Integer.toString(series[randomProblem][i]) + ", ";
-		}
-		str += " ...";
-		sequenceTextView.setText(str);
-		// Check the answer
-		final EditText mathsAnswer = (EditText)findViewById(R.id.maths_answer);
-		mathsAnswer.setTypeface(typeFace);
-		Button nextButton = (Button)findViewById(R.id.next_button);
-		nextButton.setOnClickListener(new View.OnClickListener() {
+		answer1.setTypeface(typeFace);
+		answer2.setTypeface(typeFace);
+		answer3.setTypeface(typeFace);
+		answer4.setTypeface(typeFace);
+		answer5.setTypeface(typeFace);
+		// Set up button events
+		setButtonEvents(answer1);
+		setButtonEvents(answer2);
+		setButtonEvents(answer3);
+		setButtonEvents(answer4);
+		setButtonEvents(answer5);
+	}
+	
+	private void setButtonEvents(final Button button) {
+		button.setOnClickListener(new OnClickListener() {			
 			@Override
 			public void onClick(View v) {
-				if(!mathsAnswer.getText().toString().matches("")) {
-					if(Integer.parseInt(mathsAnswer.getText().toString()) == series[randomProblem][5]) {
-						brainTrainer.numCorrect++;
-					} else {
-						brainTrainer.numIncorrect++;
-					}
-					try {
-						startRandomQuestion();
-					} catch (IllegalAccessException e) {
-						e.printStackTrace();
-					} catch (IllegalArgumentException e) {
-						e.printStackTrace();
-					} catch (NoSuchFieldException e) {
-						e.printStackTrace();
-					} catch (ClassNotFoundException e) {
-						e.printStackTrace();
-					}
+				if(button.getText().toString().equals(Integer.toString(series[randomProblem][5]))) {
+					brainTrainer.numCorrect++;
 				} else {
-					Toast.makeText(getApplicationContext(), "Please enter an answer", Toast.LENGTH_SHORT).show();
+					brainTrainer.numIncorrect++;
+				}
+				try {
+					startRandomQuestion();
+				} catch (IllegalAccessException e) {
+					e.printStackTrace();
+				} catch (IllegalArgumentException e) {
+					e.printStackTrace();
+				} catch (NoSuchFieldException e) {
+					e.printStackTrace();
+				} catch (ClassNotFoundException e) {
+					e.printStackTrace();
 				}
 			}
 		});
 	}
-	
-	@Override
-	public void onBackPressed() {
-		super.onBackPressed();
-	}
-
 }

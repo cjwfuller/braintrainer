@@ -42,7 +42,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="memory_instructions_text">Remember where the greens are!\n</string>
     <string name="memory_instructions_after_green_text">Where were the greens?\n</string>
-    <string name="maths_instructions_text">Which number should come next in the following series?\n\n</string>
+    <string name="maths_instructions_text">Which number comes next?\n\n</string>
     <string name="verbal_instructions_text">Rearrange this word and choose the category that it belongs to\n\n</string>
     <string name="classification_instructions_text">Which word does not belong?\n\n</string>
     <string name="answer_label_text">Answer:</string>
