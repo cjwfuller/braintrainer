@@ -6,6 +6,8 @@ import java.util.Random;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,22 +21,31 @@ public class Memory extends MainActivity {
 	private int numToRemember;
 	private final int numCircles = 16;
 	private static Toast toast;
+	private int numGreensFound = 0;
 	
 	ArrayList<ImageView> images = new ArrayList<ImageView>();
+	ArrayList<Integer> greens = new ArrayList<Integer>();
 	
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.activity_memory);
+	    // Nice game font
 	    Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/Arvil_Sans.ttf");
 	    TextView textView = (TextView)findViewById(R.id.memory_instructions);
 	    textView.setTypeface(typeFace);
+	    // Users have to remember varying numbers of things
 	    numToRemember = new Random().nextInt((mostToRemember - fewestToRemember) + 1) + fewestToRemember;
+	    // Users have 3 seconds to remember
 	    toast = Toast.makeText(getBaseContext(), "Time remaining: 3s", Toast.LENGTH_LONG);
 		toast.show();
-	    turnLightsOn();	
+		turnGreensOn();	
 	    startTimer();
+	    addClickHandlers();
 	}
 	
+	/**
+	 * Show a timer every 1s for 3s and turn all the shapes red after 3s
+	 */
 	private void startTimer() {
 		 new CountDownTimer(3000, 1000) {
 		     public void onTick(long millisUntilFinished) {
@@ -52,7 +63,39 @@ public class Memory extends MainActivity {
 		  }.start();
 	}
 	
-	private void turnLightsOn() {
+	/**
+	 * Each button needs a click handler.  If the user clicks a red button then
+	 * they have failed the game.  The number of green buttons needs to be 
+	 * recorded so when they have all been found, the user wins
+	 */
+	private void addClickHandlers() {
+		for(int i = 0; i < images.size(); i++) {
+			if(greens.contains(i)) {
+				final ImageView currentImageView = images.get(i);
+				images.get(i).setOnClickListener(new OnClickListener() {
+					@Override
+					// When user clicks green
+					public void onClick(View v) {
+						numGreensFound++;
+						currentImageView.setImageDrawable(getResources().getDrawable(R.drawable.green_oval));
+					}
+				});
+			} else {
+				images.get(i).setOnClickListener(new OnClickListener() {
+					@Override
+					// When user clicks red
+					public void onClick(View v) {
+						finish();
+					}
+				});
+			}
+		}
+	}
+	
+	/**
+	 * Turn a random number of the red shapes to green
+	 */
+	private void turnGreensOn() {
 	    ImageView memoryImageView1 = (ImageView)findViewById(R.id.memoryImageView1);
 	    ImageView memoryImageView2 = (ImageView)findViewById(R.id.memoryImageView2);
 	    ImageView memoryImageView3 = (ImageView)findViewById(R.id.memoryImageView3);
@@ -87,15 +130,16 @@ public class Memory extends MainActivity {
 	    images.add(memoryImageView15);
 	    images.add(memoryImageView16);
 	    
+	    // Randomly turn a random number of greens on.  Ensures that the same
+	    // shape doesn't turn green more than once too
 	    boolean generatedGreens = false;
 	    int numGreens = 0;
 	    int rand;
-	    ArrayList<Integer> greensSoFar = new ArrayList<Integer>();
 	    while(!generatedGreens) {
 	    	rand = new Random().nextInt(numCircles);
-	    	if(!greensSoFar.contains(rand)) {
+	    	if(!greens.contains(rand)) {
 	    		images.get(rand).setImageDrawable(getResources().getDrawable(R.drawable.green_oval));
-	    		greensSoFar.add(rand);
+	    		greens.add(rand);
 	    		numGreens++;
 	    	}
 	    	if(numGreens == numToRemember) {
