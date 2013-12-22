@@ -1,5 +1,6 @@
 package com.appanddone.braintrainer;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -39,16 +40,23 @@ public class Mathematics extends MainActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_mathematics);
+		Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/Arvil_Sans.ttf");
 		// Show the random maths problem
-		TextView sequenceView = (TextView)findViewById(R.id.maths_sequence);
+		TextView sequenceTextView = (TextView)findViewById(R.id.maths_sequence);
+		TextView instructionsTextView = (TextView)findViewById(R.id.maths_instructions);
+		TextView answerLabelTextView = (TextView)findViewById(R.id.maths_answer_label);
+		sequenceTextView.setTypeface(typeFace);
+		instructionsTextView.setTypeface(typeFace);
+		answerLabelTextView.setTypeface(typeFace);
 		String str = "";
 		for(int i = 0; i < series[randomProblem].length - 1; i++) {
 			str += Integer.toString(series[randomProblem][i]) + ", ";
 		}
 		str += " ...";
-		sequenceView.setText(str);
+		sequenceTextView.setText(str);
 		// Check the answer
 		final EditText mathsAnswer = (EditText)findViewById(R.id.maths_answer);
+		mathsAnswer.setTypeface(typeFace);
 		Button nextButton = (Button)findViewById(R.id.next_button);
 		nextButton.setOnClickListener(new View.OnClickListener() {
 			@Override
