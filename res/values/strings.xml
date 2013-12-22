@@ -40,13 +40,14 @@
     <string name="action_settings">Settings</string>
     <string name="about_description_text">Thanks for downloading Brain Trainer!\n\nThis app contains LOTS of mind bending exercises to train your brain.\n\nYou can choose the types of questions you want to practice or you can just let the app decide for you.\n\nBrain Trainer is not only fun but it\'s a great way to practice questions that you might get in real life e.g. in University/College or Company interviews.</string>
     <string name="hello_world">Hello world!</string>
-    <string name="memory_instructions_text">Remember the positions of the green circles\n\n</string>
+    <string name="memory_instructions_text">Remember where the greens are!\n\n</string>
     <string name="maths_instructions_text">Which number should come next in the following series?\n\n</string>
     <string name="verbal_instructions_text">Rearrange this word and choose the category that it belongs to\n\n</string>
     <string name="classification_instructions_text">Which word does not belong?\n\n</string>
     <string name="answer_label_text">Answer:</string>
     <string name="next">Submit \u25BA</string>
     
+    <string name="memory_time_left">Time Left: \n\n</string>
     <string name="red_oval">Red Oval</string>
     <string name="blue_oval">Blue Oval</string>
 

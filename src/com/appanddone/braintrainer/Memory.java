@@ -3,8 +3,12 @@ package com.appanddone.braintrainer;
 import java.util.ArrayList;
 import java.util.Random;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class Memory extends MainActivity {
 
@@ -14,13 +18,38 @@ public class Memory extends MainActivity {
 	private int mostToRemember = 7;
 	private int numToRemember;
 	private final int numCircles = 16;
+	private static Toast toast;
+	
+	ArrayList<ImageView> images = new ArrayList<ImageView>();
 	
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.activity_memory);
+	    Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/Arvil_Sans.ttf");
+	    TextView textView = (TextView)findViewById(R.id.memory_instructions);
+	    textView.setTypeface(typeFace);
 	    numToRemember = new Random().nextInt((mostToRemember - fewestToRemember) + 1) + fewestToRemember;
+	    toast = Toast.makeText(getBaseContext(), "Time remaining: 3s", Toast.LENGTH_LONG);
+		toast.show();
 	    turnLightsOn();	
+	    startTimer();
+	}
+	
+	private void startTimer() {
+		 new CountDownTimer(3000, 1000) {
+		     public void onTick(long millisUntilFinished) {
+		    	 toast.cancel();
+	    		 toast = Toast.makeText(getBaseContext(), "Time remaining: " + millisUntilFinished / 1000 + "s", Toast.LENGTH_LONG);
+	    		 toast.show();
+		     }
 
+		     public void onFinish() {
+		    	 for(ImageView image : images) {
+		    		 toast.cancel();
+		    		 image.setImageDrawable(getResources().getDrawable(R.drawable.red_oval));
+		    	 }
+		     }
+		  }.start();
 	}
 	
 	private void turnLightsOn() {
@@ -41,7 +70,6 @@ public class Memory extends MainActivity {
 	    ImageView memoryImageView15 = (ImageView)findViewById(R.id.memoryImageView15);
 	    ImageView memoryImageView16 = (ImageView)findViewById(R.id.memoryImageView16);
 	    
-	    ArrayList<ImageView> images = new ArrayList<ImageView>();
 	    images.add(memoryImageView1);
 	    images.add(memoryImageView2);
 	    images.add(memoryImageView3);

@@ -10,6 +10,7 @@ import java.util.Random;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -33,6 +34,8 @@ public class MainActivity extends Activity {
 		PACKAGE_NAME = getApplicationContext().getPackageName();
 		
 		Button startButton = (Button)findViewById(R.id.start_button);
+		Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/Arvil_Sans.ttf");
+		startButton.setTypeface(typeFace);
 		startButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -52,6 +55,7 @@ public class MainActivity extends Activity {
 		});
 		
 		Button settingsButton = (Button)findViewById(R.id.settings_button);
+		settingsButton.setTypeface(typeFace);
 		settingsButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -61,6 +65,7 @@ public class MainActivity extends Activity {
 		});
 		
 		Button aboutButton = (Button)findViewById(R.id.about_button);
+		aboutButton.setTypeface(typeFace);
 		aboutButton.setOnClickListener(new View.OnClickListener() {	
 			@Override
 			public void onClick(View v) {
