@@ -22,7 +22,8 @@ public class Finish extends MainActivity {
 		if(percent.isNaN()) {
 			percent = 0.0f;
 		}
-		percentage_correct.setText( "Percentage correct: " + Float.toString(percent) + "%");		
+		// Round percentage to 2 decimal places
+		percentage_correct.setText( "Percentage correct: " + Float.toString(percent) + "%");
 	}
 	
 	@Override

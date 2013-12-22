@@ -23,12 +23,15 @@ public class Memory extends MainActivity {
 	private static Toast toast;
 	private int numGreensFound = 0;
 	
-	ArrayList<ImageView> images = new ArrayList<ImageView>();
-	ArrayList<Integer> greens = new ArrayList<Integer>();
+	private TextView textView;
+	
+	private ArrayList<ImageView> images = new ArrayList<ImageView>();
+	private ArrayList<Integer> greens = new ArrayList<Integer>();
 	
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.activity_memory);
+	    textView = (TextView)findViewById(R.id.memory_instructions);
 	    // Nice game font
 	    Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/Arvil_Sans.ttf");
 	    TextView textView = (TextView)findViewById(R.id.memory_instructions);
@@ -36,7 +39,7 @@ public class Memory extends MainActivity {
 	    // Users have to remember varying numbers of things
 	    numToRemember = new Random().nextInt((mostToRemember - fewestToRemember) + 1) + fewestToRemember;
 	    // Users have 3 seconds to remember
-	    toast = Toast.makeText(getBaseContext(), "Time remaining: 3s", Toast.LENGTH_LONG);
+	    toast = Toast.makeText(getBaseContext(), "Time remaining: 2s", Toast.LENGTH_LONG);
 		toast.show();
 		turnGreensOn();	
 	    startTimer();
@@ -44,10 +47,10 @@ public class Memory extends MainActivity {
 	}
 	
 	/**
-	 * Show a timer every 1s for 3s and turn all the shapes red after 3s
+	 * Show a timer every 1s for 2s and turn all the shapes red after 2s
 	 */
 	private void startTimer() {
-		 new CountDownTimer(3000, 1000) {
+		 new CountDownTimer(2000, 1000) {
 		     public void onTick(long millisUntilFinished) {
 		    	 toast.cancel();
 	    		 toast = Toast.makeText(getBaseContext(), "Time remaining: " + millisUntilFinished / 1000 + "s", Toast.LENGTH_LONG);
@@ -58,6 +61,7 @@ public class Memory extends MainActivity {
 		    	 for(ImageView image : images) {
 		    		 toast.cancel();
 		    		 image.setImageDrawable(getResources().getDrawable(R.drawable.red_oval));
+		    		 textView.setText(R.string.memory_instructions_after_green_text);
 		    	 }
 		     }
 		  }.start();
@@ -77,6 +81,20 @@ public class Memory extends MainActivity {
 					// When user clicks green
 					public void onClick(View v) {
 						numGreensFound++;
+						if(numGreensFound == numToRemember) {
+							brainTrainer.numCorrect++;
+							try {
+								startRandomQuestion();
+							} catch (IllegalAccessException e) {
+								e.printStackTrace();
+							} catch (IllegalArgumentException e) {
+								e.printStackTrace();
+							} catch (NoSuchFieldException e) {
+								e.printStackTrace();
+							} catch (ClassNotFoundException e) {
+								e.printStackTrace();
+							}
+						}
 						currentImageView.setImageDrawable(getResources().getDrawable(R.drawable.green_oval));
 					}
 				});
@@ -85,7 +103,18 @@ public class Memory extends MainActivity {
 					@Override
 					// When user clicks red
 					public void onClick(View v) {
-						finish();
+						brainTrainer.numIncorrect++;
+						try {
+							startRandomQuestion();
+						} catch (IllegalAccessException e) {
+							e.printStackTrace();
+						} catch (IllegalArgumentException e) {
+							e.printStackTrace();
+						} catch (NoSuchFieldException e) {
+							e.printStackTrace();
+						} catch (ClassNotFoundException e) {
+							e.printStackTrace();
+						}
 					}
 				});
 			}

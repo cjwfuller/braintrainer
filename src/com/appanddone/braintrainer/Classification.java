@@ -1,6 +1,7 @@
 package com.appanddone.braintrainer;
 
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,7 +10,7 @@ public class Classification extends MainActivity {
 
 	private String[][] wordGroups;
 	private String[] answers;
-	public final static int numProblems = 6;
+	public final static int numProblems = 5;
 	public static int randomProblem;
 	
 	@Override
@@ -33,6 +34,13 @@ public class Classification extends MainActivity {
 		Button word3 = (Button)findViewById(R.id.word3_button);
 		Button word4 = (Button)findViewById(R.id.word4_button);
 		Button word5 = (Button)findViewById(R.id.word5_button);
+		// Also add game font!
+		Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/Arvil_Sans.ttf");
+		word1.setTypeface(typeFace);
+		word2.setTypeface(typeFace);
+		word3.setTypeface(typeFace);
+		word4.setTypeface(typeFace);
+		word5.setTypeface(typeFace);
 		word1.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) { checkAnswer(v); }
@@ -87,12 +95,6 @@ public class Classification extends MainActivity {
 		wordGroups[4][2] = "Venus";
 		wordGroups[4][3] = "Jupiter";
 		wordGroups[4][4] = "Moon";
-		// Problem 5
-		wordGroups[5][0] = "Helium";
-		wordGroups[5][1] = "Magnesium";
-		wordGroups[5][2] = "Water";
-		wordGroups[5][3] = "Oxygen";
-		wordGroups[5][4] = "Iron";
 		// Answers
 		answers = new String[numProblems];
 		answers[0] = "Carrot";
@@ -100,7 +102,6 @@ public class Classification extends MainActivity {
 		answers[2] = "Tonic";
 		answers[3] = "Train";
 		answers[4] = "Moon";
-		answers[5] = "Water";
 	}
 	
 	private void showButtonsAndSetupText() {

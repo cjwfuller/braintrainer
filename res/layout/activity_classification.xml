@@ -22,10 +22,10 @@
        android:visibility="invisible"
        android:background="@drawable/btn_green"
        style="@style/ButtonText"
-       android:width="150dp"
+       android:width="200sp"
        android:layout_gravity="center"
        android:layout_marginTop="18sp"
-       android:textSize="20sp" />
+       android:textSize="50sp" />
    <Button
        android:id="@+id/word2_button"
        android:layout_width="wrap_content"
@@ -33,10 +33,10 @@
        android:visibility="invisible"
        android:background="@drawable/btn_green"
        style="@style/ButtonText"
-       android:width="150dp"       
+       android:width="200sp"       
        android:layout_gravity="center"
        android:layout_marginTop="18sp"
-       android:textSize="20sp" />
+       android:textSize="50sp" />
    <Button
        android:id="@+id/word3_button"
        android:layout_width="wrap_content"
@@ -44,10 +44,10 @@
        android:visibility="invisible"
        android:background="@drawable/btn_green"
        style="@style/ButtonText"
-       android:width="150dp"       
+       android:width="200sp"       
        android:layout_gravity="center"
        android:layout_marginTop="18sp"
-       android:textSize="20sp" />
+       android:textSize="50sp" />
    <Button
        android:id="@+id/word4_button"
        android:layout_width="wrap_content"
@@ -55,10 +55,10 @@
        android:visibility="invisible"
        android:background="@drawable/btn_green"
        style="@style/ButtonText"
-       android:width="150dp"
+       android:width="200sp"
        android:layout_gravity="center"
        android:layout_marginTop="18sp"
-       android:textSize="20sp" />
+       android:textSize="50sp" />
    <Button
        android:id="@+id/word5_button"
        android:layout_width="wrap_content"
@@ -66,9 +66,9 @@
        android:visibility="invisible"
        android:background="@drawable/btn_green"
        style="@style/ButtonText"
-       android:width="150dp"
+       android:width="200sp"
        android:layout_gravity="center"
        android:layout_marginTop="18sp"
-       android:textSize="20sp" />                         
+       android:textSize="50sp" />                         
 
 </LinearLayout>
