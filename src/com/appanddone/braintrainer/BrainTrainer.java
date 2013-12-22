@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.app.Application;
+import android.content.Intent;
 import android.util.Log;
 
 public class BrainTrainer extends Application {
@@ -33,12 +34,16 @@ public class BrainTrainer extends Application {
 		questionsAsked.put(Verbal.class.getSimpleName(), new ArrayList<Integer>());
 		questionsAsked.put(Visual.class.getSimpleName(), new ArrayList<Integer>());
 		questionsAsked.put(PatternRecognition.class.getSimpleName(), new ArrayList<Integer>());
-		questionsAsked.put(Memory.class.getSimpleName(), new ArrayList<Integer>());
 		Log.d("MainActivity", "BrainTrainer.reset()");
 	}
 	
 	protected void recordQuestion(String activityName, Integer questionNum) {
 		questionsAsked.get(activityName).add(questionNum);
+		totalNumQuestionsAsked++;
+		Log.d("MainActivity", "BrainTrainer.recordQuestion() totalNumQuestionsAsked: " + totalNumQuestionsAsked);
+	}
+	
+	protected void recordQuestion(String activityName) {
 		totalNumQuestionsAsked++;
 		Log.d("MainActivity", "BrainTrainer.recordQuestion() totalNumQuestionsAsked: " + totalNumQuestionsAsked);
 	}

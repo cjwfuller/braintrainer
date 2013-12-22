@@ -14,8 +14,8 @@ import android.widget.Toast;
 
 public class Memory extends MainActivity {
 
-	public final static int numProblems = 1; // TODO set to -1 or something
-	public static int randomProblem; // TODO not needed
+	public final static int numProblems = -1;
+	public static int randomProblem = -1;
 	private int fewestToRemember = 5;
 	private int mostToRemember = 7;
 	private int numToRemember;
