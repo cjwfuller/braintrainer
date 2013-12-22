@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.app.Application;
-import android.content.Intent;
 import android.util.Log;
 
 public class BrainTrainer extends Application {
@@ -12,7 +11,7 @@ public class BrainTrainer extends Application {
 	public int numCorrect = 0;
 	public int numIncorrect = 0;
 	public int totalNumQuestionsAsked = 0;
-	public final int numTurns = 10;
+	public final int numTurns = 5;
 	public HashMap<String, ArrayList<Integer>> questionsAsked;
 	
 	@Override

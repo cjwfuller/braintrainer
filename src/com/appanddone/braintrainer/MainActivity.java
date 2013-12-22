@@ -168,7 +168,7 @@ public class MainActivity extends Activity {
 	
 	private boolean finishIfTurnsFinished() {
 		Log.d("MainActivity", "BrainTrainer.finishIfTurnsFinished() totalNumQuestionsAsked: " + brainTrainer.totalNumQuestionsAsked + " vs. numTurns: "+ brainTrainer.numTurns);
-		if(brainTrainer.totalNumQuestionsAsked > brainTrainer.numTurns) {
+		if(brainTrainer.totalNumQuestionsAsked == brainTrainer.numTurns) {
 			Intent intent = new Intent(MainActivity.this, Finish.class);
 			MainActivity.this.startActivity(intent);
 			Log.d("MainActivity", "BrainTrainer.finishIfTurnsFinished() Turns up!");

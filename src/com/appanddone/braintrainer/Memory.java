@@ -43,7 +43,6 @@ public class Memory extends MainActivity {
 		toast.show();
 		turnGreensOn();	
 	    startTimer();
-	    addClickHandlers();
 	}
 	
 	/**
@@ -62,6 +61,7 @@ public class Memory extends MainActivity {
 		    		 toast.cancel();
 		    		 image.setImageDrawable(getResources().getDrawable(R.drawable.red_oval));
 		    		 textView.setText(R.string.memory_instructions_after_green_text);
+		    		 addClickHandlers();
 		    	 }
 		     }
 		  }.start();
