@@ -11,7 +11,7 @@ public class BrainTrainer extends Application {
 	public int numCorrect = 0;
 	public int numIncorrect = 0;
 	public int totalNumQuestionsAsked = 0;
-	public final int numTurns = 5;
+	public final int numTurns = 10;
 	public HashMap<String, ArrayList<Integer>> questionsAsked;
 	
 	@Override

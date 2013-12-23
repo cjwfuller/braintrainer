@@ -13,7 +13,7 @@
 	   android:gravity="center"
 	   android:text="@string/classification_instructions_text"
 	   android:layout_gravity="center"
-	   android:textSize="20sp"
+	   android:textSize="40sp"
        android:textStyle="bold" />
    <Button
        android:id="@+id/word1_button"
@@ -24,7 +24,6 @@
        style="@style/ButtonText"
        android:width="200sp"
        android:layout_gravity="center"
-       android:layout_marginTop="18sp"
        android:textSize="50sp" />
    <Button
        android:id="@+id/word2_button"

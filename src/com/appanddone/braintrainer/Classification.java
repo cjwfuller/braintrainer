@@ -5,6 +5,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class Classification extends MainActivity {
 
@@ -28,6 +29,9 @@ public class Classification extends MainActivity {
 	}
 	
 	private void addClickListenersToButtons() {
+		TextView textView = (TextView)findViewById(R.id.classification_instructions);
+		Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/Arvil_Sans.ttf");
+		textView.setTypeface(typeFace);
 		// Find buttons
 		Button word1 = (Button)findViewById(R.id.word1_button);
 		Button word2 = (Button)findViewById(R.id.word2_button);
@@ -35,7 +39,6 @@ public class Classification extends MainActivity {
 		Button word4 = (Button)findViewById(R.id.word4_button);
 		Button word5 = (Button)findViewById(R.id.word5_button);
 		// Also add game font!
-		Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/Arvil_Sans.ttf");
 		word1.setTypeface(typeFace);
 		word2.setTypeface(typeFace);
 		word3.setTypeface(typeFace);

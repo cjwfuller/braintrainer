@@ -10,17 +10,15 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class Memory extends MainActivity {
 
 	public final static int numProblems = -1;
 	public static int randomProblem = -1;
 	private int fewestToRemember = 5;
-	private int mostToRemember = 7;
+	private int mostToRemember = 8;
 	private int numToRemember;
-	private final int numCircles = 16;
-	private static Toast toast;
+	private final int numCircles = 20;
 	private int numGreensFound = 0;
 	
 	private TextView textView;
@@ -38,9 +36,6 @@ public class Memory extends MainActivity {
 	    textView.setTypeface(typeFace);
 	    // Users have to remember varying numbers of things
 	    numToRemember = new Random().nextInt((mostToRemember - fewestToRemember) + 1) + fewestToRemember;
-	    // Users have 3 seconds to remember
-	    toast = Toast.makeText(getBaseContext(), "Time remaining: 2s", Toast.LENGTH_LONG);
-		toast.show();
 		turnGreensOn();	
 	    startTimer();
 	}
@@ -49,16 +44,12 @@ public class Memory extends MainActivity {
 	 * Show a timer every 1s for 2s and turn all the shapes red after 2s
 	 */
 	private void startTimer() {
-		 new CountDownTimer(2000, 1000) {
-		     public void onTick(long millisUntilFinished) {
-		    	 toast.cancel();
-	    		 toast = Toast.makeText(getBaseContext(), "Time remaining: " + millisUntilFinished / 1000 + "s", Toast.LENGTH_LONG);
-	    		 toast.show();
-		     }
+		 new CountDownTimer(3000, 1000) {
+		     public void onTick(long millisUntilFinished) { }
 
 		     public void onFinish() {
 		    	 for(ImageView image : images) {
-		    		 toast.cancel();
+		    		 //toast.cancel();
 		    		 image.setImageDrawable(getResources().getDrawable(R.drawable.red_oval));
 		    		 textView.setText(R.string.memory_instructions_after_green_text);
 		    		 addClickHandlers();
@@ -141,6 +132,10 @@ public class Memory extends MainActivity {
 	    ImageView memoryImageView14 = (ImageView)findViewById(R.id.memoryImageView14);
 	    ImageView memoryImageView15 = (ImageView)findViewById(R.id.memoryImageView15);
 	    ImageView memoryImageView16 = (ImageView)findViewById(R.id.memoryImageView16);
+	    ImageView memoryImageView17 = (ImageView)findViewById(R.id.memoryImageView17);
+	    ImageView memoryImageView18 = (ImageView)findViewById(R.id.memoryImageView18);
+	    ImageView memoryImageView19 = (ImageView)findViewById(R.id.memoryImageView19);
+	    ImageView memoryImageView20 = (ImageView)findViewById(R.id.memoryImageView20);
 	    
 	    images.add(memoryImageView1);
 	    images.add(memoryImageView2);
@@ -158,6 +153,10 @@ public class Memory extends MainActivity {
 	    images.add(memoryImageView14);
 	    images.add(memoryImageView15);
 	    images.add(memoryImageView16);
+	    images.add(memoryImageView17);
+	    images.add(memoryImageView18);
+	    images.add(memoryImageView19);
+	    images.add(memoryImageView20);	    
 	    
 	    // Randomly turn a random number of greens on.  Ensures that the same
 	    // shape doesn't turn green more than once too

@@ -23,7 +23,6 @@ public class ShapeGLRenderer implements GLSurfaceView.Renderer {
     private Triangle mTriangle1, mTriangle2;
     private Square mSquare1, mSquare2;
     private Rectangle mRectangle;
-    private float mAngle;
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
