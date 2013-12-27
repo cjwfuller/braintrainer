@@ -18,10 +18,10 @@
            android:id="@+id/logic_instructions"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:gravity="top"
+           android:layout_gravity="top"
            android:text="@string/logic_instructions_text"
            android:textSize="40sp"
-           android:textStyle="bold" /> 
+           android:textStyle="bold" />           
     </LinearLayout>    
     <LinearLayout
         android:id="@+id/layout1"
@@ -114,7 +114,6 @@
             android:id="@+id/logicButton9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="invisible"
             android:layout_marginRight="24dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/btn_green"

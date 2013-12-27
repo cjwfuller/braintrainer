@@ -53,7 +53,8 @@
         </activity>
         <activity
             android:name="com.appanddone.braintrainer.Logic"
-            android:label="@string/title_activity_logic" >
+            android:label="@string/title_activity_logic"
+            android:screenOrientation="portrait" >
         </activity>                   
         <activity
             android:name="com.appanddone.braintrainer.Spatial"
