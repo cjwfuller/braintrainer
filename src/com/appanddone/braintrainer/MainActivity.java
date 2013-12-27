@@ -178,6 +178,13 @@ public class MainActivity extends Activity {
 		return false;
 	}
 	
+	public boolean checkAnswer(boolean isCorrect) {
+		Intent intent = new Intent(MainActivity.this, CheckAnswer.class);
+		intent.putExtra("isCorrect", isCorrect);
+		MainActivity.this.startActivity(intent);
+		return true;
+	}
+	
 	public boolean startRandomQuestion() throws IllegalAccessException, IllegalArgumentException, NoSuchFieldException, ClassNotFoundException {
 		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
 		ArrayList<String> enabledAvailableQuestionTypes = getEnabledAndAvailableQuestions(settings);

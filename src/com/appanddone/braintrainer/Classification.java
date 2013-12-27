@@ -131,22 +131,13 @@ public class Classification extends MainActivity {
 	private void checkAnswer(View v) {
 		Button b = (Button)v;
 	    String buttonText = b.getText().toString();
-	    if(buttonText.equals(answers[randomProblem])) {
+	    boolean isCorrect = buttonText.equals(answers[randomProblem]); 
+	    if(isCorrect) {
 	    	brainTrainer.numCorrect++;
 		} else {
 			brainTrainer.numIncorrect++;
 		}
-		try {
-			startRandomQuestion();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		} catch (IllegalArgumentException e) {
-			e.printStackTrace();
-		} catch (NoSuchFieldException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
+	    checkAnswer(isCorrect);
 	}
 
 }

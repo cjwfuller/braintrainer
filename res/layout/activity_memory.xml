@@ -129,7 +129,7 @@
             android:id="@+id/memoryImageView12"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:layout_marginTop="21dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/red_oval"
             android:contentDescription="@string/red_oval" />  
      </LinearLayout>

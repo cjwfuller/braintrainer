@@ -106,22 +106,13 @@ public class Mathematics extends MainActivity {
 		button.setOnClickListener(new OnClickListener() {			
 			@Override
 			public void onClick(View v) {
-				if(button.getText().toString().equals(Integer.toString(series[randomProblem][5]))) {
+				boolean isCorrect = button.getText().toString().equals(Integer.toString(series[randomProblem][5]));
+				if(isCorrect) {
 					brainTrainer.numCorrect++;
 				} else {
 					brainTrainer.numIncorrect++;
 				}
-				try {
-					startRandomQuestion();
-				} catch (IllegalAccessException e) {
-					e.printStackTrace();
-				} catch (IllegalArgumentException e) {
-					e.printStackTrace();
-				} catch (NoSuchFieldException e) {
-					e.printStackTrace();
-				} catch (ClassNotFoundException e) {
-					e.printStackTrace();
-				}
+				checkAnswer(isCorrect);
 			}
 		});
 	}

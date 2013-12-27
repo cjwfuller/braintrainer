@@ -15,8 +15,8 @@ public class Memory extends MainActivity {
 
 	public final static int numProblems = -1;
 	public static int randomProblem = -1;
-	private int fewestToRemember = 5;
-	private int mostToRemember = 8;
+	private int fewestToRemember = 6;
+	private int mostToRemember = 9;
 	private int numToRemember;
 	private final int numCircles = 20;
 	private int numGreensFound = 0;
@@ -74,17 +74,7 @@ public class Memory extends MainActivity {
 						numGreensFound++;
 						if(numGreensFound == numToRemember) {
 							brainTrainer.numCorrect++;
-							try {
-								startRandomQuestion();
-							} catch (IllegalAccessException e) {
-								e.printStackTrace();
-							} catch (IllegalArgumentException e) {
-								e.printStackTrace();
-							} catch (NoSuchFieldException e) {
-								e.printStackTrace();
-							} catch (ClassNotFoundException e) {
-								e.printStackTrace();
-							}
+							checkAnswer(true);
 						}
 						currentImageView.setImageDrawable(getResources().getDrawable(R.drawable.green_oval));
 					}
@@ -95,17 +85,7 @@ public class Memory extends MainActivity {
 					// When user clicks red
 					public void onClick(View v) {
 						brainTrainer.numIncorrect++;
-						try {
-							startRandomQuestion();
-						} catch (IllegalAccessException e) {
-							e.printStackTrace();
-						} catch (IllegalArgumentException e) {
-							e.printStackTrace();
-						} catch (NoSuchFieldException e) {
-							e.printStackTrace();
-						} catch (ClassNotFoundException e) {
-							e.printStackTrace();
-						}
+						checkAnswer(false);
 					}
 				});
 			}
