@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 /**
+ * An implementation of the '8-puzzle' game for Android
+ * 
  * The Integer 0 in the grid represents a 'space'
  * 
  * @author cjwfuller
@@ -19,6 +21,7 @@ import android.widget.TextView;
 public class Logic extends MainActivity {
 	
 	public final static int numProblems = 1;
+	private final static int maxNumInversions = 3;
 	public static int randomProblem;
 	private int grid[][] = new int[3][3];;
 	
@@ -26,7 +29,10 @@ public class Logic extends MainActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_logic);
-		buildGrid();
+		// Build a solvable grid
+		while(!isSolvable() || isTooDifficult()) {
+			buildGrid();
+		}
 		displayGrid();
 		printGrid();
 		addClickHandlers();
@@ -63,7 +69,7 @@ public class Logic extends MainActivity {
 	}
 	
 	/**
-	 * Print the grid to the terminal for debuggin
+	 * Print the grid to the terminal for debugging
 	 */
 	private void printGrid() {
 		int gridSize = grid.length;
@@ -76,6 +82,22 @@ public class Logic extends MainActivity {
 			Log.d("Logic", row);
 			row = "";
 		}
+	}
+	
+	/**
+	 * Print the grid to the terminal for debugging but flattened
+	 */
+	private void printFlatGrid() {
+		int gridSize = grid.length;
+		String row = "";
+		for(int i = 0; i < gridSize; i++) {
+			for(int j = 0; j < gridSize; j++) {
+				if(grid[j][i] != 0) {
+					row += Integer.toString(grid[j][i]) + " ";
+				}
+			}
+		}
+		Log.d("Logic", "Logic.printFlatGrid() " + row);
 	}
 	
 	/**
@@ -100,6 +122,12 @@ public class Logic extends MainActivity {
 		}
 	}
 	
+	/**
+	 * Move left
+	 * 
+	 * @param i horizontal
+	 * @param j vertical
+	 */
 	private void moveLeft(int i, int j) {
 		int tmp = grid[i][j];
 		if(i != 0) {
@@ -108,6 +136,12 @@ public class Logic extends MainActivity {
 		}
 	}
 	
+	/**
+	 * Move right
+	 * 
+	 * @param i horizontal
+	 * @param j vertical
+	 */
 	private void moveRight(int i, int j) {
 		int tmp = grid[i][j];
 		int gridSize = grid.length;
@@ -117,6 +151,12 @@ public class Logic extends MainActivity {
 		}
 	}
 	
+	/**
+	 * Move down
+	 * 
+	 * @param i horizontal
+	 * @param j vertical
+	 */
 	private void moveDown(int i, int j) {
 		int tmp = grid[i][j];
 		int gridSize = grid.length;
@@ -126,6 +166,12 @@ public class Logic extends MainActivity {
 		}
 	}
 	
+	/**
+	 * Move up
+	 * 
+	 * @param i horizontal
+	 * @param j vertical
+	 */
 	private void moveUp(int i, int j) {
 		int tmp = grid[i][j];
 		if(j != 0) {
@@ -134,6 +180,11 @@ public class Logic extends MainActivity {
 		}
 	}
 	
+	/**
+	 * Get all the buttons on the form, shove them in an array and return them
+	 * 
+	 * @return ArrayList buttons
+	 */
 	private ArrayList<Button> getButtons() {
 		ArrayList<Button> buttons = new ArrayList<Button>();
 		buttons.add((Button)findViewById(R.id.logicButton1));
@@ -186,6 +237,9 @@ public class Logic extends MainActivity {
 		return result;
 	}
 	
+	/**
+	 * Get the (ith, jth) value in the grid
+	 */
 	private int getValueAt(int i, int j) {
 		int result = -1;
 		int gridSize = grid.length;
@@ -197,37 +251,71 @@ public class Logic extends MainActivity {
 		return result;
 	}
 	
-	private boolean gameComplete() {
-		boolean result = true;
+	/**
+	 * 
+	 * @todo
+	 * 
+	 * @return int number of inversions
+	 */
+	private int getNumInversions() {
+		int numInversions = 0;
+		// Start by flattening the grid into a list
+		ArrayList<Integer> flatGrid = new ArrayList<Integer>();
 		int gridSize = grid.length;
-		int count = 1;
-		// Start from top left
 		for(int i = 0; i < gridSize; i++) {
 			for(int j = 0; j < gridSize; j++) {
-				if(grid[j][i] != count) {
-					result = false;
-					break;
+				// Zero doesn't count
+				if(grid[j][i] != 0) {
+					flatGrid.add(grid[j][i]);
 				}
-				count++;
 			}
 		}
-		// Start from x=1, y=0, only bother if the game has already found to be
-		// incomplete
-		count = 1;
-		/*if(!result) {
-			for(int i = 0; i < gridSize; i++) {
-				for(int j = 1; j < gridSize; j++) {
-					if(grid[j][i] != count) {
-						result = false;
-						break;
-					}
-					count++;
+		// Now we use this grid to get the pairs
+		int flatGridSize = flatGrid.size();
+		for(int i = 0; i < flatGridSize; i++) {
+			for(int j = i; j < flatGridSize; j++) {
+				if(flatGrid.get(i) > flatGrid.get(j)) {
+					numInversions++;
 				}
 			}
-		}*/
+		}
+		printFlatGrid();
+		Log.d("Logic", "Logic.getNumInversions(): num inversions: " + Integer.toString(numInversions));
+		return numInversions;
+	}
+	
+	/**
+	 * Not all grids are solvable, here we determine whether a grid is solvable
+	 * If grid size is odd then the number of inversions needs to be even.  Our
+	 * grid size is always even (8 numbers) so for the grid to be solvable, the
+	 * number of inversions should be odd
+	 * 
+	 * @return boolean true if solvable, false if not
+	 */
+	private boolean isSolvable() {
+		boolean result = false;
+		// Even number check
+		if(getNumInversions() % 2 != 0) {
+			result = true;
+		}
 		return result;
 	}
 	
+	private boolean isTooDifficult() {
+		boolean result = false;
+		int numInversions = getNumInversions();
+		if(getNumInversions() > maxNumInversions) {
+			Log.d("Logic", "Logic.isTooDifficult() num inversions: " + Integer.toString(numInversions) + " (too difficult)");
+			result = true;
+		}
+		return result;		
+	}
+	
+	/**
+	 * When a button is clicked, get its value, using the value get its 
+	 * position in the grid, find where the button can move, move it and 
+	 * display the new grid
+	 */
 	private void addClickHandlers() {
 		ArrayList<Button> buttons = getButtons();
 		for (final Button b : buttons) {
@@ -258,6 +346,9 @@ public class Logic extends MainActivity {
 					}
 					printGrid();
 					displayGrid();
+					/*if(getNumInversions() == 0) {
+						Log.d("Logic", "Logic.addClickHandlers() Game complete!");
+					}*/
 				}
 			});
 		}
