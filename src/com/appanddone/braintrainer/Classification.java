@@ -87,11 +87,11 @@ public class Classification extends MainActivity {
 		wordGroups[2][3] = "Vodka";
 		wordGroups[2][4] = "Gin";
 		// Problem 3
-		wordGroups[3][0] = "Helicopter";
+		wordGroups[3][0] = "Bee";
 		wordGroups[3][1] = "Aeroplane";
 		wordGroups[3][2] = "Glider";
 		wordGroups[3][3] = "Train";
-		wordGroups[3][4] = "Drone";
+		wordGroups[3][4] = "Bird";
 		// Problem 4
 		wordGroups[4][0] = "Mars";
 		wordGroups[4][1] = "Earth";
