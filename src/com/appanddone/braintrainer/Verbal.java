@@ -19,7 +19,8 @@ public class Verbal extends MainActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_verbal);
 		setProblems();
-		showScrambledWord();
+		TextView scrambledWordTextView = (TextView)findViewById(R.id.verbal_letters);
+		scrambledWordTextView.setText(scrambledWords[randomProblem]);
 		showButtonsAndSetupText();
 		addClickListenersToButtons();
 	}
@@ -71,15 +72,10 @@ public class Verbal extends MainActivity {
 		categories[0][3] = "Vegetable";
 		// Problem 0 - scrambled letters
 		scrambledWords = new String[numProblems];
-		scrambledWords[0] = "TMP";
+		scrambledWords[0] = "RAPETEKA";
 		// Answers
 		answers = new String[numProblems];
 		answers[0] = "Bird";
-	}
-	
-	private void showScrambledWord() {
-		TextView scrambledWordTextView = (TextView)findViewById(R.id.verbal_letters);
-		scrambledWordTextView.setText(scrambledWords[randomProblem]);
 	}
 	
 	private void showButtonsAndSetupText() {
