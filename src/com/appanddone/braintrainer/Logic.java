@@ -1,7 +1,6 @@
 package com.appanddone.braintrainer;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -13,26 +12,23 @@ import android.widget.TextView;
 /**
  * An implementation of the '8-puzzle' game for Android
  * 
- * The Integer 0 in the grid represents a 'space'
+ * The Integer 0 in the grid represents the empty tile
  * 
  * @author cjwfuller
  *
  */
 public class Logic extends MainActivity {
 	
-	public final static int numProblems = 1;
-	private final static int maxNumInversions = 3;
+	public final static int numProblems = 2;
 	public static int randomProblem;
-	private int grid[][] = new int[3][3];;
+	private int grids[][][] = new int[numProblems][3][3];
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_logic);
 		// Build a solvable grid
-		while(!isSolvable() || isTooDifficult()) {
-			buildGrid();
-		}
+		setProblems();
 		displayGrid();
 		printGrid();
 		addClickHandlers();
@@ -49,35 +45,45 @@ public class Logic extends MainActivity {
 	}
 	
 	/**
-	 * Build a n*n grid of random integers
+	 * Set hardcoded problems.  This class used to generate random, solvable
+	 * and configurably simple problems but computational overhead was too 
+	 * great
+	 * 
+	 * @return void
 	 */
-	private void buildGrid() {
-		ArrayList<Integer> usedRands = new ArrayList<Integer>();
-		int gridSize = grid.length;
-		int numGridItems = gridSize * gridSize;
-		int rand;
-		for(int i = 0; i < gridSize; i++) {
-			for(int j = 0; j < gridSize; j++) {
-				rand = new Random().nextInt(numGridItems);
-				while(usedRands.contains(rand)) {
-					rand = new Random().nextInt(numGridItems);
-				}
-				usedRands.add(rand);
-				grid[i][j] = rand;
-			}	
-		}
+	private void setProblems() {
+		// Problem 1
+		grids[0][0][0] = 0;
+		grids[0][1][0] = 1;
+		grids[0][2][0] = 3;
+		grids[0][0][1] = 4;
+		grids[0][1][1] = 2;
+		grids[0][2][1] = 5;
+		grids[0][0][2] = 7;
+		grids[0][1][2] = 8;
+		grids[0][2][2] = 6;
+		// Problem 2
+		grids[1][0][0] = 1;
+		grids[1][1][0] = 0;
+		grids[1][2][0] = 3;
+		grids[1][0][1] = 6;
+		grids[1][1][1] = 2;
+		grids[1][2][1] = 5;
+		grids[1][0][2] = 8;
+		grids[1][1][2] = 7;
+		grids[1][2][2] = 4;
 	}
 	
 	/**
 	 * Print the grid to the terminal for debugging
 	 */
 	private void printGrid() {
-		int gridSize = grid.length;
+		int gridSize = grids[randomProblem].length;
 		String row = "";
 		Log.d("Logic", "Logic.printGrid()");
 		for(int i = 0; i < gridSize; i++) {
 			for(int j = 0; j < gridSize; j++) {
-				row += Integer.toString(grid[j][i]) + " ";
+				row += Integer.toString(grids[randomProblem][j][i]) + " ";
 			}
 			Log.d("Logic", row);
 			row = "";
@@ -88,12 +94,12 @@ public class Logic extends MainActivity {
 	 * Print the grid to the terminal for debugging but flattened
 	 */
 	private void printFlatGrid() {
-		int gridSize = grid.length;
+		int gridSize = grids[randomProblem].length;
 		String row = "";
 		for(int i = 0; i < gridSize; i++) {
 			for(int j = 0; j < gridSize; j++) {
-				if(grid[j][i] != 0) {
-					row += Integer.toString(grid[j][i]) + " ";
+				if(grids[randomProblem][j][i] != 0) {
+					row += Integer.toString(grids[randomProblem][j][i]) + " ";
 				}
 			}
 		}
@@ -106,13 +112,13 @@ public class Logic extends MainActivity {
 	private void displayGrid() {
 		Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/Arvil_Sans.ttf");
 		ArrayList<Button> buttons = getButtons();
-		int gridSize = grid.length;
+		int gridSize = grids[randomProblem].length;
 		int count = 0;
 		for(int i = 0; i < gridSize; i++) {
 			for(int j = 0; j < gridSize; j++) {
-				buttons.get(count).setText(Integer.toString(grid[j][i]));
+				buttons.get(count).setText(Integer.toString(grids[randomProblem][j][i]));
 				buttons.get(count).setTypeface(typeFace);
-				if(grid[j][i] != 0) {
+				if(grids[randomProblem][j][i] != 0) {
 					buttons.get(count).setVisibility(View.VISIBLE);
 				} else {
 					buttons.get(count).setVisibility(View.INVISIBLE);
@@ -129,10 +135,10 @@ public class Logic extends MainActivity {
 	 * @param j vertical
 	 */
 	private void moveLeft(int i, int j) {
-		int tmp = grid[i][j];
+		int tmp = grids[randomProblem][i][j];
 		if(i != 0) {
-			grid[i][j] = grid[i-1][j];
-			grid[i-1][j] = tmp;
+			grids[randomProblem][i][j] = grids[randomProblem][i-1][j];
+			grids[randomProblem][i-1][j] = tmp;
 		}
 	}
 	
@@ -143,11 +149,11 @@ public class Logic extends MainActivity {
 	 * @param j vertical
 	 */
 	private void moveRight(int i, int j) {
-		int tmp = grid[i][j];
-		int gridSize = grid.length;
+		int tmp = grids[randomProblem][i][j];
+		int gridSize = grids[randomProblem].length;
 		if(gridSize - 1 != i) {
-			grid[i][j] = grid[i+1][j];
-			grid[i+1][j] = tmp;
+			grids[randomProblem][i][j] = grids[randomProblem][i+1][j];
+			grids[randomProblem][i+1][j] = tmp;
 		}
 	}
 	
@@ -158,11 +164,11 @@ public class Logic extends MainActivity {
 	 * @param j vertical
 	 */
 	private void moveDown(int i, int j) {
-		int tmp = grid[i][j];
-		int gridSize = grid.length;
+		int tmp = grids[randomProblem][i][j];
+		int gridSize = grids[randomProblem].length;
 		if(gridSize - 1 != j) {
-			grid[i][j] = grid[i][j+1];
-			grid[i][j+1] = tmp;
+			grids[randomProblem][i][j] = grids[randomProblem][i][j+1];
+			grids[randomProblem][i][j+1] = tmp;
 		}
 	}
 	
@@ -173,10 +179,10 @@ public class Logic extends MainActivity {
 	 * @param j vertical
 	 */
 	private void moveUp(int i, int j) {
-		int tmp = grid[i][j];
+		int tmp = grids[randomProblem][i][j];
 		if(j != 0) {
-			grid[i][j] = grid[i][j-1];
-			grid[i][j-1] = tmp;
+			grids[randomProblem][i][j] = grids[randomProblem][i][j-1];
+			grids[randomProblem][i][j-1] = tmp;
 		}
 	}
 	
@@ -206,10 +212,10 @@ public class Logic extends MainActivity {
 	 */
 	private int getButtonX(int value) {
 		int result = -1;
-		int gridSize = grid.length;
+		int gridSize = grids[randomProblem].length;
 		for(int i = 0; i < gridSize; i++) {
 			for(int j = 0; j < gridSize; j++) {
-				if(grid[i][j] == value) {
+				if(grids[randomProblem][i][j] == value) {
 					result = i;
 					break;
 				}
@@ -225,10 +231,10 @@ public class Logic extends MainActivity {
 	 */
 	private int getButtonY(int value) {
 		int result = -1;
-		int gridSize = grid.length;
+		int gridSize = grids[randomProblem].length;
 		for(int i = 0; i < gridSize; i++) {
 			for(int j = 0; j < gridSize; j++) {
-				if(grid[i][j] == value) {
+				if(grids[randomProblem][i][j] == value) {
 					result = j;
 					break;
 				}
@@ -242,31 +248,28 @@ public class Logic extends MainActivity {
 	 */
 	private int getValueAt(int i, int j) {
 		int result = -1;
-		int gridSize = grid.length;
+		int gridSize = grids[randomProblem].length;
 		if(i >= 0 && i < gridSize) {
 			if(j >= 0 && j < gridSize) {
-				result = grid[i][j];
+				result = grids[randomProblem][i][j];
 			}	
 		}
 		return result;
 	}
 	
 	/**
-	 * 
-	 * @todo
-	 * 
 	 * @return int number of inversions
 	 */
 	private int getNumInversions() {
 		int numInversions = 0;
 		// Start by flattening the grid into a list
 		ArrayList<Integer> flatGrid = new ArrayList<Integer>();
-		int gridSize = grid.length;
+		int gridSize = grids[randomProblem].length;
 		for(int i = 0; i < gridSize; i++) {
 			for(int j = 0; j < gridSize; j++) {
 				// Zero doesn't count
-				if(grid[j][i] != 0) {
-					flatGrid.add(grid[j][i]);
+				if(grids[randomProblem][j][i] != 0) {
+					flatGrid.add(grids[randomProblem][j][i]);
 				}
 			}
 		}
@@ -282,33 +285,6 @@ public class Logic extends MainActivity {
 		printFlatGrid();
 		Log.d("Logic", "Logic.getNumInversions(): num inversions: " + Integer.toString(numInversions));
 		return numInversions;
-	}
-	
-	/**
-	 * Not all grids are solvable, here we determine whether a grid is solvable
-	 * If grid size is odd then the number of inversions needs to be even.  Our
-	 * grid size is always even (8 numbers) so for the grid to be solvable, the
-	 * number of inversions should be odd
-	 * 
-	 * @return boolean true if solvable, false if not
-	 */
-	private boolean isSolvable() {
-		boolean result = false;
-		// Even number check
-		if(getNumInversions() % 2 != 0) {
-			result = true;
-		}
-		return result;
-	}
-	
-	private boolean isTooDifficult() {
-		boolean result = false;
-		int numInversions = getNumInversions();
-		if(getNumInversions() > maxNumInversions) {
-			Log.d("Logic", "Logic.isTooDifficult() num inversions: " + Integer.toString(numInversions) + " (too difficult)");
-			result = true;
-		}
-		return result;		
 	}
 	
 	/**
@@ -346,9 +322,11 @@ public class Logic extends MainActivity {
 					}
 					printGrid();
 					displayGrid();
-					/*if(getNumInversions() == 0) {
+					if(getNumInversions() == 0) {
 						Log.d("Logic", "Logic.addClickHandlers() Game complete!");
-					}*/
+						brainTrainer.numCorrect++;
+						checkAnswer(true);
+					}
 				}
 			});
 		}
