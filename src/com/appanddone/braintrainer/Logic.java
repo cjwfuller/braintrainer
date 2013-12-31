@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -293,6 +294,17 @@ public class Logic extends MainActivity {
 	 * display the new grid
 	 */
 	private void addClickHandlers() {
+		// Skip button
+		Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/Arvil_Sans.ttf");
+	    Button skipButton = (Button)findViewById(R.id.skipButton);
+	    skipButton.setTypeface(typeFace);
+	    skipButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				brainTrainer.numIncorrect++;
+				checkAnswer(false);
+			}
+		});
 		ArrayList<Button> buttons = getButtons();
 		for (final Button b : buttons) {
 			b.setOnClickListener(new View.OnClickListener() {

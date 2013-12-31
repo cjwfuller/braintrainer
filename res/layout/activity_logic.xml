@@ -120,4 +120,23 @@
             android:background="@drawable/btn_green"
             style="@style/ButtonText" /> 
      </LinearLayout>  
+     <LinearLayout
+        android:id="@+id/layout4" 
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="right" >
+        <Button 
+            android:id="@+id/skipButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/skip_question"
+            android:scaleType="centerCrop"
+            android:layout_gravity="right"
+            android:background="@drawable/btn_purple"
+            style="@style/ButtonText" />
+     </LinearLayout>       
 </RelativeLayout>

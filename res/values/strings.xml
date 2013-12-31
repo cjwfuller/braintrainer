@@ -57,5 +57,6 @@
     <string name="pattern_recognition_instructions">Which picture follows logically from the following?</string>
     <string name="check_answer_text">Where you correct?</string>
     <string name="check_answer_button">Next</string>
+    <string name="skip_question">Skip</string>
 
 </resources>
