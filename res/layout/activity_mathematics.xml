@@ -67,5 +67,5 @@
             style="@style/ButtonText"
             android:textSize="50sp"
             android:layout_toRightOf="@+id/answer4_button"
-            android:layout_alignParentBottom="true"/>                
+            android:layout_alignParentBottom="true"/>                     
 </RelativeLayout>

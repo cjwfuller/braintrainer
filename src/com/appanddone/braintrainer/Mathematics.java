@@ -7,6 +7,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
+//import com.google.android.gms.ads.*;
+
 public class Mathematics extends MainActivity {
 	
 	private int[][] series;

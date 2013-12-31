@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.app.Application;
+import android.os.StrictMode;
 import android.util.Log;
 
 public class BrainTrainer extends Application {
@@ -16,6 +17,10 @@ public class BrainTrainer extends Application {
 	
 	@Override
 	public void onCreate() {
+		if(BuildConfig.DEBUG) {
+			Log.d("BrainTrainer", "BrainTrainer.onCreate() Enabling debug mode");
+			StrictMode.enableDefaults();
+	    }
 		super.onCreate();
 		reset();
 	}
