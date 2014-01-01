@@ -1,5 +1,8 @@
 package com.appanddone.braintrainer;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +21,10 @@ public class Verbal extends MainActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_verbal);
+		showLives();
+		AdView adView = (AdView)this.findViewById(R.id.adView);
+	    AdRequest adRequest = new AdRequest.Builder().build();
+	    adView.loadAd(adRequest);
 		setProblems();
 		TextView scrambledWordTextView = (TextView)findViewById(R.id.verbal_letters);
 		scrambledWordTextView.setText(scrambledWords[randomProblem]);
