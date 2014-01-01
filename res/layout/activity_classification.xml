@@ -1,73 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="22sp"
-    android:layout_marginRight="22sp"
-    android:orientation="vertical" >
-   <TextView
-	   android:id="@+id/classification_instructions"
-	   android:layout_width="wrap_content"
-	   android:layout_height="wrap_content"
-	   android:layout_marginTop="18sp"
-	   android:gravity="center"
-	   android:text="@string/classification_instructions_text"
-	   android:layout_gravity="center"
-	   android:textSize="40sp"
-       android:textStyle="bold" />
-   <Button
-       android:id="@+id/word1_button"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:layout_centerHorizontal="true" >
+   <RelativeLayout 
+        android:id="@+id/hearts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp" >
+        <TextView
+             android:id="@+id/lives_text"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginRight="10dp"
+             android:text="@string/lives_text"
+             android:textSize="20sp" />
+        <ImageView 
+             android:id="@+id/heart1"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_toRightOf="@+id/lives_text"
+             android:src="@drawable/heart"
+             android:contentDescription="@string/heart" />
+        <ImageView 
+             android:id="@+id/heart2"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_toRightOf="@+id/heart1"
+             android:src="@drawable/heart"
+             android:contentDescription="@string/heart" />
+        <ImageView 
+             android:id="@+id/heart3"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_toRightOf="@+id/heart2"
+             android:src="@drawable/heart"
+             android:contentDescription="@string/heart" /> 
+   </RelativeLayout>
+   <RelativeLayout
+       android:id="@+id/options"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:visibility="invisible"
-       android:background="@drawable/btn_green"
-       style="@style/ButtonText"
-       android:width="200sp"
-       android:layout_gravity="center"
-       android:textSize="50sp" />
-   <Button
-       android:id="@+id/word2_button"
+       android:layout_below="@+id/hearts"
+       android:layout_centerHorizontal="true"
+       android:gravity="center" >
+       <TextView
+	       android:id="@+id/classification_instructions"
+	       android:layout_width="wrap_content"
+	       android:layout_height="wrap_content"
+	       android:text="@string/classification_instructions_text"
+	       android:textSize="40sp"
+	       android:textStyle="bold" />
+	   <Button
+	       android:id="@+id/word1_button"
+	       android:layout_width="wrap_content"
+	       android:layout_height="wrap_content"
+	       android:layout_below="@+id/classification_instructions"
+	       android:visibility="invisible"
+	       android:background="@drawable/btn_green"
+	       style="@style/ButtonText"
+	       android:width="200sp"
+	       android:textSize="40sp"
+	       android:layout_centerHorizontal="true" />
+	   <Button
+	       android:id="@+id/word2_button"
+	       android:layout_width="wrap_content"
+	       android:layout_height="wrap_content"
+	       android:layout_below="@+id/word1_button"
+	       android:visibility="invisible"
+	       android:background="@drawable/btn_green"
+	       style="@style/ButtonText"
+	       android:width="200sp"
+	       android:layout_marginTop="18sp"
+	       android:textSize="40sp"
+	       android:layout_centerHorizontal="true" />
+	   <Button
+	       android:id="@+id/word3_button"
+	       android:layout_width="wrap_content"
+	       android:layout_height="wrap_content"
+	       android:layout_below="@+id/word2_button"
+	       android:visibility="invisible"
+	       android:background="@drawable/btn_green"
+	       style="@style/ButtonText"
+	       android:width="200sp"
+	       android:layout_marginTop="18sp"
+	       android:textSize="40sp"
+	       android:layout_centerHorizontal="true" />
+	   <Button
+	       android:id="@+id/word4_button"
+	       android:layout_width="wrap_content"
+	       android:layout_height="wrap_content"
+	       android:layout_below="@+id/word3_button"
+	       android:visibility="invisible"
+	       android:background="@drawable/btn_green"
+	       style="@style/ButtonText"
+	       android:width="200sp"
+	       android:layout_marginTop="18sp"
+	       android:textSize="40sp"
+	       android:layout_centerHorizontal="true" />
+	   <Button
+	       android:id="@+id/word5_button"
+	       android:layout_width="wrap_content"
+	       android:layout_height="wrap_content"
+	       android:layout_below="@+id/word4_button"
+	       android:visibility="invisible"
+	       android:background="@drawable/btn_green"
+	       style="@style/ButtonText"
+	       android:width="200sp"
+	       android:layout_marginTop="18sp"
+	       android:textSize="40sp"
+	       android:layout_centerHorizontal="true" />  
+    </RelativeLayout>   
+    <com.google.android.gms.ads.AdView 
+       android:id="@+id/adView"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:visibility="invisible"
-       android:background="@drawable/btn_green"
-       style="@style/ButtonText"
-       android:width="200sp"       
-       android:layout_gravity="center"
-       android:layout_marginTop="18sp"
-       android:textSize="50sp" />
-   <Button
-       android:id="@+id/word3_button"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:visibility="invisible"
-       android:background="@drawable/btn_green"
-       style="@style/ButtonText"
-       android:width="200sp"       
-       android:layout_gravity="center"
-       android:layout_marginTop="18sp"
-       android:textSize="50sp" />
-   <Button
-       android:id="@+id/word4_button"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:visibility="invisible"
-       android:background="@drawable/btn_green"
-       style="@style/ButtonText"
-       android:width="200sp"
-       android:layout_gravity="center"
-       android:layout_marginTop="18sp"
-       android:textSize="50sp" />
-   <Button
-       android:id="@+id/word5_button"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:visibility="invisible"
-       android:background="@drawable/btn_green"
-       style="@style/ButtonText"
-       android:width="200sp"
-       android:layout_gravity="center"
-       android:layout_marginTop="18sp"
-       android:textSize="50sp" />                         
-
-</LinearLayout>
+       android:layout_centerHorizontal="true"
+       android:layout_alignParentBottom="true"
+       android:layout_marginTop="18dp"
+       ads:adUnitId="ca-app-pub-9379479464831132/1442722003"
+       ads:adSize="BANNER" />                            
+</RelativeLayout>

@@ -46,7 +46,7 @@
     <string name="memory_instructions_after_green_text">Where were the greens?\n</string>
     <string name="maths_instructions_text">Which number comes next?</string>
     <string name="verbal_instructions_text">Rearrange this text into a word and choose the category that it belongs to</string>
-    <string name="classification_instructions_text">Which word does not belong?\n</string>
+    <string name="classification_instructions_text">Which word does not belong?</string>
     <string name="answer_label_text">Answer:</string>
     
     <string name="memory_time_left">Time Left: \n\n</string>
