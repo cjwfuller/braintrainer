@@ -16,14 +16,6 @@ public class Finish extends MainActivity {
 
 		TextView incorrect = (TextView)findViewById(R.id.incorrect_answers_text);
 		incorrect.setText("Incorrect answers: " + Integer.toString(brainTrainer.numIncorrect));
-		
-		TextView percentage_correct = (TextView)findViewById(R.id.percentage_correct_answers_text);
-		Float percent = (brainTrainer.numCorrect * 100.0f) / brainTrainer.totalNumQuestionsAsked;
-		if(percent.isNaN()) {
-			percent = 0.0f;
-		}
-		// Round percentage to 2 decimal places
-		percentage_correct.setText( "Percentage correct: " + Float.toString(percent) + "%");
 	}
 	
 	@Override

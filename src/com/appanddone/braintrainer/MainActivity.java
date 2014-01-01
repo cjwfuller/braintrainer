@@ -166,18 +166,6 @@ public class MainActivity extends Activity {
 		}
 	}
 	
-	private boolean finishIfTurnsFinished() {
-		Log.d("MainActivity", "BrainTrainer.finishIfTurnsFinished() totalNumQuestionsAsked: " + brainTrainer.totalNumQuestionsAsked + " vs. numTurns: "+ brainTrainer.numTurns);
-		if(brainTrainer.totalNumQuestionsAsked == brainTrainer.numTurns) {
-			Intent intent = new Intent(MainActivity.this, Finish.class);
-			MainActivity.this.startActivity(intent);
-			Log.d("MainActivity", "BrainTrainer.finishIfTurnsFinished() Turns up!");
-			finish();
-			return true;
-		}
-		return false;
-	}
-	
 	public boolean checkAnswer(boolean isCorrect) {
 		Intent intent = new Intent(MainActivity.this, CheckAnswer.class);
 		intent.putExtra("isCorrect", isCorrect);
@@ -189,9 +177,6 @@ public class MainActivity extends Activity {
 		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
 		ArrayList<String> enabledAvailableQuestionTypes = getEnabledAndAvailableQuestions(settings);
 		finishIfNoQuestions(enabledAvailableQuestionTypes);
-		if(finishIfTurnsFinished()) {
-			return true;
-		}
 		// Get a random enabled question type
 		int randomQuestionType = new Random().nextInt(enabledAvailableQuestionTypes.size());
 		int randomQuestionNum = 0;
@@ -202,7 +187,6 @@ public class MainActivity extends Activity {
 		while(!foundQuestion) {
 			clazz = Class.forName(getApplicationContext().getPackageName() + "." + enabledAvailableQuestionTypes.get(randomQuestionType));
 			if(enabledAvailableQuestionTypes.get(randomQuestionType).equals("Memory")) {
-				brainTrainer.recordQuestion(enabledAvailableQuestionTypes.get(randomQuestionType));
 				break;
 			}
 			Field myField = clazz.getDeclaredField("numProblems");

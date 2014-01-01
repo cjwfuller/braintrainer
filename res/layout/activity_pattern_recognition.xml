@@ -14,11 +14,4 @@
         android:text="@string/pattern_recognition_instructions"
         android:textSize="40sp"
         android:textStyle="bold" />
-    <ImageView 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/patterns_q1box1"
-        android:src="@drawable/patterns_q1box1"
-        android:layout_below="@+id/pattern_recognition_instructions"
-        android:layout_marginTop="10sp" />
 </RelativeLayout>

@@ -52,7 +52,8 @@
     <string name="memory_time_left">Time Left: \n\n</string>
     <string name="red_oval">Red Oval</string>
     <string name="blue_oval">Blue Oval</string>
-    <string name="patterns_q1box1">Pattern Recognition Box 1</string>
+    <string name="heart">Heart</string>
+    <string name="lives_text">Lives: </string>
     <string name="pattern_recognition_instructions">Which picture follows logically from the following?</string>
     <string name="check_answer_text">Where you correct?</string>
     <string name="check_answer_button">Next</string>

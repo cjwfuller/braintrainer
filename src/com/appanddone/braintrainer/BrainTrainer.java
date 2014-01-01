@@ -11,8 +11,6 @@ public class BrainTrainer extends Application {
 	
 	public int numCorrect = 0;
 	public int numIncorrect = 0;
-	public int totalNumQuestionsAsked = 0;
-	public final int numTurns = 10;
 	public HashMap<String, ArrayList<Integer>> questionsAsked;
 	
 	@Override
@@ -28,7 +26,6 @@ public class BrainTrainer extends Application {
 	public void reset() {
 		numCorrect = 0;
 		numIncorrect = 0;
-		totalNumQuestionsAsked = 0;
 		questionsAsked = new HashMap<String, ArrayList<Integer>>();
 		questionsAsked.put(Classification.class.getSimpleName(), new ArrayList<Integer>());
 		questionsAsked.put(Mathematics.class.getSimpleName(), new ArrayList<Integer>());
@@ -43,12 +40,5 @@ public class BrainTrainer extends Application {
 	
 	protected void recordQuestion(String activityName, Integer questionNum) {
 		questionsAsked.get(activityName).add(questionNum);
-		totalNumQuestionsAsked++;
-		Log.d("MainActivity", "BrainTrainer.recordQuestion() totalNumQuestionsAsked: " + totalNumQuestionsAsked);
-	}
-	
-	protected void recordQuestion(String activityName) {
-		totalNumQuestionsAsked++;
-		Log.d("MainActivity", "BrainTrainer.recordQuestion() totalNumQuestionsAsked: " + totalNumQuestionsAsked);
 	}
 }
