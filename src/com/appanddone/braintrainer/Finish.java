@@ -18,11 +18,8 @@ public class Finish extends MainActivity {
 	    adView.loadAd(adRequest);
 		
 		BrainTrainer brainTrainer = (BrainTrainer)getApplicationContext();
-		TextView correct = (TextView)findViewById(R.id.correct_answers_text);
-		correct.setText("Correct answers: " + Integer.toString(brainTrainer.numCorrect));
-
-		TextView incorrect = (TextView)findViewById(R.id.incorrect_answers_text);
-		incorrect.setText("Incorrect answers: " + Integer.toString(brainTrainer.numIncorrect));
+		TextView correct = (TextView)findViewById(R.id.score_text);
+		correct.setText("Score: " + Integer.toString(brainTrainer.numCorrect * 100));
 	}
 	
 	@Override
