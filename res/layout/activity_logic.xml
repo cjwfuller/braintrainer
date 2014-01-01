@@ -7,10 +7,48 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin" >
+    <RelativeLayout 
+	    android:id="@+id/hearts"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentTop="true"
+	    android:layout_centerVertical="true"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginBottom="10dp" >
+	    <TextView
+	         android:id="@+id/lives_text"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_marginRight="10dp"
+	         android:text="@string/lives_text"
+	         android:textSize="20sp" />
+	    <ImageView 
+	         android:id="@+id/heart1"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_toRightOf="@+id/lives_text"
+	         android:src="@drawable/heart"
+	         android:contentDescription="@string/heart" />
+	    <ImageView 
+	         android:id="@+id/heart2"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_toRightOf="@+id/heart1"
+	         android:src="@drawable/heart"
+	         android:contentDescription="@string/heart" />
+	    <ImageView 
+	         android:id="@+id/heart3"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_toRightOf="@+id/heart2"
+	         android:src="@drawable/heart"
+	         android:contentDescription="@string/heart" />  
+    </RelativeLayout>  
     <LinearLayout
         android:id="@+id/layout0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/hearts"
         android:orientation="horizontal"
         android:layout_centerHorizontal="true">
         <TextView 
@@ -31,7 +69,7 @@
         android:layout_below="@+id/layout0"
         android:layout_centerHorizontal="true" 
         android:layout_centerVertical="true"
-        android:layout_marginTop="100dp"  >
+        android:layout_marginTop="50dp"  >
         <Button 
             android:id="@+id/logicButton1"
             android:layout_width="wrap_content"

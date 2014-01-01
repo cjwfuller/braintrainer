@@ -112,6 +112,22 @@ public class MainActivity extends Activity {
 	    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);   
 	    startActivity(intent);
 	}
+		
+	/**
+	 * Show lives - users have 3 lives
+	 * Red hearts are available lives
+	 * Black hearts are used lives
+	 */
+	protected void showLives() {
+		ImageView heart1 = (ImageView)findViewById(R.id.heart1);
+		ImageView heart2 = (ImageView)findViewById(R.id.heart2);
+		if(brainTrainer.numIncorrect == 1) {
+			heart1.setImageResource(R.drawable.black_heart);
+		} else if(brainTrainer.numIncorrect == 2) {
+			heart1.setImageResource(R.drawable.black_heart);
+			heart2.setImageResource(R.drawable.black_heart);
+		}
+	}
 	
 	/**
 	 * Determine whether a class exists with the name of activityStr

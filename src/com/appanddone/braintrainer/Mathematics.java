@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.ads.*;
@@ -47,22 +46,6 @@ public class Mathematics extends MainActivity {
 	@Override
 	public void onBackPressed() {
 		super.onBackPressed();
-	}
-	
-	/**
-	 * Show lives - users have 3 lives
-	 * Red hearts are available lives
-	 * Black hearts are used lives
-	 */
-	private void showLives() {
-		ImageView heart1 = (ImageView)findViewById(R.id.heart1);
-		ImageView heart2 = (ImageView)findViewById(R.id.heart2);
-		if(brainTrainer.numIncorrect == 1) {
-			heart1.setImageResource(R.drawable.black_heart);
-		} else if(brainTrainer.numIncorrect == 2) {
-			heart1.setImageResource(R.drawable.black_heart);
-			heart2.setImageResource(R.drawable.black_heart);
-		}
 	}
 	
 	private void setProblems() {
