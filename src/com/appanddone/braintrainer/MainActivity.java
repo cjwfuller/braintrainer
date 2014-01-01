@@ -19,10 +19,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ShareActionProvider;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	
+	private ShareActionProvider mShareActionProvider;
 	public BrainTrainer brainTrainer;
 	public static String PACKAGE_NAME;
 	protected final int numLives = 3;
@@ -81,9 +83,27 @@ public class MainActivity extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.share_menu, menu);
+	    MenuItem item = menu.findItem(R.id.menu_item_share);
+	    mShareActionProvider = (ShareActionProvider) item.getActionProvider();
+	    setShareIntent(createShareIntent());
 		return true;
 	}
 
+	private void setShareIntent(Intent shareIntent) {
+	    if (mShareActionProvider != null) {
+	        mShareActionProvider.setShareIntent(shareIntent);
+	    }
+	}
+
+	// TODO use actual link!!!
+	private Intent createShareIntent() {  
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);  
+        shareIntent.setType("text/plain");  
+        shareIntent.putExtra(Intent.EXTRA_TEXT, "I'm playing Brain Trainer!  Download for Android here: http://");  
+        return shareIntent;  
+   }
+	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch(item.getItemId()) {
