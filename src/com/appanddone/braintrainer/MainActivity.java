@@ -25,6 +25,7 @@ public class MainActivity extends Activity {
 	
 	public BrainTrainer brainTrainer;
 	public static String PACKAGE_NAME;
+	protected final int numLives = 3;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -207,9 +208,8 @@ public class MainActivity extends Activity {
 	private void finishIfNoQuestions(ArrayList<String> enabledAvailableQuestionTypes) {
 		// No question types selected.  Tell the user and redirect them to the
 		// settings page
-		Intent intent;
 		if(enabledAvailableQuestionTypes.size() == 0) {
-			intent = new Intent(MainActivity.this, Finish.class);
+			Intent intent = new Intent(MainActivity.this, Finish.class);
 			MainActivity.this.startActivity(intent);
 			Toast.makeText(getApplicationContext(), "No questions remaining!", Toast.LENGTH_LONG).show();
 			finish();
@@ -223,7 +223,7 @@ public class MainActivity extends Activity {
 	 * @return 
 	 */
 	public boolean checkAnswer(boolean isCorrect) {
-		Intent intent = new Intent(MainActivity.this, CheckAnswer.class);
+		Intent intent = new Intent(this, CheckAnswer.class);
 		intent.putExtra("isCorrect", isCorrect);
 		MainActivity.this.startActivity(intent);
 		return true;

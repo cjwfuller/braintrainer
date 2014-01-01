@@ -1,9 +1,11 @@
 package com.appanddone.braintrainer;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CheckAnswer extends MainActivity {
 
@@ -26,7 +28,9 @@ public class CheckAnswer extends MainActivity {
 		     public void onTick(long millisUntilFinished) { }
 		     public void onFinish() {
 		    	 try {
-					startRandomQuestion();
+					 if(!finishIfNoLives()) {
+						 startRandomQuestion();
+					 }
 				} catch (IllegalAccessException e) {
 					e.printStackTrace();
 				} catch (IllegalArgumentException e) {
@@ -38,6 +42,19 @@ public class CheckAnswer extends MainActivity {
 				}
 		     }
 		  }.start();
+	}
+		
+	/**
+	 * Finish game if all lives used up
+	 */
+	private boolean finishIfNoLives() {
+		if(brainTrainer.numIncorrect == numLives) {
+			Intent intent = new Intent(this, Finish.class);
+			CheckAnswer.this.startActivity(intent);
+			Toast.makeText(getApplicationContext(), "No lives left!", Toast.LENGTH_LONG).show();
+			return true;
+		}
+		return false;
 	}
 	
 	@Override
