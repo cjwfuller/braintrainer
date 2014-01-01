@@ -7,7 +7,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-//import com.google.android.gms.ads.*;
+import com.google.android.gms.ads.*;
 
 public class Mathematics extends MainActivity {
 	
@@ -20,6 +20,11 @@ public class Mathematics extends MainActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_mathematics);
+		
+		AdView adView = (AdView)this.findViewById(R.id.adView);
+	    AdRequest adRequest = new AdRequest.Builder().build();
+	    adView.loadAd(adRequest);
+		
 		setProblems();
 		setPossibleSolutions();
 		setUpButtons();
@@ -33,7 +38,7 @@ public class Mathematics extends MainActivity {
 		for(int i = 0; i < series[randomProblem].length - 1; i++) {
 			str += Integer.toString(series[randomProblem][i]) + ", ";
 		}
-		str += " ...";
+		str += " ...\n\n";
 		sequenceTextView.setText(str);
 	}
 	
@@ -41,7 +46,7 @@ public class Mathematics extends MainActivity {
 	public void onBackPressed() {
 		super.onBackPressed();
 	}
-
+	
 	private void setProblems() {
 		series = new int[numProblems][6];
 		// Progressively decreasing pattern 

@@ -44,11 +44,10 @@
     <string name="memory_instructions_text">Remember where the greens are!\n</string>
     <string name="logic_instructions_text">Put the numbers in ascending order!  To move tiles, touch ones with empty slots next to them</string>
     <string name="memory_instructions_after_green_text">Where were the greens?\n</string>
-    <string name="maths_instructions_text">Which number comes next?\n\n</string>
+    <string name="maths_instructions_text">Which number comes next?</string>
     <string name="verbal_instructions_text">Rearrange this text into a word and choose the category that it belongs to</string>
     <string name="classification_instructions_text">Which word does not belong?\n</string>
     <string name="answer_label_text">Answer:</string>
-    <string name="next">Submit \u25BA</string>
     
     <string name="memory_time_left">Time Left: \n\n</string>
     <string name="red_oval">Red Oval</string>
