@@ -3,6 +3,9 @@ package com.appanddone.braintrainer;
 import java.util.ArrayList;
 import java.util.Random;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -18,7 +21,7 @@ public class Memory extends MainActivity {
 	private int fewestToRemember = 6;
 	private int mostToRemember = 9;
 	private int numToRemember;
-	private final int numCircles = 20;
+	private final int numCircles = 16;
 	private int numGreensFound = 0;
 	
 	private TextView textView;
@@ -29,6 +32,10 @@ public class Memory extends MainActivity {
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.activity_memory);
+	    showLives();
+		AdView adView = (AdView)this.findViewById(R.id.adView);
+	    AdRequest adRequest = new AdRequest.Builder().build();
+	    adView.loadAd(adRequest);
 	    textView = (TextView)findViewById(R.id.memory_instructions);
 	    // Nice game font
 	    Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/Arvil_Sans.ttf");
@@ -112,10 +119,6 @@ public class Memory extends MainActivity {
 	    ImageView memoryImageView14 = (ImageView)findViewById(R.id.memoryImageView14);
 	    ImageView memoryImageView15 = (ImageView)findViewById(R.id.memoryImageView15);
 	    ImageView memoryImageView16 = (ImageView)findViewById(R.id.memoryImageView16);
-	    ImageView memoryImageView17 = (ImageView)findViewById(R.id.memoryImageView17);
-	    ImageView memoryImageView18 = (ImageView)findViewById(R.id.memoryImageView18);
-	    ImageView memoryImageView19 = (ImageView)findViewById(R.id.memoryImageView19);
-	    ImageView memoryImageView20 = (ImageView)findViewById(R.id.memoryImageView20);
 	    
 	    images.add(memoryImageView1);
 	    images.add(memoryImageView2);
@@ -132,11 +135,7 @@ public class Memory extends MainActivity {
 	    images.add(memoryImageView13);
 	    images.add(memoryImageView14);
 	    images.add(memoryImageView15);
-	    images.add(memoryImageView16);
-	    images.add(memoryImageView17);
-	    images.add(memoryImageView18);
-	    images.add(memoryImageView19);
-	    images.add(memoryImageView20);	    
+	    images.add(memoryImageView16);			    
 	    
 	    // Randomly turn a random number of greens on.  Ensures that the same
 	    // shape doesn't turn green more than once too

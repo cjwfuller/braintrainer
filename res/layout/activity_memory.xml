@@ -1,6 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/memory_layout"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/memory_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -171,41 +172,13 @@
             android:src="@drawable/red_oval"
             android:contentDescription="@string/red_oval" />  
      </LinearLayout>  
-     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@+id/layout4" >
-        <ImageView 
-            android:id="@+id/memoryImageView17"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginRight="24dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/red_oval"
-            android:contentDescription="@string/red_oval" />
-        <ImageView 
-            android:id="@+id/memoryImageView18"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginRight="24dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/red_oval"
-            android:contentDescription="@string/red_oval" />  
-        <ImageView 
-            android:id="@+id/memoryImageView19"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginRight="24dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/red_oval"
-            android:contentDescription="@string/red_oval" />
-        <ImageView 
-            android:id="@+id/memoryImageView20"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/red_oval"
-            android:contentDescription="@string/red_oval" />  
-     </LinearLayout>  
+     <com.google.android.gms.ads.AdView 
+       android:id="@+id/adView"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerHorizontal="true"
+       android:layout_alignParentBottom="true"
+       android:layout_marginTop="18dp"
+       ads:adUnitId="ca-app-pub-9379479464831132/1442722003"
+       ads:adSize="BANNER" />   
 </RelativeLayout>
