@@ -41,9 +41,9 @@
     <string name="action_settings">Settings</string>
     <string name="about_description_text">Thanks for downloading Brain Trainer!\n\nThis app contains lots of mind bending exercises to train your brain.\n\nYou can choose the types of questions you want to practice or you can just let the app decide for you.\n\nSuggestions/comments: chris@cjwfuller.com</string>
     <string name="hello_world">Hello world!</string>
-    <string name="memory_instructions_text">Remember where the greens are!\n</string>
+    <string name="memory_instructions_text">Remember where the greens are!</string>
     <string name="logic_instructions_text">Put the numbers in ascending order!  To move tiles, touch ones with empty slots next to them</string>
-    <string name="memory_instructions_after_green_text">Where were the greens?\n</string>
+    <string name="memory_instructions_after_green_text">Where were the greens?</string>
     <string name="maths_instructions_text">Which number comes next?</string>
     <string name="verbal_instructions_text">Rearrange this text into a word and choose the category that it belongs to</string>
     <string name="classification_instructions_text">Which word does not belong?</string>

@@ -9,12 +9,51 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:gravity="center" >
+    <RelativeLayout 
+        android:id="@+id/hearts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp" >
+        <TextView
+             android:id="@+id/lives_text"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginRight="10dp"
+             android:text="@string/lives_text"
+             android:textSize="20sp" />
+        <ImageView 
+             android:id="@+id/heart1"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_toRightOf="@+id/lives_text"
+             android:src="@drawable/heart"
+             android:contentDescription="@string/heart" />
+        <ImageView 
+             android:id="@+id/heart2"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_toRightOf="@+id/heart1"
+             android:src="@drawable/heart"
+             android:contentDescription="@string/heart" />
+        <ImageView 
+             android:id="@+id/heart3"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_toRightOf="@+id/heart2"
+             android:src="@drawable/heart"
+             android:contentDescription="@string/heart" /> 
+   </RelativeLayout>
     <LinearLayout
         android:id="@+id/layout0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/hearts"
         android:orientation="horizontal"
-        android:layout_centerHorizontal="true" >
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10sp" >
         <TextView 
            android:id="@+id/memory_instructions"
            android:layout_width="wrap_content"
@@ -29,7 +68,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/layout0" >
+        android:layout_below="@+id/layout0"
+        android:layout_centerVertical="true" >
         <ImageView 
             android:id="@+id/memoryImageView1"
             android:layout_width="70dp"
@@ -63,7 +103,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/layout1" >
+        android:layout_below="@+id/layout1"
+        android:layout_centerVertical="true" >
         <ImageView 
             android:id="@+id/memoryImageView5"
             android:layout_width="70dp"
@@ -101,7 +142,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/layout2" >
+        android:layout_below="@+id/layout2"
+        android:layout_centerVertical="true" >
         <ImageView 
             android:id="@+id/memoryImageView9"
             android:layout_width="70dp"
@@ -139,7 +181,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/layout3" >
+        android:layout_below="@+id/layout3"
+        android:layout_centerVertical="true" >
         <ImageView 
             android:id="@+id/memoryImageView13"
             android:layout_width="70dp"
