@@ -112,6 +112,16 @@ public class MainActivity extends Activity {
 	    startActivity(intent);
 	}
 	
+	/**
+	 * Determine whether a class exists with the name of activityStr
+	 * 
+	 * @param activityStr
+	 * @return boolean true if questions remaining, false otherwise
+	 * @throws IllegalAccessException
+	 * @throws IllegalArgumentException
+	 * @throws NoSuchFieldException
+	 * @throws ClassNotFoundException
+	 */
 	private boolean areQuestionsOfTypeRemaining(String activityStr) throws IllegalAccessException, IllegalArgumentException, NoSuchFieldException, ClassNotFoundException {
 		boolean result = true;
 		Log.d("MainActivity", "MainActivity.areQuestionsOfTypeRemaining(" + activityStr + ") ");
@@ -127,6 +137,13 @@ public class MainActivity extends Activity {
 		return result;
 	}
 	
+	/**
+	 * Determine whether a question has been asked before
+	 * 
+	 * @param activityStr
+	 * @param questionNum
+	 * @return true if question asked before, false otherwise
+	 */
 	private boolean askedAlready(String activityStr, Integer questionNum) {
 		boolean result = false;
 		if(brainTrainer.questionsAsked.get(activityStr).contains(questionNum)) {
@@ -136,6 +153,17 @@ public class MainActivity extends Activity {
 		return result;
 	}
 	
+	/**
+	 * Get questions that belong to question types that are enabled and have 
+	 * never been asked before
+	 * 
+	 * @param settings
+	 * @return ArrayList<String> questions that are enabled and not asked
+	 * @throws IllegalAccessException
+	 * @throws IllegalArgumentException
+	 * @throws NoSuchFieldException
+	 * @throws ClassNotFoundException
+	 */
 	private ArrayList<String> getEnabledAndAvailableQuestions(SharedPreferences settings) throws IllegalAccessException, IllegalArgumentException, NoSuchFieldException, ClassNotFoundException {
 		Map<String, ?> keys = new HashMap<String, List<String>>();
 		keys = settings.getAll();
@@ -154,6 +182,11 @@ public class MainActivity extends Activity {
 		return enabledAvailableQuestionTypes;
 	}
 	
+	/**
+	 * Ends game if all questions have been asked
+	 * 
+	 * @param enabledAvailableQuestionTypes
+	 */
 	private void finishIfNoQuestions(ArrayList<String> enabledAvailableQuestionTypes) {
 		// No question types selected.  Tell the user and redirect them to the
 		// settings page
@@ -166,6 +199,12 @@ public class MainActivity extends Activity {
 		}
 	}
 	
+	/**
+	 * Show activity that tells the user if they were correct or not
+	 * 
+	 * @param isCorrect
+	 * @return 
+	 */
 	public boolean checkAnswer(boolean isCorrect) {
 		Intent intent = new Intent(MainActivity.this, CheckAnswer.class);
 		intent.putExtra("isCorrect", isCorrect);
@@ -173,6 +212,17 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
+	/**
+	 * Start a random question
+	 * Ensured that the question is from a question type that is enabled and 
+	 * makes sure that the question has not been asked before
+	 * 
+	 * @return
+	 * @throws IllegalAccessException
+	 * @throws IllegalArgumentException
+	 * @throws NoSuchFieldException
+	 * @throws ClassNotFoundException
+	 */
 	public boolean startRandomQuestion() throws IllegalAccessException, IllegalArgumentException, NoSuchFieldException, ClassNotFoundException {
 		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
 		ArrayList<String> enabledAvailableQuestionTypes = getEnabledAndAvailableQuestions(settings);
