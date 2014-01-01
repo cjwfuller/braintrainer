@@ -2,6 +2,9 @@ package com.appanddone.braintrainer;
 
 import java.util.ArrayList;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
@@ -29,6 +32,9 @@ public class Logic extends MainActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_logic);
 		showLives();
+		AdView adView = (AdView)this.findViewById(R.id.adView);
+	    AdRequest adRequest = new AdRequest.Builder().build();
+	    adView.loadAd(adRequest);
 		// Build a solvable grid
 		setProblems();
 		displayGrid();

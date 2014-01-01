@@ -218,9 +218,9 @@ containing a value of this type.
         public static final int red_oval=0x7f020026;
     }
     public static final class id {
-        public static final int about_button=0x7f06002b;
+        public static final int about_button=0x7f06002c;
         public static final int about_description_text=0x7f060005;
-        public static final int adView=0x7f06002f;
+        public static final int adView=0x7f060028;
         public static final int answer1_button=0x7f060030;
         public static final int answer2_button=0x7f060031;
         public static final int answer3_button=0x7f060032;
@@ -257,10 +257,10 @@ containing a value of this type.
         public static final int logicButton8=0x7f060024;
         public static final int logicButton9=0x7f060025;
         public static final int logic_instructions=0x7f060019;
-        public static final int main_layout=0x7f060028;
-        public static final int mathematics_layout=0x7f06002c;
-        public static final int maths_instructions=0x7f06002d;
-        public static final int maths_sequence=0x7f06002e;
+        public static final int main_layout=0x7f060029;
+        public static final int mathematics_layout=0x7f06002d;
+        public static final int maths_instructions=0x7f06002e;
+        public static final int maths_sequence=0x7f06002f;
         public static final int memoryImageView1=0x7f060036;
         public static final int memoryImageView10=0x7f06003f;
         public static final int memoryImageView11=0x7f060040;
@@ -291,9 +291,9 @@ containing a value of this type.
         public static final int pattern_recognition_instructions=0x7f06004a;
         public static final int percentage_correct_answers_text=0x7f060011;
         public static final int satellite=0x7f060002;
-        public static final int settings_button=0x7f06002a;
+        public static final int settings_button=0x7f06002b;
         public static final int skipButton=0x7f060027;
-        public static final int start_button=0x7f060029;
+        public static final int start_button=0x7f06002a;
         public static final int terrain=0x7f060003;
         public static final int verbal_instructions=0x7f06004b;
         public static final int verbal_letters=0x7f06004c;

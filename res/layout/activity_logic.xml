@@ -1,4 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:id="@+id/memory_layout"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -69,7 +70,7 @@
         android:layout_below="@+id/layout0"
         android:layout_centerHorizontal="true" 
         android:layout_centerVertical="true"
-        android:layout_marginTop="50dp"  >
+        android:layout_marginTop="15dp"  >
         <Button 
             android:id="@+id/logicButton1"
             android:layout_width="wrap_content"
@@ -160,7 +161,7 @@
      </LinearLayout>  
      <LinearLayout
         android:id="@+id/layout4" 
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -176,5 +177,12 @@
             android:layout_gravity="right"
             android:background="@drawable/btn_purple"
             style="@style/ButtonText" />
+        <com.google.android.gms.ads.AdView 
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            ads:adUnitId="ca-app-pub-9379479464831132/1442722003"
+            ads:adSize="BANNER" />
      </LinearLayout>       
 </RelativeLayout>
