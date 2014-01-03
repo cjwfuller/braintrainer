@@ -1,10 +1,12 @@
 package com.appanddone.braintrainer;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,7 +35,10 @@ public class CheckAnswer extends MainActivity {
 			mp = MediaPlayer.create(this, R.raw.incorrect);
 			answerTextView.setText("NO :-(");
 		}
-		mp.start();
+		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+		if(settings.getBoolean("sound", false)) {
+			mp.start();
+		}
 		// Go to next random activity after 1 second
 		new CountDownTimer(1000, 1000) {
 		     public void onTick(long millisUntilFinished) { }

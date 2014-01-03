@@ -66,6 +66,10 @@ public class Settings extends PreferenceActivity {
 		// use the older PreferenceActivity APIs.
 
 		PreferenceCategory fakeHeader = new PreferenceCategory(this);
+		
+		fakeHeader.setTitle(R.string.pref_header_sound);
+		addPreferencesFromResource(R.xml.pref_sound);
+		
 		fakeHeader.setTitle(R.string.pref_header_questions);
 		addPreferencesFromResource(R.xml.pref_questions);
 		Log.d("Settings", "Settings.setupSimplePreferencesScreen()");
@@ -117,6 +121,19 @@ public class Settings extends PreferenceActivity {
 			super.onCreate(savedInstanceState);
 			addPreferencesFromResource(R.xml.pref_questions);
 			Log.d("Settings", "QuestionsPreferenceFragment.onCreate()");
+		}
+	}
+	
+	/**
+	 * 
+	 */
+	public static class SoundFragment extends PreferenceFragment {
+		
+		@Override
+		public void onCreate(Bundle savedInstanceState) {
+			super.onCreate(savedInstanceState);
+			addPreferencesFromResource(R.xml.pref_sound);
+			Log.d("Settings", "SoundFragment.onCreate()");
 		}
 	}
 }

@@ -10,6 +10,7 @@ import android.content.SharedPreferences.Editor;
 import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -61,7 +62,10 @@ public class Finish extends MainActivity {
 			editor.commit();
 			// Play clap  sound
 			MediaPlayer mp = MediaPlayer.create(this, R.raw.clap);
-		    mp.start();
+			SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+			if(settings.getBoolean("sound", false)) {
+				mp.start();
+			}
 		}
 	}
 	

@@ -336,10 +336,10 @@ containing a value of this type.
     }
     public static final class string {
         public static final int about_button=0x7f080021;
-        public static final int about_description_text=0x7f08003d;
-        public static final int action_settings=0x7f08003c;
-        public static final int activity_title_settings=0x7f080025;
-        public static final int answer_label_text=0x7f080045;
+        public static final int about_description_text=0x7f08003c;
+        public static final int action_settings=0x7f08003b;
+        public static final int activity_title_settings=0x7f080024;
+        public static final int answer_label_text=0x7f080044;
         public static final int app_name=0x7f08001a;
         /**   Title for notification shown when GooglePlayServices needs to be
         enabled for a application to work. [CHAR LIMIT=70] 
@@ -364,12 +364,12 @@ containing a value of this type.
         [CHAR LIMIT=70] 
          */
         public static final int auth_client_using_bad_version_title=0x7f080014;
-        public static final int blue_oval=0x7f080048;
-        public static final int check_answer_button=0x7f08004d;
-        public static final int check_answer_text=0x7f08004c;
-        public static final int classification_instructions_text=0x7f080044;
-        public static final int classification_questions_switch_text=0x7f08002a;
-        public static final int classification_score_text=0x7f080050;
+        public static final int blue_oval=0x7f080047;
+        public static final int check_answer_button=0x7f08004c;
+        public static final int check_answer_text=0x7f08004b;
+        public static final int classification_instructions_text=0x7f080043;
+        public static final int classification_questions_switch_text=0x7f080029;
+        public static final int classification_score_text=0x7f08004f;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -441,68 +441,67 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f080013;
-        public static final int finished_text=0x7f08002e;
-        public static final int heart=0x7f080049;
-        public static final int hello_world=0x7f08003e;
-        public static final int lives_text=0x7f08004a;
-        public static final int logic_instructions_text=0x7f080040;
-        public static final int logic_questions_switch_text=0x7f080027;
-        public static final int logic_score_text=0x7f08004f;
-        public static final int main_menu=0x7f080054;
-        public static final int mathematical_questions_switch_text=0x7f08002b;
-        public static final int mathematical_score_text=0x7f080053;
-        public static final int maths_instructions_text=0x7f080042;
-        public static final int memory_instructions_after_green_text=0x7f080041;
-        public static final int memory_instructions_text=0x7f08003f;
-        public static final int memory_score_text=0x7f080052;
-        public static final int memory_time_left=0x7f080046;
+        public static final int finished_text=0x7f08002d;
+        public static final int heart=0x7f080048;
+        public static final int hello_world=0x7f08003d;
+        public static final int lives_text=0x7f080049;
+        public static final int logic_instructions_text=0x7f08003f;
+        public static final int logic_questions_switch_text=0x7f080026;
+        public static final int logic_score_text=0x7f08004e;
+        public static final int main_menu=0x7f080053;
+        public static final int mathematical_questions_switch_text=0x7f08002a;
+        public static final int mathematical_score_text=0x7f080052;
+        public static final int maths_instructions_text=0x7f080041;
+        public static final int memory_instructions_after_green_text=0x7f080040;
+        public static final int memory_instructions_text=0x7f08003e;
+        public static final int memory_score_text=0x7f080051;
+        public static final int memory_time_left=0x7f080045;
         public static final int menu_about=0x7f08001d;
         public static final int menu_main=0x7f08001b;
         public static final int menu_settings=0x7f08001c;
         public static final int menu_share=0x7f08001e;
-        public static final int pattern_recognition_instructions=0x7f08004b;
-        public static final int pattern_recognition_questions_switch_text=0x7f080028;
-        public static final int play_again=0x7f080055;
-        public static final int pref_description_social_recommendations=0x7f08005a;
-        public static final int pref_header_general=0x7f080057;
-        public static final int pref_header_questions=0x7f080058;
-        public static final int pref_title_classification=0x7f08005d;
-        public static final int pref_title_logic=0x7f08005c;
-        public static final int pref_title_mathematical=0x7f080060;
-        public static final int pref_title_memory=0x7f08005f;
-        public static final int pref_title_pattern_recognition=0x7f080063;
-        public static final int pref_title_social_recommendations=0x7f080059;
-        public static final int pref_title_sound=0x7f08005b;
-        public static final int pref_title_spatial=0x7f080061;
-        public static final int pref_title_verbal=0x7f08005e;
-        public static final int pref_title_visual=0x7f080062;
-        public static final int red_oval=0x7f080047;
+        public static final int pattern_recognition_instructions=0x7f08004a;
+        public static final int pattern_recognition_questions_switch_text=0x7f080027;
+        public static final int play_again=0x7f080054;
+        public static final int pref_header_questions=0x7f080057;
+        public static final int pref_header_sound=0x7f080056;
+        public static final int pref_sound=0x7f080061;
+        public static final int pref_title_classification=0x7f08005a;
+        public static final int pref_title_logic=0x7f080059;
+        public static final int pref_title_mathematical=0x7f08005d;
+        public static final int pref_title_memory=0x7f08005c;
+        public static final int pref_title_pattern_recognition=0x7f080060;
+        public static final int pref_title_sound=0x7f080058;
+        public static final int pref_title_spatial=0x7f08005e;
+        public static final int pref_title_verbal=0x7f08005b;
+        public static final int pref_title_visual=0x7f08005f;
+        public static final int red_oval=0x7f080046;
         public static final int reset_highscore_button=0x7f080022;
-        public static final int reset_highscore_text=0x7f080024;
+        public static final int reset_highscore_text=0x7f080023;
         public static final int settings_button=0x7f080020;
-        public static final int share=0x7f080023;
-        public static final int skip_question=0x7f08004e;
-        public static final int spatial_questions_switch_text=0x7f080029;
+        public static final int skip_question=0x7f08004d;
+        public static final int sound_enabled=0x7f080062;
+        public static final int spatial_questions_switch_text=0x7f080028;
         public static final int start_button=0x7f08001f;
-        public static final int timer_switch_text=0x7f080026;
-        public static final int title_activity_about=0x7f080031;
-        public static final int title_activity_classification=0x7f080039;
-        public static final int title_activity_finish=0x7f08003b;
-        public static final int title_activity_logic=0x7f080037;
-        public static final int title_activity_mathematics=0x7f080034;
-        public static final int title_activity_memory=0x7f080032;
-        public static final int title_activity_pattern_recognition=0x7f080036;
-        public static final int title_activity_settings=0x7f080056;
-        public static final int title_activity_spatial=0x7f080035;
-        public static final int title_activity_verbal=0x7f080033;
-        public static final int title_activity_visual=0x7f080038;
-        public static final int title_check_answer=0x7f08003a;
-        public static final int title_other_settings=0x7f080030;
-        public static final int title_question_types=0x7f08002f;
-        public static final int verbal_instructions_text=0x7f080043;
-        public static final int verbal_questions_switch_text=0x7f08002d;
-        public static final int verbal_score_text=0x7f080051;
-        public static final int visualisation_questions_switch_text=0x7f08002c;
+        public static final int timer_switch_text=0x7f080025;
+        public static final int title_activity_about=0x7f080030;
+        public static final int title_activity_classification=0x7f080038;
+        public static final int title_activity_finish=0x7f08003a;
+        public static final int title_activity_logic=0x7f080036;
+        public static final int title_activity_mathematics=0x7f080033;
+        public static final int title_activity_memory=0x7f080031;
+        public static final int title_activity_pattern_recognition=0x7f080035;
+        public static final int title_activity_settings=0x7f080055;
+        public static final int title_activity_spatial=0x7f080034;
+        public static final int title_activity_verbal=0x7f080032;
+        public static final int title_activity_visual=0x7f080037;
+        public static final int title_check_answer=0x7f080039;
+        public static final int title_other_settings=0x7f08002f;
+        public static final int title_question_types=0x7f08002e;
+        public static final int verbal_instructions_text=0x7f080042;
+        public static final int verbal_questions_switch_text=0x7f08002c;
+        public static final int verbal_score_text=0x7f080050;
+        public static final int visualisation_questions_switch_text=0x7f08002b;
     }
     public static final class style {
         /** 
@@ -535,6 +534,7 @@ containing a value of this type.
     public static final class xml {
         public static final int pref_headers=0x7f040000;
         public static final int pref_questions=0x7f040001;
+        public static final int pref_sound=0x7f040002;
     }
     public static final class styleable {
         /** Attributes that can be used with a AdsAttrs.
