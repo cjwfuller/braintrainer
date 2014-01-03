@@ -112,7 +112,7 @@ public class Verbal extends MainActivity {
 		} else {
 			brainTrainer.numIncorrect++;
 		}
-	    checkAnswer(isCorrect);
+	    checkAnswer(isCorrect, "Verbal");
 	}
 
 }

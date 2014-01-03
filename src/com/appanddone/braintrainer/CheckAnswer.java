@@ -5,6 +5,7 @@ import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,16 +15,20 @@ public class CheckAnswer extends MainActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_check_answer);
-		// Show whether user was correct/incorrect
 		Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/Arvil_Sans.ttf");
 		TextView textView = (TextView)findViewById(R.id.check_answer_title);
 		textView.setTypeface(typeFace);
 		TextView answerTextView = (TextView)findViewById(R.id.correct_or_incorrect_text);
-		
+		// Play sounds for incorrect/correct answers and display message
 		MediaPlayer mp;
+		String className = getIntent().getExtras().getString("className");
+		Integer count = brainTrainer.numCorrectBreakdown.get(className);
+		Log.d("CheckAnswer", "CheckAnswer.onCreate() Checking answer for " + className);
+		Log.d("CheckAnswer", "CheckAnswer.onCreate() Count for " + className + " is: " + count);
 		if(getIntent().getExtras().getBoolean("isCorrect")) {
 			mp = MediaPlayer.create(this, R.raw.correct);
 			answerTextView.setText("YES :-)");
+			brainTrainer.numCorrectBreakdown.put(className, count+1);
 		} else {
 			mp = MediaPlayer.create(this, R.raw.incorrect);
 			answerTextView.setText("NO :-(");

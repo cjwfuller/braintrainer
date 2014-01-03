@@ -120,7 +120,7 @@ public class Mathematics extends MainActivity {
 				} else {
 					brainTrainer.numIncorrect++;
 				}
-				checkAnswer(isCorrect);
+				checkAnswer(isCorrect, "Mathematics");
 			}
 		});
 	}

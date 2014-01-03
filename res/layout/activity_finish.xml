@@ -12,7 +12,7 @@
         android:id="@+id/answers_intro_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         android:gravity="center"
         android:text="@string/finished_text" />
@@ -21,8 +21,48 @@
         android:layout_below="@+id/answers_intro_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="18sp" />                       
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true" />      
+     <TextView
+        android:id="@+id/logic_score_text"
+        android:layout_below="@+id/score_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/logic_score_text"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true" />   
+     <TextView
+        android:id="@+id/classification_score_text"
+        android:layout_below="@+id/logic_score_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/classification_score_text"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true" /> 
+     <TextView
+        android:id="@+id/verbal_score_text"
+        android:layout_below="@+id/classification_score_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/verbal_score_text"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true" /> 
+     <TextView
+        android:id="@+id/memory_score_text"
+        android:layout_below="@+id/verbal_score_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/memory_score_text"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true" /> 
+     <TextView
+        android:id="@+id/mathematical_score_text"
+        android:layout_below="@+id/memory_score_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mathematical_score_text"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true" />                                                    
     <com.google.android.gms.ads.AdView 
        android:id="@+id/adView"
        android:layout_width="wrap_content"

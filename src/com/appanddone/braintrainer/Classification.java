@@ -144,7 +144,7 @@ public class Classification extends MainActivity {
 		} else {
 			brainTrainer.numIncorrect++;
 		}
-	    checkAnswer(isCorrect);
+	    checkAnswer(isCorrect, "Classification");
 	}
 
 }

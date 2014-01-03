@@ -3,6 +3,7 @@ package com.appanddone.braintrainer;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
+import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -13,6 +14,7 @@ public class Finish extends MainActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_finish);
+		Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/Arvil_Sans.ttf");
 		
 		AdView adView = (AdView)this.findViewById(R.id.adView);
 	    AdRequest adRequest = new AdRequest.Builder().build();
@@ -20,14 +22,28 @@ public class Finish extends MainActivity {
 		
 		BrainTrainer brainTrainer = (BrainTrainer)getApplicationContext();
 		
-		// Show how many questions were correct and give a breakdown of what
-		// the user got right and wrong
-		String finishStr = "";
-		TextView correct = (TextView)findViewById(R.id.score_text);
-		finishStr += "Questions correct: " + Integer.toString(brainTrainer.numCorrect) + "\n\n\n\n";
-		finishStr = finishStr.trim();
-		finishStr += "Breakdown: \n";
-		correct.setText(finishStr);
+		TextView instructions = (TextView)findViewById(R.id.answers_intro_text);
+		TextView totalCorrect = (TextView)findViewById(R.id.score_text);
+		TextView logic = (TextView)findViewById(R.id.logic_score_text);
+		TextView classification = (TextView)findViewById(R.id.classification_score_text);
+		TextView verbal = (TextView)findViewById(R.id.verbal_score_text);
+		TextView memory = (TextView)findViewById(R.id.memory_score_text);
+		TextView mathematics = (TextView)findViewById(R.id.mathematical_score_text);
+		
+		instructions.setTypeface(typeFace);
+		totalCorrect.setTypeface(typeFace);
+		logic.setTypeface(typeFace);
+		classification.setTypeface(typeFace);
+		verbal.setTypeface(typeFace);
+		memory.setTypeface(typeFace);
+		mathematics.setTypeface(typeFace);
+		
+		totalCorrect.setText("Total correct: " + Integer.toString(brainTrainer.numCorrect) + "\n");
+		logic.setText("Logic: " + Integer.toString(brainTrainer.numCorrectBreakdown.get("Logic")));
+		classification.setText("Classification: " + Integer.toString(brainTrainer.numCorrectBreakdown.get("Classification")));
+		verbal.setText("Verbal: " + Integer.toString(brainTrainer.numCorrectBreakdown.get("Verbal")));
+		memory.setText("Memory: " + Integer.toString(brainTrainer.numCorrectBreakdown.get("Memory")));
+		mathematics.setText("Mathematics: " + Integer.toString(brainTrainer.numCorrectBreakdown.get("Mathematics")));
 		
 		MediaPlayer mp = MediaPlayer.create(this, R.raw.clap);
 	    mp.start();

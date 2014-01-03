@@ -23,7 +23,7 @@
     <string name="mathematical_questions_switch_text">Mathematical</string>
     <string name="visualisation_questions_switch_text">Visualisation</string>
     <string name="verbal_questions_switch_text">Verbal</string>
-    <string name="finished_text">Questions complete!  Your Results&#8230;</string>
+    <string name="finished_text">Questions complete!  Your Results&#8230;\n</string>
     
     <string name="title_question_types">Question Types</string>
     <string name="title_other_settings">Other Settings</string>
@@ -59,5 +59,11 @@
     <string name="check_answer_text">Where you correct?</string>
     <string name="check_answer_button">Next</string>
     <string name="skip_question">Skip</string>
+    
+    <string name="logic_score_text">Logic: </string>
+    <string name="classification_score_text">Classification: </string>
+    <string name="verbal_score_text">Verbal: </string>
+    <string name="memory_score_text">Memory: </string>
+    <string name="mathematical_score_text">Mathematics: </string>
 
 </resources>

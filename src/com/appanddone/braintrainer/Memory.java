@@ -81,7 +81,7 @@ public class Memory extends MainActivity {
 						numGreensFound++;
 						if(numGreensFound == numToRemember) {
 							brainTrainer.numCorrect++;
-							checkAnswer(true);
+							checkAnswer(true, "Memory");
 						}
 						currentImageView.setImageDrawable(getResources().getDrawable(R.drawable.green_oval));
 					}
@@ -92,7 +92,7 @@ public class Memory extends MainActivity {
 					// When user clicks red
 					public void onClick(View v) {
 						brainTrainer.numIncorrect++;
-						checkAnswer(false);
+						checkAnswer(false, "Memory");
 					}
 				});
 			}

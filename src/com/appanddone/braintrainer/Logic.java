@@ -309,7 +309,7 @@ public class Logic extends MainActivity {
 			@Override
 			public void onClick(View v) {
 				brainTrainer.numIncorrect++;
-				checkAnswer(false);
+				checkAnswer(false, "Logic");
 			}
 		});
 		ArrayList<Button> buttons = getButtons();
@@ -344,7 +344,7 @@ public class Logic extends MainActivity {
 					if(getNumInversions() == 0) {
 						Log.d("Logic", "Logic.addClickHandlers() Game complete!");
 						brainTrainer.numCorrect++;
-						checkAnswer(true);
+						checkAnswer(true, "Logic");
 					}
 				}
 			});

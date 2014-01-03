@@ -85,7 +85,8 @@
         </activity>
         <activity
             android:name="com.appanddone.braintrainer.Finish"
-            android:label="@string/title_activity_finish" >            
+            android:label="@string/title_activity_finish"
+            android:screenOrientation="portrait" >            
         </activity>
         <activity android:name="com.google.android.gms.ads.AdActivity"
              android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />

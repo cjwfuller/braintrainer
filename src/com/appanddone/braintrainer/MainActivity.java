@@ -242,9 +242,10 @@ public class MainActivity extends Activity {
 	 * @param isCorrect
 	 * @return 
 	 */
-	public boolean checkAnswer(boolean isCorrect) {
+	public boolean checkAnswer(boolean isCorrect, String className) {
 		Intent intent = new Intent(this, CheckAnswer.class);
 		intent.putExtra("isCorrect", isCorrect);
+		intent.putExtra("className", className);
 		MainActivity.this.startActivity(intent);
 		return true;
 	}
