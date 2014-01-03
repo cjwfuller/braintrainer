@@ -48,10 +48,10 @@ public class Memory extends MainActivity {
 	}
 	
 	/**
-	 * Show a timer every 1s for 2s and turn all the shapes red after 2s
+	 * 
 	 */
 	private void startTimer() {
-		 new CountDownTimer(3000, 1000) {
+		 new CountDownTimer(2500, 1000) {
 		     public void onTick(long millisUntilFinished) { }
 
 		     public void onFinish() {

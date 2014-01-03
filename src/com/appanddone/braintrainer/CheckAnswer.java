@@ -2,6 +2,7 @@ package com.appanddone.braintrainer;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.widget.TextView;
@@ -18,11 +19,16 @@ public class CheckAnswer extends MainActivity {
 		TextView textView = (TextView)findViewById(R.id.check_answer_title);
 		textView.setTypeface(typeFace);
 		TextView answerTextView = (TextView)findViewById(R.id.correct_or_incorrect_text);
+		
+		MediaPlayer mp;
 		if(getIntent().getExtras().getBoolean("isCorrect")) {
+			mp = MediaPlayer.create(this, R.raw.correct);
 			answerTextView.setText("YES :-)");
 		} else {
+			mp = MediaPlayer.create(this, R.raw.incorrect);
 			answerTextView.setText("NO :-(");
 		}
+		mp.start();
 		// Go to next random activity after 1 second
 		new CountDownTimer(900, 1000) {
 		     public void onTick(long millisUntilFinished) { }

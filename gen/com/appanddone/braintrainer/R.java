@@ -151,20 +151,20 @@ containing a value of this type.
         public static final int zOrderOnTop=0x7f01000f;
     }
     public static final class color {
-        public static final int common_action_bar_splitter=0x7f050009;
+        public static final int common_action_bar_splitter=0x7f060009;
         /**  Sign-in Button Colors 
          */
-        public static final int common_signin_btn_dark_text_default=0x7f050000;
-        public static final int common_signin_btn_dark_text_disabled=0x7f050002;
-        public static final int common_signin_btn_dark_text_focused=0x7f050003;
-        public static final int common_signin_btn_dark_text_pressed=0x7f050001;
-        public static final int common_signin_btn_default_background=0x7f050008;
-        public static final int common_signin_btn_light_text_default=0x7f050004;
-        public static final int common_signin_btn_light_text_disabled=0x7f050006;
-        public static final int common_signin_btn_light_text_focused=0x7f050007;
-        public static final int common_signin_btn_light_text_pressed=0x7f050005;
-        public static final int common_signin_btn_text_dark=0x7f05000a;
-        public static final int common_signin_btn_text_light=0x7f05000b;
+        public static final int common_signin_btn_dark_text_default=0x7f060000;
+        public static final int common_signin_btn_dark_text_disabled=0x7f060002;
+        public static final int common_signin_btn_dark_text_focused=0x7f060003;
+        public static final int common_signin_btn_dark_text_pressed=0x7f060001;
+        public static final int common_signin_btn_default_background=0x7f060008;
+        public static final int common_signin_btn_light_text_default=0x7f060004;
+        public static final int common_signin_btn_light_text_disabled=0x7f060006;
+        public static final int common_signin_btn_light_text_focused=0x7f060007;
+        public static final int common_signin_btn_light_text_pressed=0x7f060005;
+        public static final int common_signin_btn_text_dark=0x7f06000a;
+        public static final int common_signin_btn_text_light=0x7f06000b;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -173,8 +173,8 @@ containing a value of this type.
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f090000;
-        public static final int activity_vertical_margin=0x7f090001;
+        public static final int activity_horizontal_margin=0x7f0a0000;
+        public static final int activity_vertical_margin=0x7f0a0001;
     }
     public static final class drawable {
         public static final int app_background=0x7f020000;
@@ -218,89 +218,89 @@ containing a value of this type.
         public static final int red_oval=0x7f020026;
     }
     public static final class id {
-        public static final int about_button=0x7f06002b;
-        public static final int about_description_text=0x7f060005;
-        public static final int adView=0x7f060014;
-        public static final int answer1_button=0x7f06002f;
-        public static final int answer2_button=0x7f060030;
-        public static final int answer3_button=0x7f060031;
-        public static final int answer4_button=0x7f060032;
-        public static final int answer5_button=0x7f060033;
-        public static final int answers_intro_text=0x7f060015;
-        public static final int category1_button=0x7f060048;
-        public static final int category2_button=0x7f060049;
-        public static final int category3_button=0x7f06004a;
-        public static final int category4_button=0x7f06004b;
-        public static final int check_answer_title=0x7f060006;
-        public static final int classification_instructions=0x7f06000e;
-        public static final int correct_or_incorrect_text=0x7f060007;
-        public static final int heart1=0x7f06000a;
-        public static final int heart2=0x7f06000b;
-        public static final int heart3=0x7f06000c;
-        public static final int hearts=0x7f060008;
-        public static final int hybrid=0x7f060004;
-        public static final int layout0=0x7f060018;
-        public static final int layout1=0x7f06001a;
-        public static final int layout2=0x7f06001e;
-        public static final int layout3=0x7f060022;
-        public static final int layout4=0x7f060026;
-        public static final int lives_text=0x7f060009;
-        public static final int logicButton1=0x7f06001b;
-        public static final int logicButton2=0x7f06001c;
-        public static final int logicButton3=0x7f06001d;
-        public static final int logicButton4=0x7f06001f;
-        public static final int logicButton5=0x7f060020;
-        public static final int logicButton6=0x7f060021;
-        public static final int logicButton7=0x7f060023;
-        public static final int logicButton8=0x7f060024;
-        public static final int logicButton9=0x7f060025;
-        public static final int logic_instructions=0x7f060019;
-        public static final int main_layout=0x7f060028;
-        public static final int mathematics_layout=0x7f06002c;
-        public static final int maths_instructions=0x7f06002d;
-        public static final int maths_sequence=0x7f06002e;
-        public static final int memoryImageView1=0x7f060035;
-        public static final int memoryImageView10=0x7f06003e;
-        public static final int memoryImageView11=0x7f06003f;
-        public static final int memoryImageView12=0x7f060040;
-        public static final int memoryImageView13=0x7f060041;
-        public static final int memoryImageView14=0x7f060042;
-        public static final int memoryImageView15=0x7f060043;
-        public static final int memoryImageView16=0x7f060044;
-        public static final int memoryImageView2=0x7f060036;
-        public static final int memoryImageView3=0x7f060037;
-        public static final int memoryImageView4=0x7f060038;
-        public static final int memoryImageView5=0x7f060039;
-        public static final int memoryImageView6=0x7f06003a;
-        public static final int memoryImageView7=0x7f06003b;
-        public static final int memoryImageView8=0x7f06003c;
-        public static final int memoryImageView9=0x7f06003d;
-        public static final int memory_instructions=0x7f060034;
-        public static final int memory_layout=0x7f060017;
-        public static final int menu_about=0x7f06004e;
-        public static final int menu_item_share=0x7f06004f;
-        public static final int menu_main=0x7f06004c;
-        public static final int menu_settings=0x7f06004d;
-        public static final int none=0x7f060000;
-        public static final int normal=0x7f060001;
-        public static final int options=0x7f06000d;
-        public static final int pattern_recognition_instructions=0x7f060045;
-        public static final int satellite=0x7f060002;
-        public static final int score_text=0x7f060016;
-        public static final int settings_button=0x7f06002a;
-        public static final int skipButton=0x7f060027;
-        public static final int start_button=0x7f060029;
-        public static final int terrain=0x7f060003;
-        public static final int verbal_instructions=0x7f060046;
-        public static final int verbal_letters=0x7f060047;
-        public static final int word1_button=0x7f06000f;
-        public static final int word2_button=0x7f060010;
-        public static final int word3_button=0x7f060011;
-        public static final int word4_button=0x7f060012;
-        public static final int word5_button=0x7f060013;
+        public static final int about_button=0x7f07002b;
+        public static final int about_description_text=0x7f070005;
+        public static final int adView=0x7f070014;
+        public static final int answer1_button=0x7f07002f;
+        public static final int answer2_button=0x7f070030;
+        public static final int answer3_button=0x7f070031;
+        public static final int answer4_button=0x7f070032;
+        public static final int answer5_button=0x7f070033;
+        public static final int answers_intro_text=0x7f070015;
+        public static final int category1_button=0x7f070048;
+        public static final int category2_button=0x7f070049;
+        public static final int category3_button=0x7f07004a;
+        public static final int category4_button=0x7f07004b;
+        public static final int check_answer_title=0x7f070006;
+        public static final int classification_instructions=0x7f07000e;
+        public static final int correct_or_incorrect_text=0x7f070007;
+        public static final int heart1=0x7f07000a;
+        public static final int heart2=0x7f07000b;
+        public static final int heart3=0x7f07000c;
+        public static final int hearts=0x7f070008;
+        public static final int hybrid=0x7f070004;
+        public static final int layout0=0x7f070018;
+        public static final int layout1=0x7f07001a;
+        public static final int layout2=0x7f07001e;
+        public static final int layout3=0x7f070022;
+        public static final int layout4=0x7f070026;
+        public static final int lives_text=0x7f070009;
+        public static final int logicButton1=0x7f07001b;
+        public static final int logicButton2=0x7f07001c;
+        public static final int logicButton3=0x7f07001d;
+        public static final int logicButton4=0x7f07001f;
+        public static final int logicButton5=0x7f070020;
+        public static final int logicButton6=0x7f070021;
+        public static final int logicButton7=0x7f070023;
+        public static final int logicButton8=0x7f070024;
+        public static final int logicButton9=0x7f070025;
+        public static final int logic_instructions=0x7f070019;
+        public static final int main_layout=0x7f070028;
+        public static final int mathematics_layout=0x7f07002c;
+        public static final int maths_instructions=0x7f07002d;
+        public static final int maths_sequence=0x7f07002e;
+        public static final int memoryImageView1=0x7f070035;
+        public static final int memoryImageView10=0x7f07003e;
+        public static final int memoryImageView11=0x7f07003f;
+        public static final int memoryImageView12=0x7f070040;
+        public static final int memoryImageView13=0x7f070041;
+        public static final int memoryImageView14=0x7f070042;
+        public static final int memoryImageView15=0x7f070043;
+        public static final int memoryImageView16=0x7f070044;
+        public static final int memoryImageView2=0x7f070036;
+        public static final int memoryImageView3=0x7f070037;
+        public static final int memoryImageView4=0x7f070038;
+        public static final int memoryImageView5=0x7f070039;
+        public static final int memoryImageView6=0x7f07003a;
+        public static final int memoryImageView7=0x7f07003b;
+        public static final int memoryImageView8=0x7f07003c;
+        public static final int memoryImageView9=0x7f07003d;
+        public static final int memory_instructions=0x7f070034;
+        public static final int memory_layout=0x7f070017;
+        public static final int menu_about=0x7f07004e;
+        public static final int menu_item_share=0x7f07004f;
+        public static final int menu_main=0x7f07004c;
+        public static final int menu_settings=0x7f07004d;
+        public static final int none=0x7f070000;
+        public static final int normal=0x7f070001;
+        public static final int options=0x7f07000d;
+        public static final int pattern_recognition_instructions=0x7f070045;
+        public static final int satellite=0x7f070002;
+        public static final int score_text=0x7f070016;
+        public static final int settings_button=0x7f07002a;
+        public static final int skipButton=0x7f070027;
+        public static final int start_button=0x7f070029;
+        public static final int terrain=0x7f070003;
+        public static final int verbal_instructions=0x7f070046;
+        public static final int verbal_letters=0x7f070047;
+        public static final int word1_button=0x7f07000f;
+        public static final int word2_button=0x7f070010;
+        public static final int word3_button=0x7f070011;
+        public static final int word4_button=0x7f070012;
+        public static final int word5_button=0x7f070013;
     }
     public static final class integer {
-        public static final int google_play_services_version=0x7f080000;
+        public static final int google_play_services_version=0x7f090000;
     }
     public static final class layout {
         public static final int activity_about=0x7f030000;
@@ -317,171 +317,176 @@ containing a value of this type.
         public static final int activity_visual=0x7f03000b;
     }
     public static final class menu {
-        public static final int main=0x7f0b0000;
-        public static final int share_menu=0x7f0b0001;
+        public static final int main=0x7f0c0000;
+        public static final int share_menu=0x7f0c0001;
+    }
+    public static final class raw {
+        public static final int clap=0x7f050000;
+        public static final int correct=0x7f050001;
+        public static final int incorrect=0x7f050002;
     }
     public static final class string {
-        public static final int about_button=0x7f070021;
-        public static final int about_description_text=0x7f07003d;
-        public static final int action_settings=0x7f07003c;
-        public static final int activity_title_settings=0x7f070025;
-        public static final int answer_label_text=0x7f070045;
-        public static final int app_name=0x7f07001a;
+        public static final int about_button=0x7f080021;
+        public static final int about_description_text=0x7f08003d;
+        public static final int action_settings=0x7f08003c;
+        public static final int activity_title_settings=0x7f080025;
+        public static final int answer_label_text=0x7f080045;
+        public static final int app_name=0x7f08001a;
         /**   Title for notification shown when GooglePlayServices needs to be
         enabled for a application to work. [CHAR LIMIT=70] 
          */
-        public static final int auth_client_needs_enabling_title=0x7f070015;
+        public static final int auth_client_needs_enabling_title=0x7f080015;
         /**   Title for notification shown when GooglePlayServices needs to be
         installed for a application to work. [CHAR LIMIT=70] 
          */
-        public static final int auth_client_needs_installation_title=0x7f070016;
+        public static final int auth_client_needs_installation_title=0x7f080016;
         /**   Title for notification shown when GooglePlayServices needs to be
         udpated for a application to work. [CHAR LIMIT=70] 
          */
-        public static final int auth_client_needs_update_title=0x7f070017;
+        public static final int auth_client_needs_update_title=0x7f080017;
         /**   Title for notification shown when GooglePlayServices is unavailable [CHAR LIMIT=42] 
          */
-        public static final int auth_client_play_services_err_notification_msg=0x7f070018;
+        public static final int auth_client_play_services_err_notification_msg=0x7f080018;
         /**   Requested by string saying which app requested the notification. [CHAR LIMIT=42] 
          */
-        public static final int auth_client_requested_by_msg=0x7f070019;
+        public static final int auth_client_requested_by_msg=0x7f080019;
         /**   Title for notification shown when a bad version of GooglePlayServices
         has been installed and needs correction for an application to work.
         [CHAR LIMIT=70] 
          */
-        public static final int auth_client_using_bad_version_title=0x7f070014;
-        public static final int blue_oval=0x7f070048;
-        public static final int check_answer_button=0x7f07004d;
-        public static final int check_answer_text=0x7f07004c;
-        public static final int classification_instructions_text=0x7f070044;
-        public static final int classification_questions_switch_text=0x7f07002a;
+        public static final int auth_client_using_bad_version_title=0x7f080014;
+        public static final int blue_oval=0x7f080048;
+        public static final int check_answer_button=0x7f08004d;
+        public static final int check_answer_text=0x7f08004c;
+        public static final int classification_instructions_text=0x7f080044;
+        public static final int classification_questions_switch_text=0x7f08002a;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_enable_button=0x7f070006;
+        public static final int common_google_play_services_enable_button=0x7f080006;
         /**  Message in confirmation dialog informing user they need to enable
         Google Play services in application settings [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_enable_text=0x7f070005;
+        public static final int common_google_play_services_enable_text=0x7f080005;
         /**  Title of confirmation dialog informing user they need to enable
         Google Play services in application settings [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_enable_title=0x7f070004;
+        public static final int common_google_play_services_enable_title=0x7f080004;
         /**  Button in confirmation dialog for installing Google Play services [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_install_button=0x7f070003;
+        public static final int common_google_play_services_install_button=0x7f080003;
         /**  (For phones) Message in confirmation dialog informing user that
         they need to install Google Play services (from Play Store) [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_install_text_phone=0x7f070001;
+        public static final int common_google_play_services_install_text_phone=0x7f080001;
         /**  (For tablets) Message in confirmation dialog informing user that
         they need to install Google Play services (from Play Store) [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_install_text_tablet=0x7f070002;
+        public static final int common_google_play_services_install_text_tablet=0x7f080002;
         /**  Title of confirmation dialog informing user that they need to install
         Google Play services (from Play Store) [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_install_title=0x7f070000;
+        public static final int common_google_play_services_install_title=0x7f080000;
         /**  Message in confirmation dialog informing the user that they provided an invalid account. [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_invalid_account_text=0x7f07000c;
+        public static final int common_google_play_services_invalid_account_text=0x7f08000c;
         /**  Title of confirmation dialog informing the user that they provided an invalid account. [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_invalid_account_title=0x7f07000b;
+        public static final int common_google_play_services_invalid_account_title=0x7f08000b;
         /**  Message in confirmation dialog informing the user that a network error occurred. [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_network_error_text=0x7f07000a;
+        public static final int common_google_play_services_network_error_text=0x7f08000a;
         /**  Title of confirmation dialog informing the user that a network error occurred. [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_network_error_title=0x7f070009;
+        public static final int common_google_play_services_network_error_title=0x7f080009;
         /**  Message in confirmation dialog informing user there is an unknown issue in Google Play
         services [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_unknown_issue=0x7f07000d;
+        public static final int common_google_play_services_unknown_issue=0x7f08000d;
         /**  Message in confirmation dialog informing user that date on the device is not correct,
     causing certificate checks to fail. [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_unsupported_date_text=0x7f070010;
+        public static final int common_google_play_services_unsupported_date_text=0x7f080010;
         /**  Message in confirmation dialog informing user that Google Play services is not supported on their device [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_unsupported_text=0x7f07000f;
+        public static final int common_google_play_services_unsupported_text=0x7f08000f;
         /**  Title of confirmation dialog informing user that Google Play services is not supported on their device [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_unsupported_title=0x7f07000e;
+        public static final int common_google_play_services_unsupported_title=0x7f08000e;
         /**  Button in confirmation dialog for updating Google Play services [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_update_button=0x7f070011;
+        public static final int common_google_play_services_update_button=0x7f080011;
         /**  Message in confirmation dialog informing user that they need to update
         Google Play services (from Play Store) [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_update_text=0x7f070008;
+        public static final int common_google_play_services_update_text=0x7f080008;
         /**  Title of confirmation dialog informing user that they need to update
         Google Play services (from Play Store) [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_update_title=0x7f070007;
+        public static final int common_google_play_services_update_title=0x7f080007;
         /**  Sign-in button text [CHAR LIMIT=15] 
          */
-        public static final int common_signin_button_text=0x7f070012;
+        public static final int common_signin_button_text=0x7f080012;
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
-        public static final int common_signin_button_text_long=0x7f070013;
-        public static final int finished_text=0x7f07002e;
-        public static final int heart=0x7f070049;
-        public static final int hello_world=0x7f07003e;
-        public static final int lives_text=0x7f07004a;
-        public static final int logic_instructions_text=0x7f070040;
-        public static final int logic_questions_switch_text=0x7f070027;
-        public static final int mathematical_questions_switch_text=0x7f07002b;
-        public static final int maths_instructions_text=0x7f070042;
-        public static final int memory_instructions_after_green_text=0x7f070041;
-        public static final int memory_instructions_text=0x7f07003f;
-        public static final int memory_time_left=0x7f070046;
-        public static final int menu_about=0x7f07001d;
-        public static final int menu_main=0x7f07001b;
-        public static final int menu_settings=0x7f07001c;
-        public static final int menu_share=0x7f07001e;
-        public static final int pattern_recognition_instructions=0x7f07004b;
-        public static final int pattern_recognition_questions_switch_text=0x7f070028;
-        public static final int pref_description_social_recommendations=0x7f070053;
-        public static final int pref_header_general=0x7f070050;
-        public static final int pref_header_questions=0x7f070051;
-        public static final int pref_title_classification=0x7f070056;
-        public static final int pref_title_logic=0x7f070055;
-        public static final int pref_title_mathematical=0x7f070059;
-        public static final int pref_title_memory=0x7f070058;
-        public static final int pref_title_pattern_recognition=0x7f07005c;
-        public static final int pref_title_social_recommendations=0x7f070052;
-        public static final int pref_title_sound=0x7f070054;
-        public static final int pref_title_spatial=0x7f07005a;
-        public static final int pref_title_verbal=0x7f070057;
-        public static final int pref_title_visual=0x7f07005b;
-        public static final int red_oval=0x7f070047;
-        public static final int reset_highscore_button=0x7f070022;
-        public static final int reset_highscore_text=0x7f070024;
-        public static final int settings_button=0x7f070020;
-        public static final int share=0x7f070023;
-        public static final int skip_question=0x7f07004e;
-        public static final int spatial_questions_switch_text=0x7f070029;
-        public static final int start_button=0x7f07001f;
-        public static final int timer_switch_text=0x7f070026;
-        public static final int title_activity_about=0x7f070031;
-        public static final int title_activity_classification=0x7f070039;
-        public static final int title_activity_finish=0x7f07003b;
-        public static final int title_activity_logic=0x7f070037;
-        public static final int title_activity_mathematics=0x7f070034;
-        public static final int title_activity_memory=0x7f070032;
-        public static final int title_activity_pattern_recognition=0x7f070036;
-        public static final int title_activity_settings=0x7f07004f;
-        public static final int title_activity_spatial=0x7f070035;
-        public static final int title_activity_verbal=0x7f070033;
-        public static final int title_activity_visual=0x7f070038;
-        public static final int title_check_answer=0x7f07003a;
-        public static final int title_other_settings=0x7f070030;
-        public static final int title_question_types=0x7f07002f;
-        public static final int verbal_instructions_text=0x7f070043;
-        public static final int verbal_questions_switch_text=0x7f07002d;
-        public static final int visualisation_questions_switch_text=0x7f07002c;
+        public static final int common_signin_button_text_long=0x7f080013;
+        public static final int finished_text=0x7f08002e;
+        public static final int heart=0x7f080049;
+        public static final int hello_world=0x7f08003e;
+        public static final int lives_text=0x7f08004a;
+        public static final int logic_instructions_text=0x7f080040;
+        public static final int logic_questions_switch_text=0x7f080027;
+        public static final int mathematical_questions_switch_text=0x7f08002b;
+        public static final int maths_instructions_text=0x7f080042;
+        public static final int memory_instructions_after_green_text=0x7f080041;
+        public static final int memory_instructions_text=0x7f08003f;
+        public static final int memory_time_left=0x7f080046;
+        public static final int menu_about=0x7f08001d;
+        public static final int menu_main=0x7f08001b;
+        public static final int menu_settings=0x7f08001c;
+        public static final int menu_share=0x7f08001e;
+        public static final int pattern_recognition_instructions=0x7f08004b;
+        public static final int pattern_recognition_questions_switch_text=0x7f080028;
+        public static final int pref_description_social_recommendations=0x7f080053;
+        public static final int pref_header_general=0x7f080050;
+        public static final int pref_header_questions=0x7f080051;
+        public static final int pref_title_classification=0x7f080056;
+        public static final int pref_title_logic=0x7f080055;
+        public static final int pref_title_mathematical=0x7f080059;
+        public static final int pref_title_memory=0x7f080058;
+        public static final int pref_title_pattern_recognition=0x7f08005c;
+        public static final int pref_title_social_recommendations=0x7f080052;
+        public static final int pref_title_sound=0x7f080054;
+        public static final int pref_title_spatial=0x7f08005a;
+        public static final int pref_title_verbal=0x7f080057;
+        public static final int pref_title_visual=0x7f08005b;
+        public static final int red_oval=0x7f080047;
+        public static final int reset_highscore_button=0x7f080022;
+        public static final int reset_highscore_text=0x7f080024;
+        public static final int settings_button=0x7f080020;
+        public static final int share=0x7f080023;
+        public static final int skip_question=0x7f08004e;
+        public static final int spatial_questions_switch_text=0x7f080029;
+        public static final int start_button=0x7f08001f;
+        public static final int timer_switch_text=0x7f080026;
+        public static final int title_activity_about=0x7f080031;
+        public static final int title_activity_classification=0x7f080039;
+        public static final int title_activity_finish=0x7f08003b;
+        public static final int title_activity_logic=0x7f080037;
+        public static final int title_activity_mathematics=0x7f080034;
+        public static final int title_activity_memory=0x7f080032;
+        public static final int title_activity_pattern_recognition=0x7f080036;
+        public static final int title_activity_settings=0x7f08004f;
+        public static final int title_activity_spatial=0x7f080035;
+        public static final int title_activity_verbal=0x7f080033;
+        public static final int title_activity_visual=0x7f080038;
+        public static final int title_check_answer=0x7f08003a;
+        public static final int title_other_settings=0x7f080030;
+        public static final int title_question_types=0x7f08002f;
+        public static final int verbal_instructions_text=0x7f080043;
+        public static final int verbal_questions_switch_text=0x7f08002d;
+        public static final int visualisation_questions_switch_text=0x7f08002c;
     }
     public static final class style {
         /** 
@@ -505,11 +510,11 @@ containing a value of this type.
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f0a0000;
+        public static final int AppBaseTheme=0x7f0b0000;
         /**  Application theme. 
          */
-        public static final int AppTheme=0x7f0a0001;
-        public static final int ButtonText=0x7f0a0002;
+        public static final int AppTheme=0x7f0b0001;
+        public static final int ButtonText=0x7f0b0002;
     }
     public static final class xml {
         public static final int pref_headers=0x7f040000;

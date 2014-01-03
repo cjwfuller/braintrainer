@@ -40,7 +40,7 @@
     <string name="title_activity_finish">Finish</string>
     
     <string name="action_settings">Settings</string>
-    <string name="about_description_text">Thanks for downloading Brain Trainer!\n\nThis app contains lots of mind bending exercises to train your brain.\n\nYou can choose the types of questions you want to practice or you can just let the app decide for you.\n\nSuggestions/comments: chris@cjwfuller.com</string>
+    <string name="about_description_text">Thanks for downloading Brain Trainer!\n\nThis app contains lots of mind bending exercises to train your brain.\n\nYou can choose the types of questions you want to practice or you can just let the app decide for you.\n\nSuggestions/comments: chris@cjwfuller.com\n\nCredits:\n\nSounds: www.freesound.org</string>
     <string name="hello_world">Hello world!</string>
     <string name="memory_instructions_text">Remember where the greens are!</string>
     <string name="logic_instructions_text">Put the numbers in ascending order!  To move tiles, touch ones with empty slots next to them</string>
