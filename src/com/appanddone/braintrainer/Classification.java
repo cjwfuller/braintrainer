@@ -14,7 +14,7 @@ public class Classification extends MainActivity {
 
 	private String[][] wordGroups;
 	private String[] answers;
-	public final static int numProblems = 5;
+	public final static int numProblems = 21;
 	public static int randomProblem;
 	
 	@Override
@@ -105,6 +105,102 @@ public class Classification extends MainActivity {
 		wordGroups[4][2] = "Venus";
 		wordGroups[4][3] = "Jupiter";
 		wordGroups[4][4] = "Moon";
+		// Problem 5
+		wordGroups[5][0] = "Tennis";
+		wordGroups[5][1] = "Cricket";
+		wordGroups[5][2] = "Badminton";
+		wordGroups[5][3] = "Netball";
+		wordGroups[5][4] = "Football";
+		// Problem 6
+		wordGroups[6][0] = "Square";
+		wordGroups[6][1] = "Circle";
+		wordGroups[6][2] = "Sphere";
+		wordGroups[6][3] = "Rectangle";
+		wordGroups[6][4] = "Rhombus";
+		// Problem 7
+		wordGroups[7][0] = "Trout";
+		wordGroups[7][1] = "Sole";
+		wordGroups[7][2] = "Plaice";
+		wordGroups[7][3] = "Tuna";
+		wordGroups[7][4] = "Fish";
+		// Problem 8
+		wordGroups[8][0] = "Hammer";
+		wordGroups[8][1] = "Screwdriver";
+		wordGroups[8][2] = "Saw";
+		wordGroups[8][3] = "Drill";
+		wordGroups[8][4] = "Wood";
+		// Problem 9
+		wordGroups[9][0] = "Americano";
+		wordGroups[9][1] = "Espresso";
+		wordGroups[9][2] = "Latte";
+		wordGroups[9][3] = "Tea";
+		wordGroups[9][4] = "Cappuccino";
+		// Problem 10
+		wordGroups[10][0] = "Shirt";
+		wordGroups[10][1] = "Cardigan";
+		wordGroups[10][2] = "Jumper";
+		wordGroups[10][3] = "Vest";
+		wordGroups[10][4] = "Socks";
+		// Problem 11
+		wordGroups[11][0] = "Red";
+		wordGroups[11][1] = "Blue";
+		wordGroups[11][2] = "Orange";
+		wordGroups[11][3] = "Light";
+		wordGroups[11][4] = "Purple";	
+		// Problem 12
+		wordGroups[12][0] = "Wind";
+		wordGroups[12][1] = "Summer";
+		wordGroups[12][2] = "Snow";
+		wordGroups[12][3] = "Rain";
+		wordGroups[12][4] = "Hail";	
+		// Problem 13
+		wordGroups[13][0] = "Ocean";
+		wordGroups[13][1] = "Lake";
+		wordGroups[13][2] = "Water";
+		wordGroups[13][3] = "Pond";
+		wordGroups[13][4] = "Sea";	
+		// Problem 14
+		wordGroups[14][0] = "Brazilian";
+		wordGroups[14][1] = "Chinese";
+		wordGroups[14][2] = "Africa";
+		wordGroups[14][3] = "English";
+		wordGroups[14][4] = "American";
+		// Problem 15
+		wordGroups[15][0] = "Harp";
+		wordGroups[15][1] = "Guitar";
+		wordGroups[15][2] = "Cello";
+		wordGroups[15][3] = "Violin";
+		wordGroups[15][4] = "Saxophone";	
+		// Problem 16
+		wordGroups[16][0] = "Paragraph";
+		wordGroups[16][1] = "Sentence";
+		wordGroups[16][2] = "Grammar";
+		wordGroups[16][3] = "Word";
+		wordGroups[16][4] = "Chapter";
+		// Problem 17
+		wordGroups[17][0] = "Two";
+		wordGroups[17][1] = "Third";
+		wordGroups[17][2] = "Quarter";
+		wordGroups[17][3] = "Tenth";
+		wordGroups[17][4] = "Half";	
+		// Problem 18
+		wordGroups[18][0] = "Heart";
+		wordGroups[18][1] = "Lung";
+		wordGroups[18][2] = "Ear";
+		wordGroups[18][3] = "Liver";
+		wordGroups[18][4] = "Kidney";
+		// Problem 19
+		wordGroups[19][0] = "Shout";
+		wordGroups[19][1] = "Sing";
+		wordGroups[19][2] = "Phone";
+		wordGroups[19][3] = "Talk";
+		wordGroups[19][4] = "Whisper";
+		// Problem 20
+		wordGroups[20][0] = "Bulb";
+		wordGroups[20][1] = "Candle";
+		wordGroups[20][2] = "Torch";
+		wordGroups[20][3] = "Light";
+		wordGroups[20][4] = "Glow Stick";		
 		// Answers
 		answers = new String[numProblems];
 		answers[0] = "Carrot";
@@ -112,6 +208,22 @@ public class Classification extends MainActivity {
 		answers[2] = "Tonic";
 		answers[3] = "Train";
 		answers[4] = "Moon";
+		answers[5] = "Badminton";
+		answers[6] = "Sphere";
+		answers[7] = "Fish";
+		answers[8] = "Wood";
+		answers[9] = "Tea";
+		answers[10] = "Socks";
+		answers[11] = "Light";
+		answers[12] = "Summer";
+		answers[13] = "Water";
+		answers[14] = "Africa";
+		answers[15] = "Saxophone";
+		answers[16] = "Grammar";
+		answers[17] = "Two";
+		answers[18] = "Ear";
+		answers[19] = "Phone";
+		answers[20] = "Lights";
 	}
 	
 	private void showButtonsAndSetupText() {
