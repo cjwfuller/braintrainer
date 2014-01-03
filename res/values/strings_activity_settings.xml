@@ -11,8 +11,8 @@
     <string name="pref_title_verbal">Verbal</string>
     <string name="pref_title_memory">Memory</string>
     <string name="pref_title_mathematical">Mathematical</string>
-    <string name="pref_title_spatial">Spatial</string>
-    <string name="pref_title_visual">Visual</string>
-    <string name="pref_title_pattern_recognition">Pattern Recognition</string>
+    <string name="pref_title_spatial">Spatial (coming soon)</string>
+    <string name="pref_title_visual">Visual (coming soon)</string>
+    <string name="pref_title_pattern_recognition">Pattern Recognition (coming soon)</string>
 
 </resources>
