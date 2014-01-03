@@ -38,6 +38,7 @@ public class BrainTrainer extends Application {
 		questionsAsked.put(Verbal.class.getSimpleName(), new ArrayList<Integer>());
 		questionsAsked.put(Visual.class.getSimpleName(), new ArrayList<Integer>());
 		questionsAsked.put(PatternRecognition.class.getSimpleName(), new ArrayList<Integer>());
+		questionsAsked.put(Memory.class.getSimpleName(), new ArrayList<Integer>());
 		// Keep track of scores for each question type
 		numCorrectBreakdown = new HashMap<String, Integer>();
 		numCorrectBreakdown.put(Classification.class.getSimpleName(), 0);

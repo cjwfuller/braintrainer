@@ -275,6 +275,10 @@ public class MainActivity extends Activity {
 		while(!foundQuestion) {
 			clazz = Class.forName(getApplicationContext().getPackageName() + "." + enabledAvailableQuestionTypes.get(randomQuestionType));
 			if(enabledAvailableQuestionTypes.get(randomQuestionType).equals("Memory")) {
+				// We don't need to keep track of memory questions because 
+				// they're random but store something so we know how many 
+				// memory questions were asked
+				brainTrainer.recordQuestion(enabledAvailableQuestionTypes.get(randomQuestionType), -1);
 				break;
 			}
 			Field myField = clazz.getDeclaredField("numProblems");

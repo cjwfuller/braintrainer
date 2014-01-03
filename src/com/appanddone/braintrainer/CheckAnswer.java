@@ -35,7 +35,7 @@ public class CheckAnswer extends MainActivity {
 		}
 		mp.start();
 		// Go to next random activity after 1 second
-		new CountDownTimer(900, 1000) {
+		new CountDownTimer(1000, 1000) {
 		     public void onTick(long millisUntilFinished) { }
 		     public void onFinish() {
 		    	 try {
