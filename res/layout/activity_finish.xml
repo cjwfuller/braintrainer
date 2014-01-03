@@ -62,7 +62,35 @@
         android:layout_height="wrap_content"
         android:text="@string/mathematical_score_text"
         android:textSize="30sp"
-        android:layout_centerHorizontal="true" />                                                    
+        android:layout_centerHorizontal="true" />  
+    <LinearLayout
+        android:id="@+id/finish_options_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_above="@+id/adView"
+        android:layout_centerHorizontal="true" >
+       <Button
+           android:id="@+id/main_menu_button"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:background="@drawable/btn_purple"
+           style="@style/ButtonText"
+           android:width="150sp"
+           android:layout_gravity="center"
+           android:text="@string/main_menu"
+           android:textSize="20sp" />          
+       <Button
+           android:id="@+id/play_again_button"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:background="@drawable/btn_purple"
+           style="@style/ButtonText"
+           android:width="150sp"      
+           android:layout_gravity="center"
+           android:text="@string/play_again"
+           android:textSize="20sp" />
+    </LinearLayout>                                                          
     <com.google.android.gms.ads.AdView 
        android:id="@+id/adView"
        android:layout_width="wrap_content"

@@ -65,5 +65,8 @@
     <string name="verbal_score_text">Verbal: </string>
     <string name="memory_score_text">Memory: </string>
     <string name="mathematical_score_text">Mathematics: </string>
+    
+    <string name="main_menu">Main Menu</string>
+    <string name="play_again">Play Again!</string>
 
 </resources>

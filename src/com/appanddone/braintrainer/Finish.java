@@ -4,11 +4,15 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class Finish extends MainActivity {
@@ -17,6 +21,7 @@ public class Finish extends MainActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_finish);
+		enableButtons();
 		Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/Arvil_Sans.ttf");
 		// Load ad
 		AdView adView = (AdView)this.findViewById(R.id.adView);
@@ -47,7 +52,6 @@ public class Finish extends MainActivity {
 		memory.setText("Memory: " + Integer.toString(brainTrainer.numCorrectBreakdown.get("Memory")) + " / " + Integer.toString(brainTrainer.questionsAsked.get("Memory").size()));
 		mathematics.setText("Mathematics: " + Integer.toString(brainTrainer.numCorrectBreakdown.get("Mathematics")) + " / " + Integer.toString(brainTrainer.questionsAsked.get("Mathematics").size()));
 		// If it's a new highscore then save the score
-		// TODO
 		SharedPreferences prefs = this.getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
 		int score = prefs.getInt("highscore", 0);
 		if(score < brainTrainer.numCorrect) {
@@ -64,5 +68,37 @@ public class Finish extends MainActivity {
 	@Override
 	public void onBackPressed() {
 		super.onBackPressed();
+	}
+	
+	private void enableButtons() {
+		Button mainMenuButton = (Button)findViewById(R.id.main_menu_button);
+		mainMenuButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				brainTrainer.reset();
+				Intent intent_main = new Intent(Finish.this, MainActivity.class);
+				Finish.this.startActivity(intent_main);
+			}
+		});
+		
+		Button playAgainButton = (Button)findViewById(R.id.play_again_button);
+		playAgainButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				try {
+					brainTrainer.reset();
+					startRandomQuestion();
+				} catch (IllegalAccessException e) {
+					e.printStackTrace();
+				} catch (IllegalArgumentException e) {
+					e.printStackTrace();
+				} catch (NoSuchFieldException e) {
+					e.printStackTrace();
+				} catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				}
+			}
+		});
 	}
 }

@@ -22,7 +22,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ShareActionProvider;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	
@@ -259,7 +258,6 @@ public class MainActivity extends Activity {
 		if(enabledAvailableQuestionTypes.size() == 0) {
 			Intent intent = new Intent(MainActivity.this, Finish.class);
 			MainActivity.this.startActivity(intent);
-			Toast.makeText(getApplicationContext(), "No questions remaining!", Toast.LENGTH_LONG).show();
 			finish();
 		}
 	}
