@@ -3,6 +3,9 @@ package com.appanddone.braintrainer;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -43,9 +46,19 @@ public class Finish extends MainActivity {
 		verbal.setText("Verbal: " + Integer.toString(brainTrainer.numCorrectBreakdown.get("Verbal")) + " / " + Integer.toString(brainTrainer.questionsAsked.get("Verbal").size()));
 		memory.setText("Memory: " + Integer.toString(brainTrainer.numCorrectBreakdown.get("Memory")) + " / " + Integer.toString(brainTrainer.questionsAsked.get("Memory").size()));
 		mathematics.setText("Mathematics: " + Integer.toString(brainTrainer.numCorrectBreakdown.get("Mathematics")) + " / " + Integer.toString(brainTrainer.questionsAsked.get("Mathematics").size()));
-		// Clap sound
-		MediaPlayer mp = MediaPlayer.create(this, R.raw.clap);
-	    mp.start();
+		// If it's a new highscore then save the score
+		// TODO
+		SharedPreferences prefs = this.getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
+		int score = prefs.getInt("highscore", 0);
+		if(score < brainTrainer.numCorrect) {
+			// Store
+			Editor editor = prefs.edit();
+			editor.putInt("highscore", brainTrainer.numCorrect);
+			editor.commit();
+			// Play clap  sound
+			MediaPlayer mp = MediaPlayer.create(this, R.raw.clap);
+		    mp.start();
+		}
 	}
 	
 	@Override

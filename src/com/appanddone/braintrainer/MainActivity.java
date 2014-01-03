@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Random;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
@@ -20,6 +21,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ShareActionProvider;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -77,6 +79,32 @@ public class MainActivity extends Activity {
 				MainActivity.this.startActivity(intent_about);
 			}
 		});
+		
+		// Show the highscore
+		TextView highscoreTextView = (TextView)findViewById(R.id.highscore_text);
+		highscoreTextView.setTypeface(typeFace);
+		SharedPreferences prefs = this.getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
+		int score = prefs.getInt("highscore", 0);
+		highscoreTextView.setText(getFormattedScore(score));
+	}
+	
+	/**
+	 * Given an integer score, get a 3-char score with arrows either side
+	 * If score is fewer than 2 or 3 digits then pad with zeroes 
+	 * 
+	 * @param int score to format
+	 * @return String formatted score
+	 */
+	private String getFormattedScore(int score) {
+		String str = Integer.toString(score);
+		int strLen = str.length();
+		if(strLen == 1) {
+			str = "00" + str;
+		} else if(strLen == 2) {
+			str = "0" + str;
+		}
+		str = "\u25B6\u25B6\u25B6 Highscore \u25B6\u25B6\u25B6 " + str;
+		return str;
 	}
 
 	@Override

@@ -38,6 +38,12 @@
         android:textSize="50sp"
         android:width="300dp"
         android:text="@string/about_button"
-        android:layout_below="@+id/settings_button"/>            
+        android:layout_below="@+id/settings_button"/>   
+    <TextView
+        android:id="@+id/highscore_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/about_button"
+        android:textSize="40sp" />                 
 
 </RelativeLayout>
