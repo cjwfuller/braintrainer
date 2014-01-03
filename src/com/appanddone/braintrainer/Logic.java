@@ -7,11 +7,13 @@ import com.google.android.gms.ads.AdView;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * An implementation of the '8-puzzle' game for Android
@@ -344,7 +346,16 @@ public class Logic extends MainActivity {
 					if(getNumInversions() == 0) {
 						Log.d("Logic", "Logic.addClickHandlers() Game complete!");
 						brainTrainer.numCorrect++;
-						checkAnswer(true, "Logic");
+						// Pause a little before moving onto next question with
+						// logic task so user has a chance to see how they 
+						// solved the question
+						Toast.makeText(getApplicationContext(), "Solution found!", Toast.LENGTH_SHORT).show();
+						Handler handler = new Handler(); 
+					    handler.postDelayed(new Runnable() { 
+					         public void run() { 
+					        	 checkAnswer(true, "Logic");
+					         } 
+					    }, 800); 
 					}
 				}
 			});
