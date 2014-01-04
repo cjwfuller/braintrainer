@@ -25,7 +25,7 @@ import android.widget.Toast;
  */
 public class Logic extends MainActivity {
 	
-	public final static int numProblems = 2;
+	public final static int numProblems = 21;
 	public static int randomProblem;
 	private int grids[][][] = new int[numProblems][3][3];
 	
@@ -62,7 +62,7 @@ public class Logic extends MainActivity {
 	 * @return void
 	 */
 	private void setProblems() {
-		// Problem 1
+		// Problem 0
 		grids[0][0][0] = 0;
 		grids[0][1][0] = 1;
 		grids[0][2][0] = 3;
@@ -72,7 +72,7 @@ public class Logic extends MainActivity {
 		grids[0][0][2] = 7;
 		grids[0][1][2] = 8;
 		grids[0][2][2] = 6;
-		// Problem 2
+		// Problem 1
 		grids[1][0][0] = 1;
 		grids[1][1][0] = 0;
 		grids[1][2][0] = 3;
@@ -82,6 +82,196 @@ public class Logic extends MainActivity {
 		grids[1][0][2] = 8;
 		grids[1][1][2] = 7;
 		grids[1][2][2] = 4;
+		// Problem 2
+		grids[2][0][0] = 1;
+		grids[2][1][0] = 4;
+		grids[2][2][0] = 2;
+		grids[2][0][1] = 3;
+		grids[2][1][1] = 6;
+		grids[2][2][1] = 8;
+		grids[2][0][2] = 0;
+		grids[2][1][2] = 7;
+		grids[2][2][2] = 5;		
+		// Problem 3
+		grids[3][0][0] = 2;
+		grids[3][1][0] = 5;
+		grids[3][2][0] = 3;
+		grids[3][0][1] = 6;
+		grids[3][1][1] = 1;
+		grids[3][2][1] = 4;
+		grids[3][0][2] = 8;
+		grids[3][1][2] = 7;
+		grids[3][2][2] = 0;
+		// Problem 4
+		grids[4][0][0] = 2;
+		grids[4][1][0] = 6;
+		grids[4][2][0] = 3;
+		grids[4][0][1] = 1;
+		grids[4][1][1] = 4;
+		grids[4][2][1] = 7;
+		grids[4][0][2] = 0;
+		grids[4][1][2] = 8;
+		grids[4][2][2] = 5;
+		// Problem 5
+		grids[5][0][0] = 1;
+		grids[5][1][0] = 2;
+		grids[5][2][0] = 3;
+		grids[5][0][1] = 6;
+		grids[5][1][1] = 4;
+		grids[5][2][1] = 5;
+		grids[5][0][2] = 7;
+		grids[5][1][2] = 8;
+		grids[5][2][2] = 0;	
+		// Problem 6
+		grids[6][0][0] = 2;
+		grids[6][1][0] = 1;
+		grids[6][2][0] = 3;
+		grids[6][0][1] = 7;
+		grids[6][1][1] = 4;
+		grids[6][2][1] = 5;
+		grids[6][0][2] = 6;
+		grids[6][1][2] = 8;
+		grids[6][2][2] = 0;		
+		// Problem 7
+		grids[7][0][0] = 1;
+		grids[7][1][0] = 5;
+		grids[7][2][0] = 2;
+		grids[7][0][1] = 0;
+		grids[7][1][1] = 4;
+		grids[7][2][1] = 6;
+		grids[7][0][2] = 7;
+		grids[7][1][2] = 3;
+		grids[7][2][2] = 8;
+		// Problem 8
+		grids[8][0][0] = 4;
+		grids[8][1][0] = 2;
+		grids[8][2][0] = 1;
+		grids[8][0][1] = 3;
+		grids[8][1][1] = 5;
+		grids[8][2][1] = 6;
+		grids[8][0][2] = 7;
+		grids[8][1][2] = 8;
+		grids[8][2][2] = 0;
+		// Problem 9
+		grids[9][0][0] = 2;
+		grids[9][1][0] = 3;
+		grids[9][2][0] = 5;
+		grids[9][0][1] = 1;
+		grids[9][1][1] = 6;
+		grids[9][2][1] = 8;
+		grids[9][0][2] = 7;
+		grids[9][1][2] = 4;
+		grids[9][2][2] = 0;
+		// Problem 10
+		grids[10][0][0] = 1;
+		grids[10][1][0] = 5;
+		grids[10][2][0] = 8;
+		grids[10][0][1] = 4;
+		grids[10][1][1] = 7;
+		grids[10][2][1] = 3;
+		grids[10][0][2] = 2;
+		grids[10][1][2] = 0;
+		grids[10][2][2] = 6;
+		// Problem 11
+		grids[11][0][0] = 3;
+		grids[11][1][0] = 4;
+		grids[11][2][0] = 7;
+		grids[11][0][1] = 1;
+		grids[11][1][1] = 2;
+		grids[11][2][1] = 5;
+		grids[11][0][2] = 6;
+		grids[11][1][2] = 0;
+		grids[11][2][2] = 8;
+		// Problem 12
+		grids[12][0][0] = 4;
+		grids[12][1][0] = 5;
+		grids[12][2][0] = 3;
+		grids[12][0][1] = 1;
+		grids[12][1][1] = 8;
+		grids[12][2][1] = 2;
+		grids[12][0][2] = 0;
+		grids[12][1][2] = 7;
+		grids[12][2][2] = 6;
+		// Problem 13
+		grids[13][0][0] = 1;
+		grids[13][1][0] = 5;
+		grids[13][2][0] = 3;
+		grids[13][0][1] = 8;
+		grids[13][1][1] = 4;
+		grids[13][2][1] = 6;
+		grids[13][0][2] = 2;
+		grids[13][1][2] = 0;
+		grids[13][2][2] = 7;
+		// Problem 14
+		grids[14][0][0] = 7;
+		grids[14][1][0] = 2;
+		grids[14][2][0] = 5;
+		grids[14][0][1] = 1;
+		grids[14][1][1] = 6;
+		grids[14][2][1] = 8;
+		grids[14][0][2] = 3;
+		grids[14][1][2] = 0;
+		grids[14][2][2] = 4;
+		// Problem 15
+		grids[15][0][0] = 4;
+		grids[15][1][0] = 6;
+		grids[15][2][0] = 3;
+		grids[15][0][1] = 1;
+		grids[15][1][1] = 2;
+		grids[15][2][1] = 5;
+		grids[15][0][2] = 8;
+		grids[15][1][2] = 0;
+		grids[15][2][2] = 7;
+		// Problem 16
+		grids[16][0][0] = 2;
+		grids[16][1][0] = 3;
+		grids[16][2][0] = 4;
+		grids[16][0][1] = 1;
+		grids[16][1][1] = 0;
+		grids[16][2][1] = 5;
+		grids[16][0][2] = 7;
+		grids[16][1][2] = 6;
+		grids[16][2][2] = 8;
+		// Problem 17
+		grids[17][0][0] = 1;
+		grids[17][1][0] = 4;
+		grids[17][2][0] = 2;
+		grids[17][0][1] = 3;
+		grids[17][1][1] = 5;
+		grids[17][2][1] = 8;
+		grids[17][0][2] = 6;
+		grids[17][1][2] = 7;
+		grids[17][2][2] = 0;
+		// Problem 18
+		grids[18][0][0] = 2;
+		grids[18][1][0] = 1;
+		grids[18][2][0] = 4;
+		grids[18][0][1] = 5;
+		grids[18][1][1] = 6;
+		grids[18][2][1] = 8;
+		grids[18][0][2] = 0;
+		grids[18][1][2] = 3;
+		grids[18][2][2] = 7;
+		// Problem 19
+		grids[19][0][0] = 3;
+		grids[19][1][0] = 4;
+		grids[19][2][0] = 7;
+		grids[19][0][1] = 2;
+		grids[19][1][1] = 5;
+		grids[19][2][1] = 1;
+		grids[19][0][2] = 0;
+		grids[19][1][2] = 6;
+		grids[19][2][2] = 8;
+		// Problem 20
+		grids[20][0][0] = 2;
+		grids[20][1][0] = 1;
+		grids[20][2][0] = 3;
+		grids[20][0][1] = 4;
+		grids[20][1][1] = 7;
+		grids[20][2][1] = 6;
+		grids[20][0][2] = 5;
+		grids[20][1][2] = 8;
+		grids[20][2][2] = 0;		
 	}
 	
 	/**
