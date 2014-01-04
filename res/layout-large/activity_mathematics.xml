@@ -1,0 +1,120 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mathematics_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Mathematics" >
+       <RelativeLayout 
+        android:id="@+id/hearts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp" >
+        <TextView
+             android:id="@+id/lives_text"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginRight="10dp"
+             android:text="@string/lives_text"
+             android:textSize="20sp" />
+        <ImageView 
+             android:id="@+id/heart1"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_toRightOf="@+id/lives_text"
+             android:src="@drawable/heart"
+             android:contentDescription="@string/heart" />
+        <ImageView 
+             android:id="@+id/heart2"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_toRightOf="@+id/heart1"
+             android:src="@drawable/heart"
+             android:contentDescription="@string/heart" />
+        <ImageView 
+             android:id="@+id/heart3"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_toRightOf="@+id/heart2"
+             android:src="@drawable/heart"
+             android:contentDescription="@string/heart" /> 
+   </RelativeLayout>   
+	   <TextView
+	        android:id="@+id/maths_instructions"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_below="@+id/hearts"
+	        android:text="@string/maths_instructions_text"
+	        android:textSize="40sp"
+	        android:textStyle="bold" />
+	   <TextView
+	        android:id="@+id/maths_sequence"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerVertical="true"
+	        android:layout_centerHorizontal="true"
+	        android:textSize="80sp" />
+	   <RelativeLayout 
+	       android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerHorizontal="true"
+	       android:layout_above="@+id/adView" >
+		   <Button
+		        android:id="@+id/answer1_button"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:background="@drawable/btn_green"
+		        style="@style/ButtonText"
+		        android:textSize="60sp"
+		        android:layout_toRightOf="@+id/answer1_button" />
+		   <Button
+	            android:id="@+id/answer2_button"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/btn_green"
+	            style="@style/ButtonText"
+	            android:textSize="60sp"
+	            android:layout_toRightOf="@+id/answer1_button" />
+	       <Button
+	            android:id="@+id/answer3_button"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/btn_green"
+	            style="@style/ButtonText"
+	            android:textSize="60sp"
+	            android:layout_toRightOf="@+id/answer2_button" />
+	       <Button
+	            android:id="@+id/answer4_button"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/btn_green"
+	            style="@style/ButtonText"
+	            android:textSize="60sp"
+	            android:layout_toRightOf="@+id/answer3_button" />
+	       <Button
+	            android:id="@+id/answer5_button"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/btn_green"
+	            style="@style/ButtonText"
+	            android:textSize="60sp"
+	            android:layout_toRightOf="@+id/answer4_button" />   
+       </RelativeLayout>  
+       <com.google.android.gms.ads.AdView 
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" 
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="18dp"
+            ads:adUnitId="ca-app-pub-9379479464831132/1442722003"
+            ads:adSize="BANNER" />
+</RelativeLayout>
