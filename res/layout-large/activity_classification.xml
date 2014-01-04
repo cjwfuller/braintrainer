@@ -87,8 +87,9 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:background="@drawable/btn_green"
-            android:textSize="35sp"
-            android:width="160dp" />
+            android:width="300dp"
+            android:height="100dp"
+            android:textSize="80sp" />
 
         <Button
             android:id="@+id/word3_button"
@@ -99,8 +100,9 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:background="@drawable/btn_green"
-            android:textSize="35sp"
-            android:width="160dp" />
+            android:width="300dp"
+            android:height="100dp"
+            android:textSize="80sp" />
 
         <Button
             android:id="@+id/word1_button"
@@ -109,8 +111,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:background="@drawable/btn_green"
-            android:textSize="35sp"
-            android:width="160dp" />
+            android:width="300dp"
+            android:height="100dp"
+            android:textSize="80sp" />
 
         <Button
             android:id="@+id/word4_button"
@@ -121,8 +124,9 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:background="@drawable/btn_green"
-            android:textSize="35sp"
-            android:width="160dp" />
+            android:width="300dp"
+            android:height="100dp"
+            android:textSize="80sp" />
 
         <Button
             android:id="@+id/word5_button"
@@ -132,8 +136,9 @@
             android:layout_below="@+id/word4_button"
             android:layout_centerHorizontal="true"
             android:background="@drawable/btn_green"
-            android:textSize="35sp"
-            android:width="160dp" />
+            android:width="300dp"
+            android:height="100dp"
+            android:textSize="80sp" />
     </RelativeLayout>
                             
 </RelativeLayout>
