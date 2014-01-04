@@ -14,7 +14,7 @@ public class Verbal extends MainActivity {
 	private String[][] categories;
 	private String[] answers;
 	private String[] scrambledWords;
-	public final static int numProblems = 1;
+	public final static int numProblems = 15;
 	public static int randomProblem;
 	
 	@Override
@@ -72,17 +72,113 @@ public class Verbal extends MainActivity {
 	
 	private void setProblems() {
 		categories = new String[numProblems][5];
-		// Problem 0 - choices
+		scrambledWords = new String[numProblems];
+		answers = new String[numProblems];
+		// Problem 0
 		categories[0][0] = "City";
 		categories[0][1] = "Fruit";
 		categories[0][2] = "Bird";
 		categories[0][3] = "Vegetable";
-		// Problem 0 - scrambled letters
-		scrambledWords = new String[numProblems];
 		scrambledWords[0] = "RAPETEKA";
-		// Answers
-		answers = new String[numProblems];
 		answers[0] = "Bird";
+		// Problem 1
+		categories[1][0] = "Dog";
+		categories[1][1] = "Food";
+		categories[1][2] = "Drink";
+		categories[1][3] = "Wood";
+		scrambledWords[1] = "AERDB";
+		answers[1] = "Bird";
+		// Problem 2
+		categories[2][0] = "Country";
+		categories[2][1] = "Politician";
+		categories[2][2] = "Tree";
+		categories[2][3] = "Metal";
+		scrambledWords[2] = "ZABLIR";
+		answers[2] = "Country";
+		// Problem 3
+		categories[3][0] = "Tool";
+		categories[3][1] = "Wood";
+		categories[3][2] = "Planet";
+		categories[3][3] = "Drink";
+		scrambledWords[3] = "IEPN";
+		answers[3] = "Wood";
+		// Problem 4
+		categories[4][0] = "Sport";
+		categories[4][1] = "Planet";
+		categories[4][2] = "Ocean";
+		categories[4][3] = "Rock";
+		scrambledWords[4] = "ETURJIP";
+		answers[4] = "Planet";	
+		// Problem 5
+		categories[5][0] = "Ocean";
+		categories[5][1] = "Mountain";
+		categories[5][2] = "Tree";
+		categories[5][3] = "Beach";
+		scrambledWords[5] = "TLNCTIAA";
+		answers[5] = "Ocean";	
+		// Problem 6
+		categories[6][0] = "Alcohol";
+		categories[6][1] = "Animal";
+		categories[6][2] = "Race";
+		categories[6][3] = "Instrument";
+		scrambledWords[6] = "POOSNEXAH";
+		answers[6] = "Instrument";
+		// Problem 7
+		categories[7][0] = "Gas";
+		categories[7][1] = "Furniture";
+		categories[7][2] = "Rock";
+		categories[7][3] = "Weather";
+		scrambledWords[7] = "AGEINRT";
+		answers[7] = "Rock";
+		// Problem 8
+		categories[8][0] = "Pig";
+		categories[8][1] = "Plant";
+		categories[8][2] = "Month";
+		categories[8][3] = "Season";
+		scrambledWords[8] = "TIRNWE";
+		answers[8] = "Winter";
+		// Problem 9
+		categories[9][0] = "Meat";
+		categories[9][1] = "Vegetable";
+		categories[9][2] = "Spice";
+		categories[9][3] = "Herb";
+		scrambledWords[9] = "TGUNEM";
+		answers[9] = "Spice";
+		// Problem 10
+		categories[10][0] = "Month";
+		categories[10][1] = "Clothing";
+		categories[10][2] = "Seed";
+		categories[10][3] = "Cat";
+		scrambledWords[10] = "THSIR";
+		answers[10] = "Clothing";
+		// Problem 11
+		categories[11][0] = "City";
+		categories[11][1] = "Muscle";
+		categories[11][2] = "Building";
+		categories[11][3] = "Bone";
+		scrambledWords[11] = "CAUSLPA";
+		answers[11] = "Bone";
+		// Problem 12
+		categories[12][0] = "Shape";
+		categories[12][1] = "River";
+		categories[12][2] = "Sport";
+		categories[12][3] = "Road";
+		scrambledWords[12] = "HSAMTE";
+		answers[12] = "River";
+		// Problem 13
+		categories[13][0] = "Dog";
+		categories[13][1] = "Cattle";
+		categories[13][2] = "Fish";
+		categories[13][3] = "Bird";
+		scrambledWords[13] = "EOHSNTIL";
+		answers[13] = "Cattle";
+		// Problem 14
+		categories[14][0] = "Herb";
+		categories[14][1] = "Weather";
+		categories[14][2] = "Plant";
+		categories[14][3] = "Boat";
+		scrambledWords[14] = "YHMET";
+		answers[14] = "Herb";	
 	}
 	
 	private void showButtonsAndSetupText() {
