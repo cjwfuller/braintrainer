@@ -68,7 +68,7 @@ int drawable icon 0x7f020024
 int drawable red_oval 0x7f020025
 int id about_button 0x7f070033
 int id about_description_text 0x7f070005
-int id adView 0x7f070014
+int id adView 0x7f07000d
 int id answer1_button 0x7f070038
 int id answer2_button 0x7f070039
 int id answer3_button 0x7f07003a
@@ -138,7 +138,7 @@ int id menu_main 0x7f070054
 int id menu_settings 0x7f070055
 int id none 0x7f070000
 int id normal 0x7f070001
-int id options 0x7f07000d
+int id options 0x7f07000f
 int id play_again_button 0x7f07001e
 int id satellite 0x7f070002
 int id score_text 0x7f070016
@@ -149,11 +149,11 @@ int id terrain 0x7f070003
 int id verbal_instructions 0x7f07004e
 int id verbal_letters 0x7f07004f
 int id verbal_score_text 0x7f070019
-int id word1_button 0x7f07000f
+int id word1_button 0x7f070011
 int id word2_button 0x7f070010
-int id word3_button 0x7f070011
-int id word4_button 0x7f070012
-int id word5_button 0x7f070013
+int id word3_button 0x7f070012
+int id word4_button 0x7f070013
+int id word5_button 0x7f070014
 int integer google_play_services_version 0x7f090000
 int layout activity_about 0x7f030000
 int layout activity_check_answer 0x7f030001

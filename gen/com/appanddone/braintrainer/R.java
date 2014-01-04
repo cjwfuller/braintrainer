@@ -219,7 +219,7 @@ containing a value of this type.
     public static final class id {
         public static final int about_button=0x7f070033;
         public static final int about_description_text=0x7f070005;
-        public static final int adView=0x7f070014;
+        public static final int adView=0x7f07000d;
         public static final int answer1_button=0x7f070038;
         public static final int answer2_button=0x7f070039;
         public static final int answer3_button=0x7f07003a;
@@ -289,7 +289,7 @@ containing a value of this type.
         public static final int menu_settings=0x7f070055;
         public static final int none=0x7f070000;
         public static final int normal=0x7f070001;
-        public static final int options=0x7f07000d;
+        public static final int options=0x7f07000f;
         public static final int play_again_button=0x7f07001e;
         public static final int satellite=0x7f070002;
         public static final int score_text=0x7f070016;
@@ -300,11 +300,11 @@ containing a value of this type.
         public static final int verbal_instructions=0x7f07004e;
         public static final int verbal_letters=0x7f07004f;
         public static final int verbal_score_text=0x7f070019;
-        public static final int word1_button=0x7f07000f;
+        public static final int word1_button=0x7f070011;
         public static final int word2_button=0x7f070010;
-        public static final int word3_button=0x7f070011;
-        public static final int word4_button=0x7f070012;
-        public static final int word5_button=0x7f070013;
+        public static final int word3_button=0x7f070012;
+        public static final int word4_button=0x7f070013;
+        public static final int word5_button=0x7f070014;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f090000;

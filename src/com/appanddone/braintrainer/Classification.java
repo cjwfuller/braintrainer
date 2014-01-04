@@ -233,12 +233,6 @@ public class Classification extends MainActivity {
 		Button word3 = (Button)findViewById(R.id.word3_button);
 		Button word4 = (Button)findViewById(R.id.word4_button);
 		Button word5 = (Button)findViewById(R.id.word5_button);
-		// Make buttons visible
-		word1.setVisibility(1);
-		word2.setVisibility(1);
-		word3.setVisibility(1);
-		word4.setVisibility(1);
-		word5.setVisibility(1);
 		// Assign random problem to words
 		word1.setText(wordGroups[randomProblem][0]);
 		word2.setText(wordGroups[randomProblem][1]);
