@@ -78,6 +78,9 @@
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:layout_marginRight="24dp"
+	            android:width="130dp"
+                android:height="130dp"
+	            android:textSize="100sp"
 	            android:background="@drawable/btn_green"
 	            style="@style/ButtonText" />
 	        <Button
@@ -85,6 +88,9 @@
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:layout_marginRight="21dp"
+	            android:width="130dp"
+                android:height="130dp"
+                android:textSize="100sp"
 	            android:background="@drawable/btn_green"
 	            style="@style/ButtonText" />  
 	        <Button 
@@ -92,6 +98,9 @@
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:layout_marginRight="24dp"
+	            android:width="130dp"
+                android:height="130dp"
+                android:textSize="100sp"
 	            android:background="@drawable/btn_green"
 	            style="@style/ButtonText" />
 	    </LinearLayout>
@@ -107,6 +116,9 @@
 	            android:layout_height="wrap_content"
 	            android:layout_marginRight="24dp"
 	            android:layout_marginTop="10dp"
+	            android:width="130dp"
+                android:height="130dp"
+                android:textSize="100sp"
 	            android:background="@drawable/btn_green"
 	            style="@style/ButtonText" />
 	        <Button 
@@ -115,6 +127,9 @@
 	            android:layout_height="wrap_content"
 	            android:layout_marginRight="21dp"
 	            android:layout_marginTop="10dp"
+	            android:width="130dp"
+                android:height="130dp"
+                android:textSize="100sp"
 	            android:background="@drawable/btn_green"
 	            style="@style/ButtonText" />  
 	        <Button 
@@ -123,6 +138,9 @@
 	            android:layout_height="wrap_content"
 	            android:layout_marginRight="24dp"
 	            android:layout_marginTop="10dp"
+	            android:width="130dp"
+                android:height="130dp"
+                android:textSize="100sp"
 	            android:background="@drawable/btn_green"
 	            style="@style/ButtonText" /> 
 	     </LinearLayout>     
@@ -138,6 +156,9 @@
 	            android:layout_height="wrap_content"
 	            android:layout_marginRight="24dp"
 	            android:layout_marginTop="10dp"
+	            android:width="130dp"
+                android:height="130dp"
+                android:textSize="100sp"
 	            android:background="@drawable/btn_green"
 	            style="@style/ButtonText" />
 	        <Button 
@@ -146,6 +167,9 @@
 	            android:layout_height="wrap_content"
 	            android:layout_marginRight="24dp"
 	            android:layout_marginTop="10dp"
+	            android:width="130dp"
+                android:height="130dp"
+                android:textSize="100sp"
 	            android:background="@drawable/btn_green"
 	            style="@style/ButtonText" />  
 	        <Button 
@@ -154,6 +178,9 @@
 	            android:layout_height="wrap_content"
 	            android:layout_marginRight="24dp"
 	            android:layout_marginTop="10dp"
+	            android:width="130dp"
+                android:height="130dp"
+                android:textSize="100sp"
 	            android:background="@drawable/btn_green"
 	            style="@style/ButtonText" /> 
 	     </LinearLayout>  
@@ -165,17 +192,20 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:gravity="right" >
-        <Button 
-            android:id="@+id/skipButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginRight="24dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/skip_question"
-            android:scaleType="centerCrop"
-            android:background="@drawable/btn_purple"
-            style="@style/ButtonText" />
+
+         <Button
+             android:id="@+id/skipButton"
+             style="@style/ButtonText"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             android:layout_marginTop="10dp"
+             android:background="@drawable/btn_purple"
+             android:height="100dp"
+             android:scaleType="centerCrop"
+             android:text="@string/skip_question"
+             android:textSize="60sp"
+             android:width="150dp" />
 
         <com.google.android.gms.ads.AdView
             android:id="@+id/adView"
