@@ -64,9 +64,8 @@ int drawable ic_plusone_medium_off_client 0x7f020020
 int drawable ic_plusone_small_off_client 0x7f020021
 int drawable ic_plusone_standard_off_client 0x7f020022
 int drawable ic_plusone_tall_off_client 0x7f020023
-int drawable pattern_q1box1 0x7f020024
-int drawable patterns_q1box1 0x7f020025
-int drawable red_oval 0x7f020026
+int drawable icon 0x7f020024
+int drawable red_oval 0x7f020025
 int id about_button 0x7f070033
 int id about_description_text 0x7f070005
 int id adView 0x7f070014

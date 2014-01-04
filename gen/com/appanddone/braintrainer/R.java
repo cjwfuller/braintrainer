@@ -213,9 +213,8 @@ containing a value of this type.
         public static final int ic_plusone_small_off_client=0x7f020021;
         public static final int ic_plusone_standard_off_client=0x7f020022;
         public static final int ic_plusone_tall_off_client=0x7f020023;
-        public static final int pattern_q1box1=0x7f020024;
-        public static final int patterns_q1box1=0x7f020025;
-        public static final int red_oval=0x7f020026;
+        public static final int icon=0x7f020024;
+        public static final int red_oval=0x7f020025;
     }
     public static final class id {
         public static final int about_button=0x7f070033;
