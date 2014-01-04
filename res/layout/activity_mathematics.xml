@@ -74,7 +74,7 @@
 		        android:layout_height="wrap_content"
 		        android:background="@drawable/btn_green"
 		        style="@style/ButtonText"
-		        android:textSize="50sp"
+		        android:textSize="40sp"
 		        android:layout_toRightOf="@+id/answer1_button" />
 		   <Button
 	            android:id="@+id/answer2_button"
@@ -82,7 +82,7 @@
 	            android:layout_height="wrap_content"
 	            android:background="@drawable/btn_green"
 	            style="@style/ButtonText"
-	            android:textSize="50sp"
+	            android:textSize="40sp"
 	            android:layout_toRightOf="@+id/answer1_button" />
 	       <Button
 	            android:id="@+id/answer3_button"
@@ -90,7 +90,7 @@
 	            android:layout_height="wrap_content"
 	            android:background="@drawable/btn_green"
 	            style="@style/ButtonText"
-	            android:textSize="50sp"
+	            android:textSize="40sp"
 	            android:layout_toRightOf="@+id/answer2_button" />
 	       <Button
 	            android:id="@+id/answer4_button"
@@ -98,7 +98,7 @@
 	            android:layout_height="wrap_content"
 	            android:background="@drawable/btn_green"
 	            style="@style/ButtonText"
-	            android:textSize="50sp"
+	            android:textSize="40sp"
 	            android:layout_toRightOf="@+id/answer3_button" />
 	       <Button
 	            android:id="@+id/answer5_button"
@@ -106,7 +106,7 @@
 	            android:layout_height="wrap_content"
 	            android:background="@drawable/btn_green"
 	            style="@style/ButtonText"
-	            android:textSize="50sp"
+	            android:textSize="40sp"
 	            android:layout_toRightOf="@+id/answer4_button" />   
        </RelativeLayout>  
        <com.google.android.gms.ads.AdView 

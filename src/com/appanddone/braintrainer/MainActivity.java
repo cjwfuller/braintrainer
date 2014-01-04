@@ -23,6 +23,12 @@ import android.widget.ImageView;
 import android.widget.ShareActionProvider;
 import android.widget.TextView;
 
+/**
+ * TODO how many things can you do with a brick (for example)
+ * 
+ * @author cjwfuller
+ *
+ */
 public class MainActivity extends Activity {
 	
 	private ShareActionProvider mShareActionProvider;
