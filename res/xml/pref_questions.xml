@@ -21,21 +21,6 @@
     <CheckBoxPreference
         android:defaultValue="true"
         android:key="Mathematics_question_type"
-        android:title="@string/pref_title_mathematical" />
-    <CheckBoxPreference
-        android:defaultValue="true"
-        android:key="Spatial_question_type"
-        android:title="@string/pref_title_spatial"
-        android:enabled="false" />
-    <CheckBoxPreference
-        android:defaultValue="true"
-        android:key="Visual_question_type"
-        android:title="@string/pref_title_visual"
-        android:enabled="false" />
-    <CheckBoxPreference
-        android:defaultValue="true"
-        android:key="PatternRecognition_question_type"
-        android:title="@string/pref_title_pattern_recognition"
-        android:enabled="false" />                    
+        android:title="@string/pref_title_mathematical" />                   
     </PreferenceCategory>
 </PreferenceScreen>
