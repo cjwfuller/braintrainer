@@ -9,6 +9,12 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:gravity="center"
     tools:context=".MainActivity" >
+    <TextView
+        android:id="@+id/highscore_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/about_button"
+        android:textSize="40sp" />
     <Button
         android:id="@+id/start_button"
         android:layout_width="wrap_content"
@@ -38,12 +44,6 @@
         android:textSize="50sp"
         android:width="300dp"
         android:text="@string/about_button"
-        android:layout_below="@+id/settings_button"/>   
-    <TextView
-        android:id="@+id/highscore_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/about_button"
-        android:textSize="40sp" />                 
+        android:layout_below="@+id/settings_button"/>                    
 
 </RelativeLayout>

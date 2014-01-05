@@ -108,7 +108,7 @@ public class MainActivity extends Activity {
 		} else if(strLen == 2) {
 			str = "0" + str;
 		}
-		str = "\u25B6\u25B6\u25B6 Highscore \u25B6\u25B6\u25B6 " + str;
+		str = "Highscore \u25B6" + str;
 		return str;
 	}
 
@@ -133,7 +133,7 @@ public class MainActivity extends Activity {
 	private Intent createShareIntent() {  
         Intent shareIntent = new Intent(Intent.ACTION_SEND);  
         shareIntent.setType("text/plain");  
-        shareIntent.putExtra(Intent.EXTRA_TEXT, "I'm playing Brain Trainer!  Download for Android here: http://");  
+        shareIntent.putExtra(Intent.EXTRA_TEXT, "I'm playing Brain Trainer!  Download for Android here: https://play.google.com/store/apps/details?id=com.appanddone.braintrainer");  
         return shareIntent;  
    }
 	
