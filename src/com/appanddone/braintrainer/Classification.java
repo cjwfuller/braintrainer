@@ -203,27 +203,27 @@ public class Classification extends MainActivity {
 		wordGroups[20][4] = "Glow Stick";		
 		// Answers
 		answers = new String[numProblems];
-		answers[0] = "Carrot";
-		answers[1] = "Tree";
-		answers[2] = "Tonic";
-		answers[3] = "Train";
-		answers[4] = "Moon";
-		answers[5] = "Badminton";
-		answers[6] = "Sphere";
-		answers[7] = "Fish";
-		answers[8] = "Wood";
-		answers[9] = "Tea";
-		answers[10] = "Socks";
-		answers[11] = "Light";
-		answers[12] = "Summer";
-		answers[13] = "Water";
-		answers[14] = "Africa";
-		answers[15] = "Saxophone";
-		answers[16] = "Grammar";
-		answers[17] = "Two";
-		answers[18] = "Ear";
-		answers[19] = "Phone";
-		answers[20] = "Lights";
+		answers[0] = "Carrot"; //
+		answers[1] = "Tree"; //
+		answers[2] = "Tonic"; //
+		answers[3] = "Train"; //
+		answers[4] = "Moon"; //
+		answers[5] = "Badminton"; //
+		answers[6] = "Sphere"; // 
+		answers[7] = "Fish"; //
+		answers[8] = "Wood"; //
+		answers[9] = "Tea"; //
+		answers[10] = "Socks"; //
+		answers[11] = "Light"; //
+		answers[12] = "Summer"; //
+		answers[13] = "Water"; //
+		answers[14] = "Africa"; //
+		answers[15] = "Saxophone"; //
+		answers[16] = "Grammar"; //
+		answers[17] = "Two"; //
+		answers[18] = "Ear"; //
+		answers[19] = "Phone"; //
+		answers[20] = "Light"; //
 	}
 	
 	private void showButtonsAndSetupText() {

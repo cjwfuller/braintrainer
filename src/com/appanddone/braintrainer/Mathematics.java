@@ -164,7 +164,7 @@ public class Mathematics extends MainActivity {
 		series[15][4] = 120;
 		series[15][5] = 720;
 		// Problem 16 - 4n+2 (next 30)
-		series[16][0] = 4;
+		series[16][0] = 6;
 		series[16][1] = 10;
 		series[16][2] = 14;
 		series[16][3] = 18;
