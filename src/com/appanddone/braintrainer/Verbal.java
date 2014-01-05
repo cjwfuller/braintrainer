@@ -86,63 +86,63 @@ public class Verbal extends MainActivity {
 		categories[1][1] = "Food";
 		categories[1][2] = "Drink";
 		categories[1][3] = "Wood";
-		scrambledWords[1] = "AERDB";
+		scrambledWords[1] = "AERDB"; // bread
 		answers[1] = "Bird";
 		// Problem 2
 		categories[2][0] = "Country";
 		categories[2][1] = "Politician";
 		categories[2][2] = "Tree";
 		categories[2][3] = "Metal";
-		scrambledWords[2] = "ZABLIR";
+		scrambledWords[2] = "ZABLIR"; // brazil
 		answers[2] = "Country";
 		// Problem 3
 		categories[3][0] = "Tool";
 		categories[3][1] = "Wood";
 		categories[3][2] = "Planet";
 		categories[3][3] = "Drink";
-		scrambledWords[3] = "IEPN";
+		scrambledWords[3] = "IEPN"; // pine
 		answers[3] = "Wood";
 		// Problem 4
 		categories[4][0] = "Sport";
 		categories[4][1] = "Planet";
 		categories[4][2] = "Ocean";
 		categories[4][3] = "Rock";
-		scrambledWords[4] = "ETURJIP";
+		scrambledWords[4] = "ETURJIP"; // jupiter
 		answers[4] = "Planet";	
 		// Problem 5
 		categories[5][0] = "Ocean";
 		categories[5][1] = "Mountain";
 		categories[5][2] = "Tree";
 		categories[5][3] = "Beach";
-		scrambledWords[5] = "TLNCTIAA";
+		scrambledWords[5] = "TLNCTIAA"; // atlantic
 		answers[5] = "Ocean";	
 		// Problem 6
 		categories[6][0] = "Alcohol";
 		categories[6][1] = "Animal";
 		categories[6][2] = "Race";
 		categories[6][3] = "Instrument";
-		scrambledWords[6] = "POOSNEXAH";
+		scrambledWords[6] = "POOSNEXAH"; // saxophone
 		answers[6] = "Instrument";
 		// Problem 7
 		categories[7][0] = "Gas";
 		categories[7][1] = "Furniture";
 		categories[7][2] = "Rock";
 		categories[7][3] = "Weather";
-		scrambledWords[7] = "AGEINRT";
+		scrambledWords[7] = "AGEINRT"; // granite
 		answers[7] = "Rock";
 		// Problem 8
 		categories[8][0] = "Pig";
 		categories[8][1] = "Plant";
 		categories[8][2] = "Month";
 		categories[8][3] = "Season";
-		scrambledWords[8] = "TIRNWE";
-		answers[8] = "Winter";
+		scrambledWords[8] = "TIRNWE"; // winter
+		answers[8] = "Season";
 		// Problem 9
 		categories[9][0] = "Meat";
 		categories[9][1] = "Vegetable";
 		categories[9][2] = "Spice";
 		categories[9][3] = "Herb";
-		scrambledWords[9] = "TGUNEM";
+		scrambledWords[9] = "KRIAAPP";
 		answers[9] = "Spice";
 		// Problem 10
 		categories[10][0] = "Month";
@@ -170,8 +170,8 @@ public class Verbal extends MainActivity {
 		categories[13][1] = "Cattle";
 		categories[13][2] = "Fish";
 		categories[13][3] = "Bird";
-		scrambledWords[13] = "EOHSNTIL";
-		answers[13] = "Cattle";
+		scrambledWords[13] = "LLCIEO";
+		answers[13] = "Dog";
 		// Problem 14
 		categories[14][0] = "Herb";
 		categories[14][1] = "Weather";
