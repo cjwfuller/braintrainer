@@ -36,7 +36,7 @@ public class CheckAnswer extends MainActivity {
 			answerTextView.setText("NO :-(");
 		}
 		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
-		if(settings.getBoolean("sound", false)) {
+		if(settings.getBoolean("sound", true)) {
 			mp.start();
 		}
 		// Go to next random activity after 1 second

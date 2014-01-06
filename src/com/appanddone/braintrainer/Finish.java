@@ -63,7 +63,7 @@ public class Finish extends MainActivity {
 			// Play clap  sound
 			MediaPlayer mp = MediaPlayer.create(this, R.raw.clap);
 			SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
-			if(settings.getBoolean("sound", false)) {
+			if(settings.getBoolean("sound", true)) {
 				mp.start();
 			}
 		}
