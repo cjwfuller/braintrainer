@@ -87,7 +87,7 @@ public class Verbal extends MainActivity {
 		categories[1][2] = "Drink";
 		categories[1][3] = "Wood";
 		scrambledWords[1] = "AERDB"; // bread
-		answers[1] = "Bird";
+		answers[1] = "Bread";
 		// Problem 2
 		categories[2][0] = "Country";
 		categories[2][1] = "Politician";
